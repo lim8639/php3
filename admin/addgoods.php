@@ -131,7 +131,8 @@ include_once("top.php");
 
                     <script type="text/javascript">
 
-                        var editor = UE.getEditor('container');
+                        var editor = UE.getEditor('container',{initialFrameWidth:'100%',initialFrameHeight:'100%'});
+                        );
 
                     </script>
 

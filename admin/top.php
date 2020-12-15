@@ -30,8 +30,8 @@ if(empty($_SESSION['user']))
         <section class="header_section_l">
         </section>
         <section class="header_section_r">
-            <a href="#">网站首页</a>
-            <a href="index.php">系统首页</a>
+            <a href="../">网站首页</a>
+            <a href="brogoods.php">系统首页</a>
         </section>
     </div>
 </header>

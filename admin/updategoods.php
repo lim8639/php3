@@ -143,7 +143,7 @@ $modity_row=mysqli_fetch_assoc($modity_result);
 
                         <script type="text/javascript">
 
-                            var editor = UE.getEditor('container');
+                            var editor = UE.getEditor('container',{initialFrameWidth:'100%',initialFrameHeight:'100%'});
 
                         </script>
 

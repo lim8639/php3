@@ -22,7 +22,7 @@
         </div>
         <div class="collapsed">
             <span>类别管理</span>
-            <a href="">添加类别</a>
+            <a href="addtype.php">添加类别</a>
             <a href="">修改类别</a>
         </div>
         <div class="collapsed">
