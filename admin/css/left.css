@@ -1,0 +1,66 @@
+
+#middle {
+    position: absolute;
+    top: 75px;
+    height: 100%;
+    width: 23%;
+    background:#fff;
+}
+.left {
+    top: -15px;
+    float: left;
+    width: 220px;
+    background: #fff url(../images/left_bg.png) repeat-y  right;
+    height: 100%;
+    position: relative;
+}
+
+
+div.sdmenu{
+    font-size:12px;
+    background:#ccc;
+    color:#fff;
+}
+div.sdmenu div{
+    overflow:hidden;
+    margin-top:-1px;
+}
+div.sdmenu div{
+    background:#fff
+    url(../images/left_bg.png) repeat-y right;
+}
+div.sdmenu div.collapsed{
+    height:30px;
+}
+div.sdmenu div span{
+    display:block;
+    height:30px;
+    line-height:30px;
+    overflow:hidden;
+    cursor:pointer;
+    background: url(../images/left2.png);
+    font-size:12px;
+    color:#111111;
+    text-indent:30px;
+    font-weight:bold;
+    }
+div.sdmenu div.collapsed span{
+    background: url(../images/left.png);
+    font-size:12px;
+    text-indent:30px;
+    font-weight:bold;
+}
+
+div.sdmenu div a{
+    display:block;
+    color:#262525;
+    background:url(../images/171.png) no-repeat 30px 4px;
+    text-indent:50px;
+    padding:2px 0;
+}
+
+div.sdmenu div a:hover{
+    background-color:#3a8a0f;
+    color:#ffffff;
+    text-decoration:none;}
+

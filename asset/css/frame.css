@@ -1,0 +1,124 @@
+body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, img {
+    margin:0;
+    padding:0;
+    border:0;
+    list-style: none;
+}
+body{
+    font-family:"微软雅黑",
+    Arial, Helvetica, sans-serif;
+    font-size:14px;
+}
+@font-face {font-family: 'freshskin';src:url('../font/iconfont.ttf') format('truetype')}
+
+@font-face {font-family: 'iconfont';
+    src: url('../src/icon/iconfont.eot'); /* IE9*/
+    src: url('../src/icon/iconfont.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+    url('../src/icon/iconfont.woff') format('woff'), /* chrome、firefox */
+    url('../src/icon/iconfont.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+    url('../src/icon/iconfont.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+.iconfont:hover{
+    color: #999999;
+    background-color: #fff;
+}
+.iconfont{
+    height: 32px;
+    width: 32px;
+    color: #FFFFFF;
+    box-shadow: 0 0 0 1px #fff inset;
+    transition: box-shadow 0.6s ease 0.6s;
+    border: #FFFFFF 1px solid;
+    padding: 10px;
+    border-radius: 50%;
+    margin-left: 20px;
+    font-family:"iconfont" !important;
+    font-size:20px;font-style:normal;
+    -webkit-font-smoothing: antialiased;
+    -webkit-text-stroke-width: 0.2px;
+    -moz-osx-font-smoothing: grayscale;}
+a{
+
+    color:#42b983;text-decoration: none;
+}
+input,textarea{
+    outline: none;
+}
+@font-face {
+    font-family: 'freshskin';
+    src:url('../font/iconfont.ttf');
+}
+
+
+#query:hover{
+    color: #337!important;
+}
+a:hover{
+    text-decoration: none;
+}
+
+/*header*/
+header{
+    z-index: 11;
+    height: 80px;
+    width: 100%;
+    box-shadow: 0 1px 40px -8px rgba(0,0,0,.5);
+    background-color: #FFFFFFF2;
+}
+header img{
+  margin-bottom: 10px;
+}
+header ul li{
+    display:inline-block;
+}
+
+#head{
+    position: relative;
+}
+ .head-left{
+     height: 80px;
+     display: inline-block;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
+.head-left b{
+    margin-left: 10px;
+    font-size: 25px;
+    height: 80px;
+    line-height: 80px;
+}
+.head-right{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    top: 0;
+
+}
+
+.head-right ul li{
+    padding: 0 10px;
+    line-height: 80px;
+    height: 80px;
+}
+/*footer*/
+
+.head-right ul a{
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    font-style:initial;
+}
+footer{
+    padding-bottom: 80px;
+    width: 100%;
+    /*height: 400px;*/
+    margin-top: 100px;
+    background: #545861;
+}
+
+.copyright{
+    text-align: center;
+    margin-top: 30px;
+}
+.copyright p{
+    color: #f7f7f9;
+}

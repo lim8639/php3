@@ -1,0 +1,48 @@
+
+.right_div_title{
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-bottom:1px solid #ddd;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+div h3 a {color:#999; text-decoration:none;}
+
+div h3 a:hover{color: #07398b;text-decoration:none;}
+
+h3{
+    font-weight:500;
+    font-size: 20px;
+   margin-right: 10px;
+}
+.img{
+    position: relative;
+}
+.other{
+    position: absolute;
+    width:100%;
+    text-align:center;
+    padding-right: 25px;
+}
+.fan{
+    position: absolute;
+    left: 30%;
+    top:65%;
+
+}
+.fan button{
+    margin-right: 10px;
+}
+.search{
+    width: 50%;
+    position: relative;
+    left: 42%;
+
+}
+#livesearch div:hover
+{
+    background-color:#999;
+}
+#livesearch a{
+    color:#999; text-decoration:none;
+}
