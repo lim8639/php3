@@ -16,21 +16,17 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select />
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43d8b58a-e96f-4de0-86d6-3baa5c6e481e" name="Default Changelist" comment="1010/12/15 15:30 本地更新">
-      <change afterPath="$PROJECT_DIR$/shop/css/order.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/asset/css/frame.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/css/frame.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/car.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/car.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/css/details.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/css/details.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/details.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/details.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shop/order .php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/order .php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/car.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/shoppingcar.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/girl.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/girl.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/header.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/index-header.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/index-header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/work.php" beforeDir="false" afterPath="$PROJECT_DIR$/work.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,6 +91,7 @@
       <workItem from="1607991166914" duration="25485000" />
       <workItem from="1608019599288" duration="6536000" />
       <workItem from="1608038464163" duration="3552000" />
+      <workItem from="1608042752307" duration="110000" />
     </task>
     <task id="LOCAL-00001" summary="1010/12/15 15:30 本地更新">
       <created>1608017908120</created>
@@ -128,7 +125,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
