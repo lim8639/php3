@@ -108,7 +108,8 @@ header ul li{
     font-style:initial;
 }
 footer{
-    padding-bottom: 80px;
+    padding-top: 10px;
+    padding-bottom: 60px;
     width: 100%;
     /*height: 400px;*/
     margin-top: 100px;
