@@ -31,7 +31,7 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">请问有什么可以帮助你的吗</h4>
+                <h4 class="modal-title" id="myModalLabel">购物车</h4>
             </div>
             <div class="modal-body">
                 点击搜索<input type="text"> <button type="button" class="btn btn-primary">前往</button>
@@ -42,7 +42,7 @@
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
-                <button type="button" class="btn btn-primary">前往</button>
+                <button type="button" class="btn btn-info">前往</button>
             </div>
         </div>
     </div>

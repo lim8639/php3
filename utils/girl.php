@@ -27,7 +27,6 @@
             "react": {
                 "opacityDefault": 1.0,
                 "opacityOnHover": 1.0,
-
             }
         });
     </script>

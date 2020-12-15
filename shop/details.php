@@ -46,8 +46,7 @@
                        <li style="width: 10%"><img src="#" alt="">logo</li>
                        <li><span class="glyphicon glyphicon-arrow-right"></span>价格平稳</li>
                        <li ><span class="glyphicon glyphicon-eur"></span>更低价</li>
-                       <li > <span class="
-glyphicon glyphicon-star-empty"></span>降价提醒</li>
+                       <li > <span class="glyphicon glyphicon-star-empty"></span>降价提醒</li>
                    </ul>
                    <ul id="ul2">
                        <li><p><span class="discount">促</span>先领券后下单</p><p><span class="discount">促</span>先领券后下单</p></li>
@@ -73,54 +72,50 @@ glyphicon glyphicon-star-empty"></span>降价提醒</li>
             <hr>
             <p class="adrr">
                 <p>颜色：
-                <ul>
-                    <li>红色</li>
-                    <li>红色</li>
-                    <li>红色</li>
-                    <li>红色</li>
-                    <li>红色</li>
-                </ul>
+
                 </p>
-            </div>
+                      <ul>
+                          <li>红色</li>
+                          <li>红色</li>
+                          <li>红色</li>
+                          <li>红色</li>
+                          <li>红色</li>
+                      </ul>
+
             <div class="intocar">
                 <label>
-                    <input id="num" type="text" name="num" value="1">
+                    <input id="num"  type="number" name="num" value="1">
                 </label>
                  <span id="add" class="btn change">
                     +
                  </span>
-                <span id="decline" class="btn change">
--
-                 </span>
-                <script>
-                    var num = $('#num');
-                    $('#add').click(function () {
-                        var value = num.val();
-                        value++;
-                        num.attr('value',value);
-                    })
-                    $('#decline').click(function () {
-                        var value = num.val();
-                        if (value>1){
-                            value--;
-                            num.attr('value',value);
-                        }
-                    })
-                </script>
+                <span id="decline" class="btn change">-</span>
+                         <script>
+                             var num = $('#num');
+                             $('#add').click(function () {
+                                 var value = num.val();
+                                 value++;
+                                 num.attr('value',value);
+                             })
+                             $('#decline').click(function () {
+                                 var value = num.val();
+                                 if (value>1){
+                                     value--;
+                                     num.attr('value',value);
+                                 }
+                             })
+                         </script>
                  <button id="btn">
                      <b>加入购物车
                      </b>
                  </button>
-
             </div>
         </div>
     </div>
 </div>
-
 <?php
-include "../utils/car.php";
+include "../utils/shoppingcar.php";
 include "../utils/footer.php";
-
 ?>
 </body>
 </html>

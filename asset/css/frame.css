@@ -123,3 +123,13 @@ footer{
 .copyright p{
     color: #f7f7f9;
 }
+#car{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+}
+#car img{
+    width: 100%;
+}

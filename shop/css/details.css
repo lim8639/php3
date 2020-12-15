@@ -184,13 +184,23 @@ select{
     height: 50px;
 }
 
-#car{
-    width: 100px;
-    height: 100px;
-    position: fixed;
-    bottom: 10%;
-    right: 5%;
+#car-list{
+
 }
-#car img{
-    width: 100%;
+#car-list >ul>li{
+    height: 100px;
+
+}
+.car-num{
+   width: 50px;
+    height: 50px;
+}
+#car-list li span{
+
+}
+#car-list li img{
+   height: 100%;
+}
+#car-list li p{
+
 }

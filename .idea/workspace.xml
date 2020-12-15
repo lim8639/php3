@@ -20,13 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43d8b58a-e96f-4de0-86d6-3baa5c6e481e" name="Default Changelist" comment="1010/12/15 15:30 本地更新">
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/css/order.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/aaaa.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/asset/css/frame.css" beforeDir="false" afterPath="$PROJECT_DIR$/asset/css/frame.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/car.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/car.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/css/details.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/css/details.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/details.php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/details.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shop/order .php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/order .php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/ConnecToDB.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/footer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/car.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/shoppingcar.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/girl.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/girl.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/index-header.php" beforeDir="false" afterPath="$PROJECT_DIR$/utils/index-header.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +49,6 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1leH4pMfx1c9KWUCFcwwDnmXBYO" />
@@ -71,13 +74,13 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="X:\hellophp\asset\src\img2" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="X:\hellophp\admin" />
       <recent name="X:\hellophp\asset\src\img2" />
       <recent name="X:\hellophp\admin\images" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="X:\hellophp\asset\src\img2" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -90,7 +93,8 @@
       <updated>1607950447919</updated>
       <workItem from="1607950448952" duration="3765000" />
       <workItem from="1607991166914" duration="25485000" />
-      <workItem from="1608019599288" duration="3606000" />
+      <workItem from="1608019599288" duration="6536000" />
+      <workItem from="1608038464163" duration="3552000" />
     </task>
     <task id="LOCAL-00001" summary="1010/12/15 15:30 本地更新">
       <created>1608017908120</created>
@@ -106,7 +110,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608019712165</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="1010/12/15 15:30 本地更新">
+      <created>1608033660339</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1608033660339</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -122,6 +133,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="1010/12/15 15:30 本地更新" />
@@ -164,10 +176,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="549" y="166" key="FileChooserDialogImpl/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608017293231" />
-    <state x="403" y="172" width="913" height="479" key="MultipleFileMergeDialog" timestamp="1608021138360">
+    <state x="93" y="214" width="913" height="479" key="MultipleFileMergeDialog" timestamp="1608034056051">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="403" y="172" width="913" height="479" key="MultipleFileMergeDialog/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608021138360" />
+    <state x="93" y="214" width="913" height="479" key="MultipleFileMergeDialog/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608034056051" />
     <state x="599" y="335" key="NewPhpFileDialog" timestamp="1608019631788">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -176,14 +188,14 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="56" key="SettingsEditor/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608033044021" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608019721861">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608034134184">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608019721861" />
-    <state x="574" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608033236209">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608034134184" />
+    <state x="525" y="298" width="388" height="206" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608034389922">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="574" y="325" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608033236209" />
+    <state x="525" y="298" width="388" height="206" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608034389922" />
     <state x="607" y="142" key="ftp.server.browser" timestamp="1607950909631">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
