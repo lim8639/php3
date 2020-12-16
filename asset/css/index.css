@@ -38,7 +38,10 @@ nav{
 
 .top1{
     text-align: center;
-   padding-bottom: 20px;
+   //padding-bottom: 20px;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
 }
 .top1 p{
     padding: 10px;
@@ -106,6 +109,30 @@ position: absolute;
     height: 39px;
     width: 124px;
     border-radius: 20px;
+}
+.top1_div_first{
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0px;
+    box-sizing: border-box;
+
+}
+.top1_div_second{
+    position: relative;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+.top1_div_third{
+    //position: absolute;
+    padding-top: 16px;
+    left: 0;
+    top: 0;
+    right: 0;
+    padding:0 24px;
+    background-color: transparent!important;
+    z-index: 500;
 }
 /*模态框*/
 /*https://v3.bootcss.com/javascript/#transitions*/
