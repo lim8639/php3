@@ -84,33 +84,51 @@
 
             <div class="intocar">
                 <label>
-                    <input id="num"  type="number" name="num" value="1">
+                    <input id="num"  type="number" name="num" readonly>
                 </label>
                  <span id="add" class="btn change">
                     +
                  </span>
                 <span id="decline" class="btn change">-</span>
+
+                <button id="btn">
+                    <b>加入购物车
+                    </b>
+                </button>
                          <script>
-                             var num = $('#num');
+                             var nub =1;
+                             var $input = $('#num');
+                             $input.attr('value',nub);
                              $('#add').click(function () {
-                                 var value = num.val();
-                                 alert(value);
-                                 num.attr('value',++value);
-                             })
+                               nub = $input.val();
+                               console.log(nub);
+                               nub++;
+                               $input.attr('value',nub);
+                             });
                              $('#decline').click(function () {
-                                 var value = num.val();
-                                 var nn = value++;
-                                 if (value>1){
-                                     num.attr('value', ++nn);
-                                 }else {
-                                     num.attr('value',);
+                                 if (nub>1)
+                                 {
+                                     nub = $input.val();
+                                     console.log(nub);
+                                     nub--;
+                                     $input.attr('value',nub);
                                  }
                              })
+
+                             $('#btn').click(function () {
+                                 $.ajax({
+                                     type: "POST",
+                                     url: "car.php",
+                                     data: {action:"query",uid:5},
+                                     dataType: "text",
+                                     async:false,
+                                     success: function(data) {
+                                         $('#test').append(data);
+                                     }
+                                 });
+                             })
                          </script>
-                 <button id="btn">
-                     <b>加入购物车
-                     </b>
-                 </button>
+
             </div>
         </div>
     </div>

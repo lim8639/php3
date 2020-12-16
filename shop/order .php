@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../asset/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../asset/css/frame.css">
     <link rel="stylesheet" href="css/order.css">
+    <link rel="stylesheet" href="../utils/car.css">
     <script src="../asset/bootstrap-3.3.7-dist/jquery/jquery-3.5.1.min.js"></script>
     <script src="../asset/bootstrap-3.3.7-dist/js/bootstrap.min.js">
     </script>
