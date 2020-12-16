@@ -43,18 +43,36 @@ li{
     background-color: #e8ff02;
     margin: auto;
 }
-.righttop1 h2{
+.h2{
+    margin: 0;
+    display: inline-block;
     line-height: 60px;
     height: 60px;
-    margin: 0;
+}
+.glyphicon {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    -webkit-font-smoothing: antialiased;
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1.4!important;
+    -moz-osx-font-smoothing: grayscale;
 }
 .righttop1{
+    position: relative;
+    text-align: center;
     line-height: 60px;
     background-color: #42b983;
     height: 60px;
     color: #fff;
     border-radius: 40px;
     margin: 15px 0;
+}
+.righttop1 p{
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    font-size: 22px;
+    color: #f7fcff;
 }
 .rightcarall{
     height: 350px;

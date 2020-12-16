@@ -35,7 +35,7 @@
                hello
            </div>
            <div class="small col-lg-6 col-md-6 col-sm-12 col-xs-12">
-helllo
+                helllo
            </div>
        </div>
    </div>

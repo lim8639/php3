@@ -82,6 +82,30 @@ header ul li{
     left: 0;
     top: 0;
 }
+ #search-all{
+
+ }
+#search-all .form-group{
+    width: 80%;
+    position: relative;
+}
+#search-all label{
+    width: 90%;
+}
+#search-all input{
+    display: inline-block;
+    width: 100%;
+}
+#search-all ul li{
+
+    width: 300px;
+    background-color: #1b6d85;
+}
+#search-all ul{
+    position: absolute;
+    top: 50px;
+    left: 15%;
+}
 .head-left b{
     margin-left: 10px;
     font-size: 25px;

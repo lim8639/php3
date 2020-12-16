@@ -6,5 +6,19 @@
     right: 5%;
 }
 #car img{
+
     width: 100%;
+}
+
+#num-car{
+    position: absolute;
+    border-radius: 30px;
+    font-size: 16px;
+    line-height: 30px;
+    text-align: center;
+    display: inline-block;
+    background-color: red;
+    color: #f7f7f9;
+    height: 30px;
+    width: 30px;
 }
