@@ -1,0 +1,83 @@
+{
+  "list":[
+    {
+      "id":"1001",
+      "name":"曾小贤",
+      "address":"广东省 广州市 天河区",
+      "province":"广东省",
+      "city":"广州市",
+      "district":"天河区",
+      "detailAddress":"体育西路维多利亚广场20楼良品铺子",
+      "zipCode":"510000",
+      "phone":"12345678910",
+      "date":"2019.07.09 11:14",
+      "isDefault":true,
+      "isActive":true
+    },
+    {
+      "id":"1002",
+      "name":"张益达",
+      "address":"广东省 广州市 海珠区",
+      "province":"广东省",
+      "city":"广州市",
+      "district":"海珠区",
+      "detailAddress":"广州大道南1629号华南鞋业城",
+      "zipCode":"510000",
+      "phone":"156568532323",
+      "date":"2019.07.08 12:00",
+      "isDefault":false,
+      "isActive":false
+    },
+    {
+      "id":"1003",
+      "name":"胡一菲",
+      "address":"广东省 广州市 番禺区",
+      "province":"广东省",
+      "city":"广州市",
+      "district":"番禺区",
+      "detailAddress":"华洲街街道办事处",
+      "zipCode":"000000",
+      "phone":"12455688212",
+      "date":"2019.07.06 09:11",
+      "isDefault":false,
+      "isActive":false
+    },
+    {
+      "id":"1004",
+      "name":"秦羽墨",
+      "address":"广东省 广州市 白云区",
+      "province":"广东省",
+      "city":"广州市",
+      "district":"白云区",
+      "detailAddress":"广州大道南1629号华南鞋业城",
+      "zipCode":"510000",
+      "phone":"156568532323",
+      "date":"2019.07.05 22:20",
+      "isDefault":false,
+      "isActive":false
+    },
+    {
+      "id":"1005",
+      "name":"吕子乔",
+      "address":"广东省 广州市 荔湾区",
+      "province":"广东省",
+      "city":"广州市",
+      "district":"荔湾区",
+      "detailAddress":"华洲街街道办事处",
+      "zipCode":"000000",
+      "phone":"12455688212",
+      "date":"2019.07.01 10:40",
+      "isDefault":false,
+      "isActive":false
+    }
+
+
+  ]
+
+}
+
+
+
+
+
+

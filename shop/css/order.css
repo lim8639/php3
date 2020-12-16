@@ -1,5 +1,5 @@
 .order{
-    height: 600px;
+
     width: 100%;
     /*border: 1px #e3ece2 solid;*/
 }
@@ -18,12 +18,11 @@
 .adrr{
     margin: 20px 0;
     padding: 35px 15px;
-    width: 100%;
     background-color: #fff9ef;
 
 }
-th{
-    background-color: ;
+.the-address{
+    width: 100%;
 }
 .first{
     width: 40%;
@@ -37,5 +36,31 @@ th{
     text-align: center;
 }
 .tansport{
-    padding: 5px 50px;
+
 }
+
+#pay{
+
+    border: 1px solid silver;
+}
+#paid tr td{
+    margin-bottom: 10px;
+    line-height: 25px;
+    height: 25px!important;
+    padding: 0!important;
+}
+.sub{
+    padding: 20px 30px;
+    text-align: right;
+}
+#btnsub{
+
+    outline-color: #f7f7f9;
+    background-color: #c61d25;
+    width: 160px;
+    height: 40px;
+    color: #f7f7f9;
+    font-size: 20px;
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+}
+

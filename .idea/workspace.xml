@@ -16,17 +16,44 @@
         <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
       </path>
     </expand>
-    <select>
-      <path>
-        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
-        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
-      </path>
-    </select>
+    <select />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="43d8b58a-e96f-4de0-86d6-3baa5c6e481e" name="Default Changelist" comment="1010/12/15 15:30 本地更新">
+      <change afterPath="$PROJECT_DIR$/asset/pluge/adrr/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/pluge/adrr/js/plugins/angular/angular.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/pluge/adrr/js/plugins/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/pluge/adrr/js/plugins/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/pluge/adrr/js/plugins/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/pluge/adrr/js/plugins/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/pluge/adrr/js/plugins/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/pluge/adrr/js/plugins/jquery/dist/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/pluge/adrr/js/selectAddress2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/pluge/adrr/template/city.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/pluge/adrr/template/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/vueshdz/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/vueshdz/jquery插件库.url" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/vueshdz/js/addressTest.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/vueshdz/js/axios.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/vueshdz/js/vue.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/asset/vueshdz/www.jq22.com.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/js/index.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/js/plugins/angular/angular.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/js/plugins/bootstrap/dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/js/plugins/bootstrap/dist/fonts/glyphicons-halflings-regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/js/plugins/bootstrap/dist/fonts/glyphicons-halflings-regular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/js/plugins/bootstrap/dist/fonts/glyphicons-halflings-regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/js/plugins/bootstrap/dist/fonts/glyphicons-halflings-regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/js/plugins/jquery/dist/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/js/selectAddress2.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/template/city.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shop/template/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/hellophp.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/hellophp.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/css/order.css" beforeDir="false" afterPath="$PROJECT_DIR$/shop/css/order.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shop/order .php" beforeDir="false" afterPath="$PROJECT_DIR$/shop/order .php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +72,7 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="UPDATE_TYPE" value="REBASE" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1leH4pMfx1c9KWUCFcwwDnmXBYO" />
@@ -58,7 +86,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/shop" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -70,13 +98,17 @@
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="X:\hellophp\asset\src\img2" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\julien\PhpstormProjects\php4\shop" />
+      <recent name="C:\Users\julien\PhpstormProjects\php4\asset\pluge" />
+      <recent name="C:\Users\julien\PhpstormProjects\php4\asset" />
       <recent name="X:\hellophp\admin" />
       <recent name="X:\hellophp\asset\src\img2" />
-      <recent name="X:\hellophp\admin\images" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\julien\PhpstormProjects\php4\shop" />
+      <recent name="C:\Users\julien\PhpstormProjects\php4\shop\css" />
+      <recent name="X:\hellophp\asset\src\img2" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -121,7 +153,14 @@
       <option name="project" value="LOCAL" />
       <updated>1608042880047</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="1010/12/15 15:30 本地更新">
+      <created>1608088772734</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1608088772734</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -204,10 +243,10 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="270" y="56" key="SettingsEditor/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608033044021" />
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608042889803">
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2" timestamp="1608088780458">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608042889803" />
+    <state x="361" y="145" key="Vcs.Push.Dialog.v2/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608088780458" />
     <state x="525" y="298" width="388" height="206" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1608034389922">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
@@ -224,5 +263,9 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="425" y="187" key="run.anything.popup/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608019654925" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1608088216552">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824/-1080.0.864.1496@0.0.1536.824" timestamp="1608088216552" />
   </component>
 </project>
