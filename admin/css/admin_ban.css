@@ -1,0 +1,15 @@
+div.ban{
+    position: relative;
+    top: 75px;
+    left:20%;
+    height: 100%;
+    width: 75%;
+    background: #fff;
+}
+div.banform{
+
+    position: relative;
+    top: 200px;
+    left: 380px;
+
+}

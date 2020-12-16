@@ -1,0 +1,37 @@
+.right_div_title{
+    font-size: 12px;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    border-bottom:1px solid #ddd;
+    margin-bottom: 20px;
+    line-height: 30px;
+}
+#pic{
+    width:120px;
+    height:160px;
+    background:#CCC;
+    padding:0px;
+    margin-top:3px;
+
+}
+
+#pic img
+
+{
+    width:120px;
+    height:160px;
+
+}
+p.o{
+    color:#0000cc;
+    margin: 5px auto 10px 0px;}
+p.typename{
+    margin: 5px auto 10px 0px;
+    color: #117700;
+}
+p.sum{
+    margin: 6px auto 10px 0px;
+    color: #0000cc;
+}
+td{
+    align-content: center;
+}

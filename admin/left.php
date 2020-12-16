@@ -27,13 +27,13 @@
         </div>
         <div class="collapsed">
             <span>用户管理</span>
-            <a href="">账号封禁</a>
+            <a href="admin_ban.php">账号封禁</a>
             <a href="">管理员管理</a>
         </div>
         <div class="collapsed">
             <span>订单管理</span>
-            <a href="">查看订单</a>
-            <a href="">管理订单</a>
+            <a href="order_browse.php">查看订单</a>
+            <a href="order_admin.php">管理订单</a>
         </div>
         <div class="collapsed">
             <span>公告管理</span>
