@@ -60,23 +60,34 @@ include "utils/index-header.php";
 </nav>
 <!--Main-->
 <div class="top1">
-    <p>精品水果</p>
-    <div class="tab_list">
-        <ul>
-            <li><button type="button" style="background-color:#fff;" class="btn btn2">水果皇后</button></li>
-            <li><button type="button" style="background-color:#fff;" class="btn btn2">水果皇后</button></li>
-            <li><button type="button" style="background-color:#fff;" class="btn btn2">水果皇后</button></li>
-            <li><button type="button" style="background-color:#fff;" class="btn btn2">水果皇后</button></li>
-            <li><button type="button" style="background-color:#fff;" class="btn btn2">水果皇后</button></li>
-        </ul>
-    </div>
-    <div class="show">
+<!-- 滚动图的第一层section   -->
+    <section class="top1_div_first">
+<!--滚动图的第二层div-->
+        <div class="top1_div_second">
+<!--滚动图的第三层div-->
+            <div class="top1_div_third">
+                            <p>精品水果</p>
+                            <div class="tab_list">
+                                <ul>
+                                    <li><button type="button" style="background-color:#fff;" class="btn btn2">水果皇后</button></li>
+                                    <li><button type="button" style="background-color:#fff;" class="btn btn2">水果皇后</button></li>
+                                    <li><button type="button" style="background-color:#fff;" class="btn btn2">水果皇后</button></li>
+                                    <li><button type="button" style="background-color:#fff;" class="btn btn2">水果皇后</button></li>
+                                    <li><button type="button" style="background-color:#fff;" class="btn btn2">水果皇后</button></li>
+                                </ul>
+                            </div>
+                        <div class="show">
 
-    </div>
-    <h2>陌上花开</h2>
-    <h6>限时折扣78%</h6>
-    <button class="topbtn">立即抢购<span class="glyphicon glyphicon-send"></span></button>
+
+                        </div>
+                        <h2>陌上花开</h2>
+                        <h6>限时折扣78%</h6>
+                        <button class="topbtn">立即抢购<span class="glyphicon glyphicon-send"></span></button>
+             <div>
+         </div>
+    </section>
 </div>
+
 <div class="top1">
     <p>精品水果</p>
     <div class="tab_list">

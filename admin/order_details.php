@@ -76,7 +76,9 @@ include_once("top.php");
                     <td width="618" >
                         <p style="display:inline-block; class="num";margin:10px 0 0 15px;"><span> <?php echo "买家编号：". $row2["customernum"]?> </span><p/>
                         <p style="display:inline-block;class="num"; margin:15px><span> <?php echo "买家账号： ". $row2["account"]?> </span><p/>
+
                         <p style="display:inline-block; class="num";margin:10px 0 0 15px;"><span> <?php echo "卖家邮箱：". $row2["email"]?> </span><p/>
+                        <p style="display:inline-block; class="num";margin:10px 0 0 15px;"><span> <?php echo "收获地址编号：". $row1["addressnum"]?> </span><p/>
                     </td>
                 </tr>
                 <tr >
@@ -85,8 +87,8 @@ include_once("top.php");
                         <p class="typename" >
 
                             <?php
-                               echo $row3["typename"];
-                                    ?>
+                            echo $row3["typename"];
+                            ?>
                         </p>
 
                     </td>
@@ -97,9 +99,9 @@ include_once("top.php");
                     <td width="618" >
                         <p class="sum" style="margin:5px 0px 10px 0px; color: #0000cc;">
 
-                        <?php
-                        echo $row1["money"]."元";
-                        ?>
+                            <?php
+                            echo $row1["money"]."元";
+                            ?>
                         </p>
                     </td>
                 </tr>
