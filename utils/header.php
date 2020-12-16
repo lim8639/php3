@@ -25,3 +25,36 @@
         // Fruits
     </script>
 </header>
+<!-- Modal -->
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">全站检索</h4>
+            </div>
+            <div id="search-all" class="modal-body" >
+                <form class="form-inline">
+                    <div class="form-group">
+                        <label>
+                            <input type="text" class="form-control" >
+                            <button type="submit" class="btn btn-default">搜索</button>
+                        </label>
+                        <ul>
+                            <li>数据查询</li>
+                            <li>数据查询</li>
+                            <li>数据查询</li>
+                            <li>数据查询</li>
+                            <li>数据查询</li>
+                        </ul>
+                    </div>
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                <button type="button" class="btn btn-info">前往</button>
+            </div>
+        </div>
+    </div>
+</div>

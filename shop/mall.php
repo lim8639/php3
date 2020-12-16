@@ -15,8 +15,7 @@
     <script src="../asset/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
 </head>
 <body>
-<header>
-</header>
+<?include "../utils/header.php"; ?>
 <div class="container">
     <div class="row">
         <div class="daohang">
@@ -47,7 +46,7 @@
                         <li><a href="#fresh"><span class="glyphicon glyphicon-apple"></span>新鲜水果</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="
-glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
+                                glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">海南</a></li>
                                 <li><a href="#">广西</a></li>
@@ -140,7 +139,7 @@ glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
         <div class="hotone">
             <img src="<?php echo "../admin/".$var[2]['picture']?>">
         </div>
-        <div class="hotone">
+        <div class="hotone hidden-sm hidden-xs" >
             <img src="<?php echo "../admin/".$var[3]['picture']?>">
         </div>
     </div>
@@ -150,14 +149,17 @@ glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
         </div>
         <?php
         foreach ($var as $item){
+
             $show = "<div class=\"newone col-sm-6 col-md-3 col-xs-6 col-lg-3\">
-          
             <div class=\"thumbnail\">
                 <img src=\"../admin/".$item['picture']."\">
                 <div class=\"caption\">
                     <h3>".$item['modityname']."</h3>
+                    
                     <p>
-                        <a href=\"details.php?id=".$item['moditynum']."\" class=\"btn btn-primary\" role=\"button\">加入购物车</a>
+                        <button  class=\"btn btn-primary btn-into-car\" role=\"button\">
+                        <input type='hidden' name='id' value='".$item['moditynum']."'>
+                         加入购物车</button>
                         <a href=\"details.php?id=".$item['moditynum']."\" class=\"btn btn-default\" role=\"button\">购买</a>
                     </p>
                 </div>
@@ -181,6 +183,27 @@ glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
         <!--        </div>-->
 
     </div>
+    <input type="hidden" id="islogin" value="<?php if(empty($_SESSION['username'])){
+         echo "0";
+    }else{
+        echo "1";
+    }?>">
+    <script>
+          $('.btn-into-car').click(function () {
+              var value = $(this).children('input').val();
+               var login = $('#islogin').val();
+              $.ajax({
+                  type: "POST",
+                  url: "car.php",
+                  data: {action:"addOneCar",moditynum:value},
+                  dataType: "text",
+                  async:true,
+                  success: function(data) {
+                    alert(data);
+                  }
+              });
+          });
+    </script>
     <div class="kind"></div>
 </div>
 <div class="page">
@@ -206,6 +229,7 @@ glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
 </div>
 </div>
 <?php
+include "../utils/shoppingcar.php";
 include "../utils/footer.php";
 ?>
 </body>

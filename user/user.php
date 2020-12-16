@@ -99,9 +99,7 @@ include "../admin/conn.php";
             </div>
             <div class="rightme" id="me">
                 <div class="righttop1">
-                    <h2 align="center">
-                        <span class="glyphicon glyphicon-user"></span>我的帐户
-                    </h2>
+                  <p><span class="glyphicon glyphicon-user"></span>USER我的账户</p>
                 </div>
                 <div class="rightmemiddle" >
                     <form id="userform" style="width:62%;align-self: center">
@@ -132,10 +130,12 @@ include "../admin/conn.php";
             </div>
             <div class="rightcar" id="car">
                 <div class="righttop1">
-                    <h2 align="center">
+                    <p>
                         <span class="glyphicon glyphicon-shopping-cart">
-                        </span>购物车
-                    </h2>
+
+                        </span>
+                        购物车
+                    </p>
                 </div>
                 <div class="rightcarall">
                     <div class="col-sm-6 col-md-4">

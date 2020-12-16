@@ -1,8 +1,9 @@
-<div id="car" data-toggle="modal" data-target="#myModal">
+<div id="car" data-toggle="modal" data-target="#myModal1">
+    <div id="num-car">1</div>
     <img src="../asset/src/img2/car.png" alt="">
 </div>
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">

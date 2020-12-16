@@ -107,7 +107,6 @@ include_once("top.php");
                     <div id="pic">
 
                         <img id="img"  src="images/1234.png" alt="没有素材图" />
-
                     </div>
                 </td>
             </tr>

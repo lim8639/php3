@@ -29,8 +29,8 @@ function  queryList($con,$sql){
  * @return string[]|null
  *  对应数组 查一个，返回一个关联数组
  */
-function queryOneRecord($conn,$sql){
-    $res = mysqli_query($conn,$sql) or  die("查询失败");
+function queryOneRecord($con,$sql){
+    $res = mysqli_query($con,$sql) or  die("查询失败");
     $row = mysqli_fetch_assoc($res);
     return $row;
 }

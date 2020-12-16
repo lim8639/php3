@@ -14,6 +14,7 @@
             background-color: purple;
             position: relative;
         }
+
         .small{
             /*子绝父相*/
             position: absolute;
