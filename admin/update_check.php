@@ -66,20 +66,6 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
 
     else{
 
-        $sql="select * from tab_modity where modityname=$modityname";
-        $result1=mysqli_query($conn,$sql) ;
-        //这里报错后加上的
-        if (!$result) {
-            printf("Error: %s\n", mysqli_error($conn));
-            exit();
-        }
-        if(mysqli_num_rows($result1)>0)
-        {
-            echo "<script>alert('商品名称重复');history.back();</script>";
-        }
-        else
-
-        {
             if(isset($file))
             {$photo=$file;}
             else{$photo="";}
@@ -108,7 +94,7 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
             echo "</script>";
             header("location:brogoods.php");
 
-        } }}
+         }}
 
 
 ?>

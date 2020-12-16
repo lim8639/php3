@@ -85,7 +85,7 @@ include "top.php";
                             <div>$<?php echo $row['sellprice'];?>/$<span><?php echo $row['bid'];?></span></div>
                             <div>
                                 <div class="buttons">
-                                    <a class="btn cart" href="updategood.php?moditynum=<?php echo $row['moditynum'];?>"><span class="glyphicon glyphicon-pencil"></span></a>
+                                    <a class="btn cart" href="updategoods.php?moditynum=<?php echo $row['moditynum'];?>"><span class="glyphicon glyphicon-pencil"></span></a>
                                 </div>
                             </div>
 
