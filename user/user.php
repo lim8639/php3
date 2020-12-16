@@ -32,11 +32,12 @@ include "../admin/conn.php";
             height: 40px;
         }
     </style>
+
 </head>
 <body>
 <div id="header">
     <?php
-//    include "../utils/header.php";
+    include "../utils/header.php";
     include "../utils/conn.php"; // 获取链接 $conn
     include "../utils/dao.php"; // 直接调用函数
 //    查询一个用户,这里是我的锅，偷懒我就没改
@@ -86,7 +87,7 @@ include "../admin/conn.php";
                     fixed.css('padding-top',scroH+"px");
                     fixed.css('padding-bottom',he+"px");
                 }
-            });
+            })
         </script>
         <div class="right col-xs-12 col-sm-6 col-md-8 col-lg-8">
             <div class="righttop">

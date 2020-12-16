@@ -164,7 +164,7 @@ include "../utils/shoppingcar.php";
         <script>
             $('#btnsub').click(function () {
                 alert("订单已经提交");
-            })
+            });
         </script>
 </div>
 <?php  include "../utils/footer.php"?>
