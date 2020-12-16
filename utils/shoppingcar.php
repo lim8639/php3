@@ -32,7 +32,18 @@
                 <button type="button" id="submit" class="btn btn-success">立即结算</button>
             </div>
             <script>
-
+                $('#car').click(function () {
+                    $.ajax({
+                        type: "POST",
+                        url: "car.php",
+                        data: {action:"queryListCar"},
+                        dataType: "text",
+                        async:true,
+                        success: function(data) {
+                          alert(data);
+                        }
+                    });
+                });
                 $('.decline').click(function () {
                     var $input = $(this).parent('li').children('input');
                     var i = $input.val();
@@ -41,7 +52,6 @@
                         $input.attr('value',i);
                     }
                 });
-
                 $('.add').click(function () {
                     var $input = $(this).parent('li').children('input');
                     var j = $input.val();
@@ -53,7 +63,6 @@
                     order.css('display','none');
 
                 });
-
             </script>
         </div>
     </div>

@@ -195,11 +195,15 @@
               $.ajax({
                   type: "POST",
                   url: "car.php",
-                  data: {action:"addOneCar",moditynum:value},
+                  data: {action:"addOneCar",moditynum:value,shopnum:1},
                   dataType: "text",
                   async:true,
                   success: function(data) {
-                    alert(data);
+                    if (data>0){
+                        alert("添加成功");
+                    }else {
+                        alert("添加失败");
+                    }
                   }
               });
           });
