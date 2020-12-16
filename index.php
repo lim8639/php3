@@ -70,10 +70,10 @@ include "utils/index-header.php";
                             <p class="top1_p_first">精品水果</p>
                             <div class="top1_div_fourth">
                                 <ul class="top1_ul_first" role="tablist">
-                                    <li class="top1_li_first" role="presentation"><button type="button" style="background-color:#fff;" class="top1_button_first">水果皇后</button></li>
-                                    <li class="top1_li_first"><button type="button" style="background-color:#fff;" class="top1_button_first">水果皇后</button></li>
-                                    <li class="top1_li_first"><button type="button" style="background-color:#fff;" class="top1_button_first">水果皇后</button></li>
-                                    <li class="top1_li_first"><button type="button" style="background-color:#fff;" class="top1_button_first">水果皇后</button></li>
+                                    <li class="top1_li_first" role="presentation"><button type="button" style="background-color:#fff;" class="top1_button_first">精品水果篮</button></li>
+                                    <li class="top1_li_first"><button type="button" style="background-color:#fff;" class="top1_button_first">优选樱桃</button></li>
+                                    <li class="top1_li_first"><button type="button" style="background-color:#fff;" class="top1_button_first">优选樱桃</button></li>
+                                    <li class="top1_li_first"><button type="button" style="background-color:#fff;" class="top1_button_first">麻阳甜橙</button></li>
                                     <li class="top1_li_first"><button type="button" style="background-color:#fff;" class="top1_button_first">水果皇后</button></li>
                                 </ul>
                             </div>
@@ -84,14 +84,14 @@ include "utils/index-header.php";
                     <div class="container">
                         <div class="list" style="left:0px;">
                             <!--<img src="../static/image/photo1.jpg" alt="5"/>-->
-                            <img src="../static/image/banner.jpg" alt="1"/>
-                            <img src="../static/image/slide1.jpg" alt="2"/>
-                            <img src="../static/image/slide1.jpg" alt="3"/>
-                            <img src="../static/image/slide1.jpg" alt="4"/>
-                            <img src="../static/image/photo1.jpg" alt="5"/>
+                            <img src="admin/images/banner1.jpg" alt="1"/>
+                            <img src="admin/images/in_22.jpg" alt="2"/>
+                            <img src="admin/images/in_33.jpg" alt="3"/>
+                            <img src="admin/images/in_44.jpg" alt="4"/>
+                            <img src="admin/images/in_55.jpg" alt="5"/>
                             <!--<img src="../static/image/banner.jpg" alt="1"/>-->
                         </div>
-                        <div class="pointer">
+                        <div class="pointer" style="display: none">
                             <span index="1" class="on"></span>
                             <span index="2"></span>
                             <span index="3"></span>

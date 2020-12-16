@@ -216,11 +216,12 @@ button{
      margin:0;
  }
 .container{
-    width:600px;
+    width:1000px;
     height:400px;
     overflow: hidden;
     position:relative;
     margin:0 auto;
+    right: 13%;
 }
 .list{
     width:3000px;
