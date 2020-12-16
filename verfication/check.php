@@ -31,6 +31,7 @@ function login($account,$password,$conn){
    $row = mysqli_fetch_assoc($rec);
     if (password_verify($password,$row['password'])){
         // 保存用户id的session
+        // 我存的居然是用户名
         $_SESSION['username'] = $row['account'];
         if(!empty($_SESSION['LOGIN_REQUEST_URI'])){
             header('location:'.$_SESSION['LOGIN_REQUEST_URI']);

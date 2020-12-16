@@ -5,7 +5,7 @@
  * 利用SESSION可以将数据存储在服务器，从而实现跨页面访问
  *
  */
-include "verfication/usersession.php";
+include "../verfication/usersession.php";
 include "../admin/conn.php";
 ?>
 <!doctype html>
@@ -32,12 +32,25 @@ include "../admin/conn.php";
             height: 40px;
         }
     </style>
-
 </head>
 <body>
 <div id="header">
     <?php
-    include "utils/header.php";
+//    include "../utils/header.php";
+    include "../utils/conn.php"; // 获取链接 $conn
+    include "../utils/dao.php"; // 直接调用函数
+//    查询一个用户,这里是我的锅，偷懒我就没改
+    $id = $_SESSION['username']; // 在登录界面
+    // 这里黄色按 alt + enter  意思是设置一个标准给他检查
+    // 那就换成account
+    $sql = "SELECT * FROM tab_user WHERE account = $id;";
+
+//    开始查询
+
+    $res = queryOneRecord($conn,$sql);
+
+    // 看看查到了什么=> 查到了一个关联数组
+//    print_r($res);
     ?>
 </div>
 <div class="container">
@@ -49,9 +62,14 @@ include "../admin/conn.php";
                 </div>
                 <div class="leftdown">
                     <ul style="padding: 0">
-                        <li><h3>用户编号:<?php $_SESSION['customernum']?></h3></li>
+                        <li><h3>用户编号:<?php $_SESSION['username'];?></h3></li>
                         <li><h3>账号:222</h3></li>
-                        <li><h3>邮箱:333</h3></li>
+<!--                        -->
+                        <li><h3>邮箱:<?php
+                                //是一个关联数组
+                                echo $res['email'];
+                                ?>
+                            </h3></li>
                     </ul>
                 </div>
             </div>
@@ -68,7 +86,7 @@ include "../admin/conn.php";
                     fixed.css('padding-top',scroH+"px");
                     fixed.css('padding-bottom',he+"px");
                 }
-            })
+            });
         </script>
         <div class="right col-xs-12 col-sm-6 col-md-8 col-lg-8">
             <div class="righttop">

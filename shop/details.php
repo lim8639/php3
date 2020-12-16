@@ -23,21 +23,33 @@
 <div style="height: 30px" class="hidden-sm hidden-xs"></div>
 <div class="container" >
     <div class="row">
+        <?php
+
+        if (empty($_GET['id'])){
+            header('location:mall.php');
+        }
+        $id = $_GET['id'];
+        include "../utils/conn.php";
+        include "../utils/dao.php";
+        $sql = "select * from tab_modity where moditynum ='$id';";
+        $rec = queryOneRecord($conn,$sql);
+        ?>
       <div class="left col-lg-5 col-md-5 col-sm-12 col-xs-12">
           <div class="wareimg">
-              <img src="../admin/images/pic2.jpg" alt="dada">
+              <img src="../admin/<?php echo $rec['picture'];?>" alt="dada">
           </div>
       </div>
+
         <div class="right col-lg-6 col-md-6 col-sm-12 col-xs-12">
              <h3>
-                 <b>科沃斯地宝DJ35扫地机器人智能家用全自动吸尘器</b>
+                 <b><?php echo $rec['modityname'];?></b>
              </h3>
             <p>双旦抢先购 限时直降600元</p>
             <div class="pan">
               <p>价格：
                   <span id="doller">￥</span>
                   <span id="price">
-                      <b>998</b>
+                      <b><?php echo $rec['sellprice'];?></b>
                   </span>
                   <a href="#">降价通知</a>
               </p>
@@ -56,19 +68,20 @@
                </div>
                 <p>进口税 <span id="tax">商家承担</span> <span ><a id="tax2" href="#">税费信息 <span class="glyphicon glyphicon-question-sign"></a></span></span></p>
             </div>
+            <div><p><span>商品描述：</span><?php echo $rec['moditydescribe'];?></p></div>
             <div class="adrr">
-                <p>配送：<span>秦皇岛 至</span>
+                <p>配送：<span>秦皇岛至</span>
                     <label>
                         <select>
                             <option value ="volvo">广西南宁市江南区波尔多庄园</option>
-                            <option value ="saab">Saab</option>
-                            <option value="opel">Opel</option>
-                            <option value="audi">Audi</option>
+                            <option value ="saab">广东白云山白云小区</option>
+                            <option value="opel">广西南宁市横县新福镇飞龙街</option>
+                            <option value="audi">hello world</option>
                         </select>
                     </label>
                     有货预计5-20天送达
                 </p>
-                <p>运费：<span>店铺单笔订单不满89元，在线支付运费10元</span></p>
+                <p>运费：<span>店铺单笔订单不满99元，在线支付运费10元</span></p>
             </div>
             <hr>
             <p class="adrr">
@@ -128,7 +141,6 @@
                                  });
                              })
                          </script>
-
             </div>
         </div>
     </div>
