@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="../asset/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="../asset/css/frame.css">
     <link rel="stylesheet" href="css/details.css">
+    <link rel="stylesheet" href="../utils/car.css">
     <script src="../asset/bootstrap-3.3.7-dist/jquery/jquery-3.5.1.min.js">
 
     </script>
@@ -72,7 +73,6 @@
             <hr>
             <p class="adrr">
                 <p>颜色：
-
                 </p>
                       <ul>
                           <li>红色</li>
@@ -94,14 +94,16 @@
                              var num = $('#num');
                              $('#add').click(function () {
                                  var value = num.val();
-                                 value++;
-                                 num.attr('value',value);
+                                 alert(value);
+                                 num.attr('value',++value);
                              })
                              $('#decline').click(function () {
                                  var value = num.val();
+                                 var nn = value++;
                                  if (value>1){
-                                     value--;
-                                     num.attr('value',value);
+                                     num.attr('value', ++nn);
+                                 }else {
+                                     num.attr('value',);
                                  }
                              })
                          </script>

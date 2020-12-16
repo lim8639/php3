@@ -1,0 +1,10 @@
+#car{
+    width: 100px;
+    height: 100px;
+    position: fixed;
+    bottom: 10%;
+    right: 5%;
+}
+#car img{
+    width: 100%;
+}

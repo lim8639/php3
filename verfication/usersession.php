@@ -7,6 +7,6 @@ if (empty($_SESSION['username'])){
      */
     if(!empty($_SERVER['REQUEST_URI']))
         $_SESSION['LOGIN_REQUEST_URI']= $_SERVER['REQUEST_URI'];
-    header('location:../verfication/index.php');
+    header('location:../verfication/login.php');
 }
 

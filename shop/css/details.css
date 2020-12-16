@@ -147,7 +147,7 @@ select{
     display: block;
     border-radius: 0;
     top: 0;
-    left: 25px!important;
+    left: 40px!important;
     position: absolute;
     border: 1px solid #e7e7e7;
     height: 25px!important;
@@ -157,7 +157,7 @@ select{
 #decline{
     border-radius: 0;
     top: 25px;
-    left: 25px;
+    left: 40px;
 }
 .intocar label{
     height: 50px;
@@ -168,7 +168,7 @@ select{
     left: 0;
     position: absolute;
     display: inline-block;
-    width: 26px;
+    width: 40px;
     height: 100%;
 }
 #btn{
@@ -183,9 +183,16 @@ select{
     width: 190px;
     height: 50px;
 }
-
-#car-list{
-
+/* 谷歌 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+/* 火狐 */
+input{
+    -moz-appearance:textfield;
 }
 #car-list >ul>li{
     height: 100px;

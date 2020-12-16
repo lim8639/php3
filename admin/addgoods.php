@@ -12,9 +12,7 @@
 
 </head>
 <script>
-
     function changepic() {
-
         var reads= new FileReader();
 
         f=document.getElementById('file').files[0];

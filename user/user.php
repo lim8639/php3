@@ -5,7 +5,6 @@
  *
  */
 include "../verfication/usersession.php";
-
 ?>
 <!doctype html>
 <html lang="zh-CN">
@@ -14,7 +13,7 @@ include "../verfication/usersession.php";
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>个人中心页</title>
     <link rel="shortcut icon" href="../asset/src/icon/favicon.ico">
     <link rel="stylesheet" href="../asset/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="user2.css">
