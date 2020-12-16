@@ -40,8 +40,8 @@
                     </div>
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"">
                     <ul class="nav navbar-nav">
-                        <li><a href="#"><span class="glyphicon glyphicon-time"></span>限时特卖<span class="sr-only">(current)</span></a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-apple"></span>新鲜水果</a></li>
+                        <li><a href="#hot"><span class="glyphicon glyphicon-time"></span>限时特卖<span class="sr-only">(current)</span></a></li>
+                        <li><a href="#fresh"><span class="glyphicon glyphicon-apple"></span>新鲜水果</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="
 glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
@@ -67,11 +67,11 @@ glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="
                                 glyphicon glyphicon-user"></span>我的<span class="caret"></span></a>
                             <ul class="dropdown-menu">
-                                <li><a href="#">我的账户</a></li>
-                                <li><a href="#">我的订单</a></li>
-                                <li><a href="#">购物车</a></li>
+                                <li><a href="../user/user.php">我的账户</a></li>
+                                <li><a href="../user/user.php">我的订单</a></li>
+                                <li><a href="../user/user.php">购物车</a></li>
                                 <li role="separator" class="divider"></li>
-                                <li><a href="#">更多我的</a></li>
+                                <li><a href="../user/user.php">更多我的</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -121,7 +121,7 @@ glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
             </a>
         </div>
     </div>
-    <div class="hot">
+    <div class="hot" id="hot">
         <div class="hottop">
             <h3>限时热卖</h3>
         </div>
@@ -135,7 +135,7 @@ glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
             <img src="img/k2.jpg">
         </div>
     </div>
-    <div class="new">
+    <div class="new" id="fresh">
         <div class=" hottop">
             <h3>新鲜水果</h3>
         </div>

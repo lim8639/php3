@@ -23,7 +23,6 @@
     text-align: center;
 }
 
-ul:nth-child(4)
 .left ul{
     margin-left: 60px;
 }
@@ -57,18 +56,45 @@ li{
     border-radius: 40px;
     margin: 15px 0;
 }
+.rightcarall{
+    height: 350px;
+    width: 750px;
+}
 
-
- .rightcarone{
+ .thumbnail{
     background-color: #F5F5F5;
     display: inline-block;
      height: 240px;
-     width: 246px;
+     width: 235px;
+}
+.thumbnail img{
+    height: 240px;
+    width: 240px;
+}
+.panel-body{
+    height: 300px;
+    width: 750px;
+}
+.orderphoto{
+    height: 280px;
+    width: 175px;
+}
+.thumbnail2{
+    background-color: #F5F5F5;
+    display: inline-block;
+    height: 250px;
+    width: 145px;
+    padding: 0 2px;
+}
+.thumbnail2 img{
+    height: 150px;
+    width: 150px;
+}
+.caption{
+    text-align: center;
+}
+.page{
+    text-align: center;
 }
 
-.rightdanone{
-    background-color: #f6f2f2;
-    display: inline-block;
-    height: 240px;
-    width: 745px;
-}
+

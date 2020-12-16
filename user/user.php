@@ -1,10 +1,12 @@
 <?php
+
 /**
  * SESSION 是一个重要的变量
  * 利用SESSION可以将数据存储在服务器，从而实现跨页面访问
  *
  */
-include "../verfication/usersession.php";
+include "verfication/usersession.php";
+include "../admin/conn.php";
 ?>
 <!doctype html>
 <html lang="zh-CN">
@@ -35,22 +37,24 @@ include "../verfication/usersession.php";
 <body>
 <div id="header">
     <?php
-    include "../utils/header.php";
+    include "utils/header.php";
     ?>
 </div>
 <div class="container">
     <div class="row">
         <div class="left col-xs-12 col-sm-6 col-md-4 col-lg-4">
-            <div id="fixed">     <div class="img">
+            <div id="fixed">
+                <div class="img">
                     <img src="../asset/src/img/th1.png" class="img-circle">
                 </div>
                 <div class="leftdown">
                     <ul style="padding: 0">
-                        <li><h3>用户编号:111</h3></li>
+                        <li><h3>用户编号:<?php $_SESSION['customernum']?></h3></li>
                         <li><h3>账号:222</h3></li>
                         <li><h3>邮箱:333</h3></li>
                     </ul>
-                </div></div>
+                </div>
+            </div>
         </div>
         <script>
             $(document).scroll(function () {
@@ -75,7 +79,11 @@ include "../verfication/usersession.php";
                 </ul>
             </div>
             <div class="rightme" id="me">
-                <div class="righttop1"><h2 align="center"><span class="glyphicon glyphicon-user"></span>我的帐户</h2></div>
+                <div class="righttop1">
+                    <h2 align="center">
+                        <span class="glyphicon glyphicon-user"></span>我的帐户
+                    </h2>
+                </div>
                 <div class="rightmemiddle" >
                     <form id="userform" style="width:62%;align-self: center">
                         <div class="form-group">
@@ -92,7 +100,7 @@ include "../verfication/usersession.php";
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">修改邮箱</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">修改头像</label>
@@ -101,34 +109,71 @@ include "../verfication/usersession.php";
                         </div>
                         <button type="submit" class="btn btn-default">提交</button>
                     </form>
-                    <div class="rightmeone"></div>
                 </div>
             </div>
             <div class="rightcar" id="car">
-                <div class=" righttop1"><h2 align="center">
-                        <span class="glyphicon glyphicon-shopping-cart"></span>购物车</h2></div>
-                <div class="rightcarmiddle">
-                    <div class="rightcarone">
-                        <img src="">购物车1
-                        <p>商品编号</p>
-                        <p>商品名称</p>
-                        <p>商品价格</p>
-                        <p>商品简介</p>
+                <div class="righttop1">
+                    <h2 align="center">
+                        <span class="glyphicon glyphicon-shopping-cart">
+                        </span>购物车
+                    </h2>
+                </div>
+                <div class="rightcarall">
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="../admin/images/222.png" alt="...">
+                            <div class="caption">
+                                <h3>商品名称</h3>
+                                <p>...</p>
+                                <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                    <a href="#" class="btn btn-default" role="button">移除</a>
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="rightcarone">
-                        <img src="">购物车2
-                        <p>商品编号</p>
-                        <p>商品名称</p>
-                        <p>商品价格</p>
-                        <p>商品简介</p>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="..." alt="...">
+                            <div class="caption">
+                                <h3>商品名称</h3>
+                                <p>...</p>
+                                <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                    <a href="#" class="btn btn-default" role="button">移除</a></p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="rightcarone">
-                        <img src="">购物车3
-                        <p>商品编号</p>
-                        <p>商品名称</p>
-                        <p>商品价格</p>
-                        <p>商品简介</p>
+                    <div class="col-sm-6 col-md-4">
+                        <div class="thumbnail">
+                            <img src="..." alt="...">
+                            <div class="caption">
+                                <h3>商品名称</h3>
+                                <p>...</p>
+                                <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                    <a href="#" class="btn btn-default" role="button">移除</a></p>
+                            </div>
+                        </div>
                     </div>
+                </div>
+                <div class="page">
+                    <nav aria-label="Page navigation">
+                        <ul class="pagination">
+                            <li>
+                                <a href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">1</a></li>
+                            <li>
+                                <a href="#" aria-label="Next">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
             </div>
             <div class="rightdan" id="order">
@@ -138,13 +183,78 @@ include "../verfication/usersession.php";
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <?php echo "订单一"?>
+                                    <?php echo "待付款"?>
+                                    <span class="badge" style="float: right">14</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
-                                <?php echo "订单一的内容"?>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="../admin/images/222.png" alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">1</a></li>
+                                        <li>
+                                            <a href="#" aria-label="Next">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>
@@ -152,13 +262,78 @@ include "../verfication/usersession.php";
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <?php echo "订单二"?>
+                                    <?php echo "待发货"?>
+                                    <span class="badge" style="float: right">14</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
-                                <?php echo "订单二的内容"?>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="../admin/images/222.png" alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">1</a></li>
+                                        <li>
+                                            <a href="#" aria-label="Next">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>
@@ -166,13 +341,236 @@ include "../verfication/usersession.php";
                         <div class="panel-heading" role="tab" id="headingThree">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    <?php echo "订单三"?>
+                                    <?php echo "待收货"?>
+                                    <span class="badge" style="float: right">14</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                                <?php echo "订单三的内容"?>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="../admin/images/222.png" alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">1</a></li>
+                                        <li>
+                                            <a href="#" aria-label="Next">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFour">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    <?php echo "待评价"?>
+                                    <span class="badge" style="float: right">14</span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
+                            <div class="panel-body">
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="../admin/images/222.png" alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">1</a></li>
+                                        <li>
+                                            <a href="#" aria-label="Next">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingFive">
+                            <h4 class="panel-title">
+                                <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    <?php echo "退款/售后"?>
+                                    <span class="badge" style="float: right">14</span>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
+                            <div class="panel-body">
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="..." alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="orderphoto col-sm-6 col-md-4">
+                                    <div class="thumbnail2 thumbnail">
+                                        <img src="../admin/images/222.png" alt="...">
+                                        <div class="caption">
+                                            <h3>商品名称</h3>
+                                            <p>...</p>
+                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
+                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="page">
+                                <nav aria-label="Page navigation">
+                                    <ul class="pagination">
+                                        <li>
+                                            <a href="#" aria-label="Previous">
+                                                <span aria-hidden="true">&raquo;</span>
+                                            </a>
+                                        </li>
+                                        <li><a href="#">5</a></li>
+                                        <li><a href="#">4</a></li>
+                                        <li><a href="#">3</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">1</a></li>
+                                        <li>
+                                            <a href="#" aria-label="Next">
+                                                <span aria-hidden="true">&laquo;</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </nav>
                             </div>
                         </div>
                     </div>
@@ -182,7 +580,7 @@ include "../verfication/usersession.php";
     </div>
 </div>
 <?php
-include "../utils/footer.php";
+include "utils/footer.php";
 ?>
 </body>
 </html>
