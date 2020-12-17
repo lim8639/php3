@@ -66,88 +66,71 @@ include "utils/index-header.php";
 <!--滚动图的第二层div-->
         <div class="top1_div_second">
 <!--滚动图的第三层div-->
-
                     <div class="top1_div_third">
                                     <p class="top1_p_first">精品水果</p>
                                     <div class="top1_div_fourth">
                                         <ul class="top1_ul_first" role="tablist">
                                             <li class="top1_li_first" role="presentation" index="1"><button type="button" style="background-color:#fff;" class="top1_button_first" index="1">精品水果篮</button></li>
                                             <li class="top1_li_first" index="2"><button type="button" style="background-color:#fff;" class="top1_button_first" index="2">优选樱桃</button></li>
-                                            <li class="top1_li_first" index="3"><button type="button" style="background-color:#fff;" class="top1_button_first" index="3">优选樱桃</button></li>
+                                            <li class="top1_li_first" index="3"><button type="button" style="background-color:#fff;" class="top1_button_first" index="3">优选猕猴桃</button></li>
                                             <li class="top1_li_first" index="4"><button type="button" style="background-color:#fff;" class="top1_button_first" index="4">麻阳甜橙</button></li>
                                             <li class="top1_li_first" index="5"><button type="button" style="background-color:#fff;" class="top1_button_first" index="5">水果皇后</button></li>
                                         </ul>
                                     </div>
-                        <div class="show">
-
-
-
-                            <div class="container">
-                                <div class="list" style="left:0px;">
-                                    <!--<img src="../static/image/photo1.jpg" alt="5"/>-->
-                                    <img src="admin/images/scroll/in_111.jpg" alt="1"/>
-                                    <img src="admin/images/scroll/in_222.jpg" alt="2"/>
-                                    <img src="admin/images/scroll/in_333.jpg" alt="3"/>
-                                    <img src="admin/images/scroll/in_444.jpg" alt="4"/>
-                                    <img src="admin/images/scroll/in_555.jpg" alt="5"/>
-                                    <!--<img src="../static/image/banner.jpg" alt="1"/>-->
-                                </div>
-
-                            </div>
-                        </div>
-                                <h2>水果优品</h2>
-                                <h6>限时折扣78%</h6>
-                                <button class="topbtn">立即抢购<span class="glyphicon glyphicon-send"></span></button>
-
-
-
-
-
-                            <p class="top1_p_first">地方特产</p>
-                            <div class="top1_div_fourth">
-                                <ul class="top1_ul_first" id="top1_ul_second" role="tablist">
-                                    <li class="top1_li_first" role="presentation" index="1"><button type="button" style="background-color:#fff;" class="top1_button_first">进口水果</button></li>
-                                    <li class="top1_li_first" index="2"><button type="button" style="background-color:#fff;" class="top1_button_first">丰水梨</button></li>
-                                    <li class="top1_li_first" index="3"><button type="button" style="background-color:#fff;" class="top1_button_first">百香果</button></li>
-                                    <li class="top1_li_first" index="4"><button type="button" style="background-color:#fff;" class="top1_button_first">麻阳甜橙</button></li>
-                                    <li class="top1_li_first" index="5"><button type="button" style="background-color:#fff;" class="top1_button_first">精品水果篮</button></li>
-                                </ul>
-                            </div>
-                            <div class="show">
-
-                                <div class="container">
-                                    <div class="list_a" style="left:0px;">
-                                        <!--<img src="../static/image/photo1.jpg" alt="5"/>-->
-                                        <img src="admin/images/scroll/in_555.jpg" alt="1"/>
-                                        <img src="admin/images/scroll/in_444.jpg" alt="2"/>
-                                        <img src="admin/images/scroll/in_666.jpg" alt="3"/>
-                                        <img src="admin/images/scroll/in_222.jpg" alt="4"/>
-                                        <img src="admin/images/scroll/in_111.jpg" alt="5"/>
-                                        <!--<img src="../static/image/banner.jpg" alt="1"/>-->
+                                    <div class="show">
+                                        <div class="container">
+                                            <div class="list" style="left:0px;">
+                                                <!--<img src="../static/image/photo1.jpg" alt="5"/>-->
+                                                <img src="admin/images/scroll/in_111.jpg" alt="1"/>
+                                                <img src="admin/images/scroll/in_222.jpg" alt="2"/>
+                                                <img src="admin/images/scroll/in_333.jpg" alt="3"/>
+                                                <img src="admin/images/scroll/in_444.jpg" alt="4"/>
+                                                <img src="admin/images/scroll/in_555.jpg" alt="5"/>
+                                                <!--<img src="../static/image/banner.jpg" alt="1"/>-->
+                                            </div>
+                                        </div>
                                     </div>
+                                    <h2>水果优品</h2>
+                                    <h6>限时折扣78%</h6>
+                                    <button class="topbtn">立即抢购<span class="glyphicon glyphicon-send"></span></button>
+                                    <p class="top1_p_first">地方特产</p>
+                                    <div class="top1_div_fourth">
+                                        <ul class="top1_ul_first" id="top1_ul_second" role="tablist">
+                                            <li class="top1_li_first" role="presentation" index="1"><button type="button" style="background-color:#fff;" class="top1_button_first">进口水果</button></li>
+                                            <li class="top1_li_first" index="2"><button type="button" style="background-color:#fff;" class="top1_button_first">丰水梨</button></li>
+                                            <li class="top1_li_first" index="3"><button type="button" style="background-color:#fff;" class="top1_button_first">百香果</button></li>
+                                            <li class="top1_li_first" index="4"><button type="button" style="background-color:#fff;" class="top1_button_first">麻阳甜橙</button></li>
+                                            <li class="top1_li_first" index="5"><button type="button" style="background-color:#fff;" class="top1_button_first">精品水果篮</button></li>
+                                        </ul>
+                                    </div>
+                                    <div class="show">
 
-                                </div>
+                                        <div class="container">
+                                            <div class="list_a" style="left:0px;">
+                                                <!--<img src="../static/image/photo1.jpg" alt="5"/>-->
+                                                <img src="admin/images/scroll/in_555.jpg" alt="1"/>
+                                                <img src="admin/images/scroll/in_444.jpg" alt="2"/>
+                                                <img src="admin/images/scroll/in_666.jpg" alt="3"/>
+                                                <img src="admin/images/scroll/in_222.jpg" alt="4"/>
+                                                <img src="admin/images/scroll/in_111.jpg" alt="5"/>
+                                                <!--<img src="../static/image/banner.jpg" alt="1"/>-->
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                    <h2>助农水果</h2>
+                                    <h6>限时折扣78%</h6>
+                                    <button class="topbtn">立即抢购 <span class="glyphicon glyphicon-send"></span></button>
 
 
-                            </div>
-                            <h2>助农水果</h2>
-                            <h6></h6>
-                            <button class="topbtn">立即抢购 <span class="glyphicon glyphicon-send"></span></button>
 
+                                    <?php
+                                    include "utils/girl.php";
+                                    include "utils/footer.php";
 
-
-                            <?php
-                            include "utils/girl.php";
-                            include "utils/footer.php";
-
-                            ?>
-
-                        </div>
-
-
-
+                                    ?>
+                    </div>
          </div>
-
     </section>
 </div>
 <script></script>
