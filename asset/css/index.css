@@ -42,6 +42,8 @@ nav{
     margin: 0px;
     padding: 0px;
     vertical-align: top;
+    position: relative;
+
 }
 .top1 p{
     padding: 10px;
@@ -92,8 +94,8 @@ position: absolute;
 }
 .show{
     margin: 10px auto;
-    width: 750px;
-    height: 350px;
+    width: 1000px;
+    height: 400px;
     box-sizing:border-box;
 
 }
@@ -133,6 +135,7 @@ position: absolute;
     padding:0 24px;
     background-color: transparent!important;
     z-index: 500;
+    height: 1600px;
 }
 .top1_p_first{
     margin-top: 48px;
@@ -221,17 +224,27 @@ button{
     overflow: hidden;
     position:relative;
     margin:0 auto;
-    right: 13%;
 }
 .list{
-    width:3000px;
+    width:5000px;
     height:400px;
     position:absolute;
 
 }
 .list>img{
     float:left;
-    width:600px;
+    width:1000px;
+    height:400px;
+}
+.list_a{
+    width:5000px;
+    height:400px;
+    position:absolute;
+
+}
+.list_a>img{
+    float:left;
+    width:1000px;
     height:400px;
 }
 .pointer{
@@ -249,9 +262,7 @@ button{
     border-radius:50%;
     border:1px solid #fff;
 }
-.pointer .on{
-    background: #28a4c9;
-}
+
 .arrow{
     position:absolute;
     text-decoration:none;
@@ -268,12 +279,7 @@ button{
 .arrow:hover{
     background: #0f0f0f;
 }
-.left{
-    left:0;
-}
-.right{
-    right:0;
-}
+
 .container:hover .arrow{
     display:block;
 }
