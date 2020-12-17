@@ -17,14 +17,14 @@ if (strlen($q)>0)
             if ($hint=="")
             {
                 $hint="<div style='width:100%;padding-left:2px;'><a href='" .
-                    "brogoods.php?key=".$row['modityname'].
+                    "shop/mall2.php?key=".$row['modityname'].
                     "' target='_blank'>" .
                     $row['modityname']. "</a></div>";
             }
             else
             {
                 $hint=$hint . "<br /><div style='width:100%;margin-top:-20px;padding-left:2px;'><a href='" .
-                    "brogoods.php?key=".$row['modityname'] .
+                    "shop/mall2.php?key=".$row['modityname'] .
                     "' target='_blank'>" .
                     $row['modityname'] . "</a></div>";
             }

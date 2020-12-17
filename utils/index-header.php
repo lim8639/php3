@@ -27,6 +27,17 @@
         xmlhttp.open("GET","utils/livesearch.php?q="+str,true);
         xmlhttp.send();
     }
+    function showResult2()
+    {
+        if($("#search_in").val().length==0)
+        {
+            location.href="shop/mall2.php";
+        }
+        else
+        {
+            location.href="shop/mall2.php?key="+$("#search_in").val();
+        }
+    }
 </script>
 <style>
     #livesearch div:hover
@@ -72,7 +83,7 @@
                 <h4 class="modal-title" id="myModalLabel">搜索</h4>
             </div>
             <div class="modal-body">
-                点击搜索<input type="text" onkeyup="showResult(this.value)" > <button type="button" class="btn btn-primary">前往</button>
+                点击搜索<input type="text" id="search_in" onkeyup="showResult(this.value)" > <button type="button" class="btn btn-primary" onclick="showResult2()">前往</button>
                 <div id="livesearch" style="z-index: 1000;background-color:white;width: 28%;margin-left: 10%;margin-top: -1%;" ></div>
 
 
