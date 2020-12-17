@@ -108,7 +108,7 @@ include "../admin/conn.php";
                   <p><span class="glyphicon glyphicon-user"></span>USER我的账户</p>
                 </div>
                 <div class="rightmemiddle" >
-                    <form id="userform" method="post" action="checkuser.php" styleme="width:62%;align-self: center">
+                    <form id="userform" method="post" action="checkuser.php" style="width:62%;align-self: center">
                         <div class="form-group">
                             <label for="oldpassword">旧密码</label>
                             <input type="password"  name="p1" class="form-control" id="oldpassword" placeholder="password">
