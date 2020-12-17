@@ -1,6 +1,6 @@
 <?php
 
- // 不登录不允许使用购物车操作
+// 不登录不允许使用购物车操作
 include "../verfication/usersession.php";
 include "../utils/conn.php";
 include "../utils/dao.php";
@@ -67,6 +67,7 @@ function deleteCar($uid,$gid){
          echo 0;
      }
 }
+
 function deleteAllCar($uid){
     $sql = "delete from tab_shop where customernum =$uid;";
     if (changeRecord($sql)){

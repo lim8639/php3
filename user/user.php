@@ -599,7 +599,7 @@ include "../admin/conn.php";
     </div>
 </div>
 <?php
-include "utils/footer.php";
+include "../utils/footer.php";
 ?>
 </body>
 </html>
