@@ -35,6 +35,12 @@ include "../admin/conn.php";
 
 </head>
 <body>
+<!--
+
+-->
+<!--改一下布局
+换成表格 传值
+-->
 <div id="header">
     <?php
     include "../utils/header.php";
@@ -102,30 +108,70 @@ include "../admin/conn.php";
                   <p><span class="glyphicon glyphicon-user"></span>USER我的账户</p>
                 </div>
                 <div class="rightmemiddle" >
-                    <form id="userform" style="width:62%;align-self: center">
+                    <form id="userform" method="post" action="checkuser.php" styleme="width:62%;align-self: center">
                         <div class="form-group">
-                            <label for="exampleInputEmail1">旧密码</label>
-                            <input type="password" class="form-control" id="exampleInputEmail1" placeholder="password">
+                            <label for="oldpassword">旧密码</label>
+                            <input type="password"  name="p1" class="form-control" id="oldpassword" placeholder="password">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">新密码</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <label for="newpassword2">新密码</label>
+                            <input type="password" name="p2" class="form-control" id="newpassword2" placeholder="Password">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">确认密码</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <label for="confirmpassword3">确认密码</label>
+                            <input type="password" name="p3" class="form-control" id="confirmpassword3" placeholder="Password">
                         </div>
                         <div class="form-group">
-                            <label for="exampleInputPassword1">修改邮箱</label>
-                            <input type="email" class="form-control" id="exampleInputPassword1" placeholder="email">
+                            <label for="exampleInputemail">修改邮箱</label>
+                            <input type="email"  name="email" class="form-control" id="exampleInputemail" placeholder="email">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputFile">修改头像</label>
                             <input type="file" id="exampleInputFile">
                             <p class="help-block">Example block-level help text here.</p>
                         </div>
-                        <button type="submit" class="btn btn-default">提交</button>
+
+                        <button type="submit" class="btn btn-default" id="btn1">提交</button>
                     </form>
+                    <script>
+                        $("#btn1").click(function () {
+                            var p1 = $("#oldpassword").val();
+                            if(p1==''){
+                                alert("没有输入旧密码");
+                                return false;
+                            }
+                           var p2 =  $("#confirmpassword3").val();
+                           var p3 = $('#newpassword2').val();
+                           var email = $('#exampleInputemail').val();
+                           // $("#confirmpassword3").attr('value',123);
+                           if (p2!=p3){
+                               alert("两次密码不相等");
+                               return false;
+                           }else if (p2!=''&&p3!=''){
+                               if(p2==p3){
+                                   if (email!=''){
+                                       alert("密码和邮箱修改成功");
+                                       return false;
+                                   }else {
+                                       alert("密码修改成功");
+                                       return false;
+                                   }
+
+                               }
+                           }else if (p2==''&&p3==''){
+                               if (email!=''){
+                                   alert("邮箱修改成功");
+                                   return false;
+                               }else {
+                                   alert("请输入修改后的密码或邮箱");
+                                   return false;
+                               }
+                           }
+
+
+
+                        });
+                    </script>
                 </div>
             </div>
             <div class="rightcar" id="car">
