@@ -28,7 +28,7 @@
              $.ajax({
                  type: "POST",
                  url: "car.php",
-                 data: {action:"query",uid:5},
+                 data: {action:"query",moditynum:},
                  dataType: "text",
                  success: function(data) {
                      $('#test').append(data);

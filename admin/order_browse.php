@@ -85,65 +85,68 @@ $endPage=ceil($allNum/$pageSize);
 $sql.=" order by ordernum limit ".($pageNum-1)*$pageSize.",".$pageSize;
 ?>
 <div class="browse">
-<div id="top">
+    <div id="top">
 
 
-    <div id="search">
-        <form action=add_check.php" method="post" enctype="multipart/form-data" name="form">
-            <input type="text" name="key" value="<?php echo $key;?>" /><span>按照单号进行查询</span>
+        <div id="search">
+            <form action="order_browse.php"" method="post" enctype="multipart/form-data" name="form">
+            <input type="text" name="key" value="<?php echo $key;?>" /><span>根据订单编号进行查询</span>
             <input type="submit" value="查询"/>
-        </form>
+            </form>
 
-</div>
+        </div>
 
-<?php
-$result=mysqli_query($conn,$sql)or die("数据查询失败".$sql);//执行SQL语句
-if(mysqli_num_rows($result)>0){ //判断是否有查询结果
-    echo"<table align='center' >";//输出表格标签
-    echo"<tr>
+        <?php
+        $result=mysqli_query($conn,$sql)or die("数据查询失败".$sql);//执行SQL语句
+        if(mysqli_num_rows($result)>0){ //判断是否有查询结果
+            echo"<table align='center' >";//输出表格标签
+            echo"<tr>
        
         <th>订单编号</th>
 		<th>商品编号</th>
 		<th>数量</th>
 		<th>金额</th>
 		<th>买家编号</th>
-		<th colspan='3'></th></tr>";//输出表头行
-    while($row=mysqli_fetch_assoc($result))//从记录集获取一行数据到数组，不为false，则显示该行数据(数组中各元素
-    {
-        ?>
+		<th>地址编号</th>
+		<th colspan='2'></th></tr>";//输出表头行
+            while($row=mysqli_fetch_assoc($result))//从记录集获取一行数据到数组，不为false，则显示该行数据(数组中各元素
+            {
+                ?>
 
-        <tr onMouseOver="this.style.backgroundColor='#D8F4FF';"onMouseOut="this.style.backgroundColor='#ffffff';">
+                <tr onMouseOver="this.style.backgroundColor='#D8F4FF';"onMouseOut="this.style.backgroundColor='#ffffff';">
 
-        <?php
+                <?php
 
-        echo"
+                echo"
        <td >$row[ordernum]</td>
        <td>$row[moditynum]</td>
        <td>$row[num]</td>
 	   <td>$row[money]</td>
-       <td>$row[customernum]</td>";
+       <td>$row[customernum]</td>
+       <td>$row[addressnum]</td>
+       ";
 
-	   echo"</tr>";//输出行结束标记
-    };
-    ?>
-    <tr>
-        <td colspan="10" align="center">
-            <a href="?pageNum=1">首页</a>
-            <a href="?pageNum=<?php echo $pageNum==1?1:($pageNum-1)?>">上一页</a>
-            <a href="?pageNum=<?php echo $pageNum==$endPage?$endPage:($pageNum+1)?>">下一页</a>
-            <a href="?pageNum=<?php echo $endPage?>">尾页</a>
-        </td>
-    </tr>
+                echo"</tr>";//输出行结束标记
+            };
+            ?>
+            <tr>
+                <td colspan="10" align="center">
+                    <a href="?pageNum=1">首页</a>
+                    <a href="?pageNum=<?php echo $pageNum==1?1:($pageNum-1)?>">上一页</a>
+                    <a href="?pageNum=<?php echo $pageNum==$endPage?$endPage:($pageNum+1)?>">下一页</a>
+                    <a href="?pageNum=<?php echo $endPage?>">尾页</a>
+                </td>
+            </tr>
 
 
-    <?php
-    echo"</table>";//输出表格结束标记
-}
-else //没有查询结果
-    echo"尚无订单信息";
+            <?php
+            echo"</table>";//输出表格结束标记
+        }
+        else //没有查询结果
+            echo"尚无订单信息";
 
-?>
-</div>
+        ?>
+    </div>
 </body>
 
 </html>

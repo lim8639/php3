@@ -13,10 +13,12 @@
     <link rel="stylesheet" href="../utils/car.css">
     <script src="../asset/bootstrap-3.3.7-dist/jquery/jquery-3.5.1.min.js"></script>
     <script src="../asset/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="js/car.js"></script>
 </head>
 <body>
-<header>
-</header>
+<?php
+include "../verfication/usersession.php";
+?>
 <div class="container">
     <div class="row">
         <div class="daohang">
@@ -40,14 +42,13 @@
                             </div>
                         </nav>
                     </div>
-
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"">
                     <ul class="nav navbar-nav">
                         <li><a href="#hot"><span class="glyphicon glyphicon-time"></span>限时特卖<span class="sr-only">(current)</span></a></li>
                         <li><a href="#fresh"><span class="glyphicon glyphicon-apple"></span>新鲜水果</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="
-glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
+                                glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
                             <ul class="dropdown-menu">
                                 <li><a href="#">海南</a></li>
                                 <li><a href="#">广西</a></li>
@@ -125,10 +126,10 @@ glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
         </div>
     </div>
     <?php
-     include "../utils/dao.php";
+    include "../utils/dao.php";
     include "../utils/conn.php";
-     $sql = "select * from tab_modity;";
-     $var = queryList($conn,$sql);
+    $sql = "select * from tab_modity;";
+    $var = queryList($conn,$sql);
     ?>
     <div class="hot" id="hot">
         <div class="hottop">
@@ -140,7 +141,7 @@ glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
         <div class="hotone">
             <img src="<?php echo "../admin/".$var[2]['picture']?>">
         </div>
-        <div class="hotone">
+        <div class="hotone hidden-sm hidden-xs" >
             <img src="<?php echo "../admin/".$var[3]['picture']?>">
         </div>
     </div>
@@ -151,13 +152,15 @@ glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
         <?php
         foreach ($var as $item){
             $show = "<div class=\"newone col-sm-6 col-md-3 col-xs-6 col-lg-3\">
-          
             <div class=\"thumbnail\">
                 <img src=\"../admin/".$item['picture']."\">
                 <div class=\"caption\">
                     <h3>".$item['modityname']."</h3>
+   
                     <p>
-                        <a href=\"details.php?id=".$item['moditynum']."\" class=\"btn btn-primary\" role=\"button\">加入购物车</a>
+                        <button  class=\"btn btn-primary btn-into-car\" role=\"button\">
+                        <input type='hidden' name='id' value='".$item['moditynum']."'>
+                         加入购物车</button>
                         <a href=\"details.php?id=".$item['moditynum']."\" class=\"btn btn-default\" role=\"button\">购买</a>
                     </p>
                 </div>
@@ -166,47 +169,70 @@ glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
             echo $show;
         }
         ?>
-<!--        格式代码样例-->
-<!--        <div class="newone col-sm-6 col-md-4 ">-->
-<!--            <div class="thumbnail">-->
-<!--                <img src="img/k2.jpg">-->
-<!--                <div class="caption">-->
-<!--                    <h3>商品名称</h3>-->
-<!--                    <p>-->
-<!--                        <a href="#" class="btn btn-primary" role="button">加入购物车</a>-->
-<!--                        <a href="#" class="btn btn-default" role="button">购买</a>-->
-<!--                    </p>-->
-<!--                </div>-->
-<!--            </div>-->
-<!--        </div>-->
+        <!--        格式代码样例-->
+        <!--        <div class="newone col-sm-6 col-md-4 ">-->
+        <!--            <div class="thumbnail">-->
+        <!--                <img src="img/k2.jpg">-->
+        <!--                <div class="caption">-->
+        <!--                    <h3>商品名称</h3>-->
+        <!--                    <p>-->
+        <!--                        <a href="#" class="btn btn-primary" role="button">加入购物车</a>-->
+        <!--                        <a href="#" class="btn btn-default" role="button">购买</a>-->
+        <!--                    </p>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
 
     </div>
+    <input type="hidden" id="islogin" value="<?php if(empty($_SESSION['username'])){
+         echo "0";
+    }else{
+        echo "1";
+    }?>">
+    <script>
+          $('.btn-into-car').click(function () {
+              var value = $(this).children('input').val();
+              $.ajax({
+                  type: "POST",
+                  url: "car.php",
+                  data: {action:"addOneCar",moditynum:value,shopnum:1},
+                  dataType: "text",
+                  async:true,
+                  success: function(data){
+                      $n =  $('#num-car')
+                      $n.html('');
+                      $n.append(data);
+                  }
+              });
+          });
+    </script>
     <div class="kind"></div>
-    </div>
-    <div class="page">
-        <nav aria-label="Page navigation">
-            <ul class="pagination">
-                <li>
-                    <a href="#" aria-label="Previous">
-                        <span aria-hidden="true">&laquo;</span>
-                    </a>
-                </li>
-                <li><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li>
-                    <a href="#" aria-label="Next">
-                        <span aria-hidden="true">&raquo;</span>
-                    </a>
-                </li>
-            </ul>
-        </nav>
-    </div>
+</div>
+<div class="page">
+    <nav aria-label="Page navigation">
+        <ul class="pagination">
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">&laquo;</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">&raquo;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div>
 </div>
 <?php
-  include "../utils/footer.php";
+include "../utils/shoppingcar.php";
+include "../utils/footer.php";
 ?>
 </body>
 </html>

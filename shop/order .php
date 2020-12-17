@@ -16,10 +16,10 @@
     </script>
 </head>
 <body>
-<?php
-include "../utils/header.php";
-include "../utils/shoppingcar.php";
-?>
+    <?php
+    include "../utils/header.php";
+    include "../utils/shoppingcar.php";
+    ?>
 <div class="container">
     <div class="page-header">
         <h1>确认订单<small>请仔细检查您的订单</small></h1>
@@ -164,10 +164,9 @@ include "../utils/shoppingcar.php";
         <script>
             $('#btnsub').click(function () {
                 alert("订单已经提交");
-            })
+            });
         </script>
 </div>
 <?php  include "../utils/footer.php"?>
-
 </body>
 </html>

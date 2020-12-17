@@ -28,7 +28,7 @@
         <div class="collapsed">
             <span>用户管理</span>
             <a href="admin_ban.php">账号封禁</a>
-            <a href="">管理员管理</a>
+            <a href="user_admin.php">管理员管理</a>
         </div>
         <div class="collapsed">
             <span>订单管理</span>
