@@ -15,7 +15,6 @@
 </head>
 
 <body style="padding-right: 0">
-
 <?php
 include "utils/index-header.php";
 ?>

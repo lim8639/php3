@@ -85,16 +85,17 @@ $(document).on("click", "#delete-all", function () {
         $n.html('');
         $n.append(0);
     }
-
 });
 });
-    $(document).on("click", "#submit", function () {
+   /**
+    * 购物车提交
+    */
+$(document).on("click", "#submit", function () {
 
 });
     $(document).on("click", ".plus", function () {
     var nump = $(this).parent('div').children('label').children('input');
     var num =  nump.val();
-
     num++;
     nump.attr('value',num);
     });

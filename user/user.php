@@ -75,6 +75,9 @@ include "../admin/conn.php";
                 </div>
             </div>
         </div>
+        <h1><?php if (!empty($_GET['msg'])){
+            echo $_GET['msg'];
+            }?></h1>
         <script>
             $(document).scroll(function () {
                 var h = document.body.clientWidth-168;
@@ -102,18 +105,18 @@ include "../admin/conn.php";
                   <p><span class="glyphicon glyphicon-user"></span>USER我的账户</p>
                 </div>
                 <div class="rightmemiddle" >
-                    <form id="userform" style="width:62%;align-self: center">
+                    <form action="checkuser.php" method="post" id="userform" style="width:62%;align-self: center">
                         <div class="form-group">
                             <label for="exampleInputEmail1">旧密码</label>
-                            <input type="password" class="form-control" id="exampleInputEmail1" placeholder="password">
+                            <input name="p1" type="password" class="form-control" id="exampleInputEmail1" placeholder="password">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">新密码</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input name="p2" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">确认密码</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                            <input name="p3" type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                         </div>
                         <div class="form-group">
                             <label for="exampleInputPassword1">修改邮箱</label>

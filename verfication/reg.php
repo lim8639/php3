@@ -56,7 +56,12 @@
                 setTimeout(function () {
                     $('#get_email_code').attr('disabled','false');
                 },10000)
-            })
+            });
+            document.getElementById('#daad'){
+
+            }
+            // dom 树
+
         </script>
     </div>
     <div class="form-group">

@@ -81,8 +81,14 @@ include "../verfication/usersession.php";
                     </ul>
                 </div><!-- /.navbar-collapse -->
         </div><!-- /.container-fluid -->
-        </nav>
+ </nav>
     </div>
+</div>
+</div>
+   <div style="width: 100%;height: 300px;background-color:#3c763d;"></div>
+    <div class="container">
+    <div class="row">
+
     <div class="lunbo">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -182,7 +188,6 @@ include "../verfication/usersession.php";
         <!--                </div>-->
         <!--            </div>-->
         <!--        </div>-->
-
     </div>
     <input type="hidden" id="islogin" value="<?php if(empty($_SESSION['username'])){
          echo "0";
@@ -190,6 +195,7 @@ include "../verfication/usersession.php";
         echo "1";
     }?>">
     <script>
+
           $('.btn-into-car').click(function () {
               var value = $(this).children('input').val();
               $.ajax({
