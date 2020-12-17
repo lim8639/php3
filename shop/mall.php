@@ -13,9 +13,12 @@
     <link rel="stylesheet" href="../utils/car.css">
     <script src="../asset/bootstrap-3.3.7-dist/jquery/jquery-3.5.1.min.js"></script>
     <script src="../asset/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="js/car.js"></script>
 </head>
 <body>
-<?include "../utils/header.php"; ?>
+<?php
+include "../verfication/usersession.php";
+?>
 <div class="container">
     <div class="row">
         <div class="daohang">
@@ -148,13 +151,12 @@
         </div>
         <?php
         foreach ($var as $item){
-
             $show = "<div class=\"newone col-sm-6 col-md-3 col-xs-6 col-lg-3\">
             <div class=\"thumbnail\">
                 <img src=\"../admin/".$item['picture']."\">
                 <div class=\"caption\">
                     <h3>".$item['modityname']."</h3>
-                    
+   
                     <p>
                         <button  class=\"btn btn-primary btn-into-car\" role=\"button\">
                         <input type='hidden' name='id' value='".$item['moditynum']."'>
@@ -190,20 +192,16 @@
     <script>
           $('.btn-into-car').click(function () {
               var value = $(this).children('input').val();
-               var login = $('#islogin').val();
-
               $.ajax({
                   type: "POST",
                   url: "car.php",
                   data: {action:"addOneCar",moditynum:value,shopnum:1},
                   dataType: "text",
                   async:true,
-                  success: function(data) {
-                    if (data>0){
-                        alert("添加成功");
-                    }else {
-                        alert("添加失败");
-                    }
+                  success: function(data){
+                      $n =  $('#num-car')
+                      $n.html('');
+                      $n.append(data);
                   }
               });
           });

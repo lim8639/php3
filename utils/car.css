@@ -22,3 +22,66 @@
     height: 30px;
     width: 30px;
 }
+
+#car-list >ul>li{
+    vertical-align: middle;
+    height: 60px;
+    margin-bottom: 5px;
+}
+
+#car-list li span{
+
+}
+#car-list li img{
+    width: 60px;
+    display: inline-block;
+    height: 60px;
+}
+#car-list li p{
+
+}
+.name{
+    /*overflow: hidden;*/
+    height: 60px;
+    line-height: 60px;
+}
+.name p{
+
+    display: inline-block;
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #7575e2;
+}
+
+.name input{
+    width: 30px;
+    border: #00000000;
+    display: inline-block;
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    color: #7575e2;
+    height: 60px;
+}
+.dele{
+    line-height: 66px;
+    height: 60px;
+    vertical-align: center;
+    padding: 0;
+}
+.delete-one-car{
+    position: absolute;
+    padding: 0;
+    text-align: center;
+    vertical-align: center;
+}
+/* 谷歌 */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    appearance: none;
+    margin: 0;
+}
+/* 火狐 */
+input{
+    -moz-appearance:textfield;
+}
