@@ -39,7 +39,6 @@
                             </div>
                         </nav>
                     </div>
-
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"">
                     <ul class="nav navbar-nav">
                         <li><a href="#hot"><span class="glyphicon glyphicon-time"></span>限时特卖<span class="sr-only">(current)</span></a></li>
@@ -192,14 +191,19 @@
           $('.btn-into-car').click(function () {
               var value = $(this).children('input').val();
                var login = $('#islogin').val();
+
               $.ajax({
                   type: "POST",
                   url: "car.php",
-                  data: {action:"addOneCar",moditynum:value},
+                  data: {action:"addOneCar",moditynum:value,shopnum:1},
                   dataType: "text",
                   async:true,
                   success: function(data) {
-                    alert(data);
+                    if (data>0){
+                        alert("添加成功");
+                    }else {
+                        alert("添加失败");
+                    }
                   }
               });
           });

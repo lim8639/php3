@@ -31,8 +31,29 @@
                 <button type="button" id="delete-all" class="btn btn-warning" data-dismiss="modal">清空购物车</button>
                 <button type="button" id="submit" class="btn btn-success">立即结算</button>
             </div>
+            <input type="hidden" id="islogin" value="<?php if(empty($_SESSION['username'])){
+                echo "0";
+            }else{
+                echo "1";
+            }?>">
             <script>
-
+                $('#car').click(function () {
+                    if ($('#islogin')>0){
+                        $.ajax({
+                            type: "POST",
+                            url: "car.php",
+                            data: {action:"queryListCar"},
+                            dataType: "text",
+                            async:true,
+                            success: function(data) {
+                                alert(data);
+                            }
+                        });
+                    }else {
+                        alert("请先登录");
+                        $(location).attr('href','../verfication/login.php');
+                    }
+                });
                 $('.decline').click(function () {
                     var $input = $(this).parent('li').children('input');
                     var i = $input.val();
@@ -41,7 +62,6 @@
                         $input.attr('value',i);
                     }
                 });
-
                 $('.add').click(function () {
                     var $input = $(this).parent('li').children('input');
                     var j = $input.val();
@@ -53,7 +73,6 @@
                     order.css('display','none');
 
                 });
-
             </script>
         </div>
     </div>
