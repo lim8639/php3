@@ -1,0 +1,113 @@
+Index: user/test.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+><!doctype html>\r\n<html lang=\"en\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\"\r\n          content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <title>Document</title>\r\n    <link rel=\"stylesheet\" href=\"../asset/bootstrap-3.3.7-dist/css/bootstrap.min.css\">\r\n    <style>\r\n        .big{\r\n            width: 800px;\r\n            height: 600px;\r\n            background-color: purple;\r\n            position: relative;\r\n        }\r\n\r\n        .small{\r\n            /*子绝父相*/\r\n            position: absolute;\r\n\r\n            margin-top: -100px;\r\n            margin-left: -100px;\r\n            top: 50%;\r\n            left: 50%;\r\n            width: 200px;\r\n            height: 200px;\r\n            background-color: pink;\r\n        }\r\n\r\n        #small{\r\n            display: inline-block;\r\n            width: 200px;\r\n            height: 200px;\r\n            background-color: skyblue;\r\n        }\r\n    </style>\r\n</head>\r\n<body>\r\n<div class=\"big\">\r\n    <div class=\"small\">\r\n   ouabosuvsiudbvosidvbnpavosa[v\r\n    </div>\r\n</div>\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- user/test.php	(revision b88467978a2e0852c71c1f94be286c5024eb7f9b)
++++ user/test.php	(date 1608181712528)
+@@ -1,46 +1,31 @@
+ <!doctype html>
+-<html lang="en">
++<html lang="zh-CN">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport"
+           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+     <title>Document</title>
+-    <link rel="stylesheet" href="../asset/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+     <style>
+-        .big{
+-            width: 800px;
+-            height: 600px;
+-            background-color: purple;
+-            position: relative;
++        html,body{
++            padding: 0;
++            margin: 0;
++            overflow-x:hidden;
++            height: 100%;
++            width: 100%;
+         }
+-
+-        .small{
+-            /*子绝父相*/
+-            position: absolute;
+-
+-            margin-top: -100px;
+-            margin-left: -100px;
+-            top: 50%;
+-            left: 50%;
+-            width: 200px;
+-            height: 200px;
+-            background-color: pink;
+-        }
+-
+-        #small{
+-            display: inline-block;
+-            width: 200px;
+-            height: 200px;
+-            background-color: skyblue;
++        .div{
++            height: 100%;
++            background-color: #3c763d;
++            width: 38%;
+         }
+     </style>
+ </head>
+ <body>
+-<div class="big">
+-    <div class="small">
+-   ouabosuvsiudbvosidvbnpavosa[v
+-    </div>
+-</div>
++  <div class="div">
++     <div class="container">
++         hello world
++     </div>
++  </div>
+ </body>
+ </html>
+\ No newline at end of file
+Index: index.php
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>\r\n<!doctype html>\r\n<html lang=\"zh-CN\">\r\n<head>\r\n    <meta charset=\"UTF-8\">\r\n    <meta name=\"viewport\" content=\"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0\">\r\n    <meta http-equiv=\"X-UA-Compatible\" content=\"ie=edge\">\r\n    <title>水果新语</title>\r\n    <link rel=\"shortcut icon\" href=\"asset/src/icon/favicon.ico\">\r\n    <link rel=\"stylesheet\" href=\"asset/bootstrap-3.3.7-dist/css/bootstrap.min.css\">\r\n    <link rel=\"stylesheet\" href=\"asset/css/frame.css\">\r\n    <link rel=\"stylesheet\" href=\"asset/css/index.css\">\r\n    <script src=\"asset/bootstrap-3.3.7-dist/jquery/jquery-3.5.1.min.js\"></script>\r\n    <script src=\"asset/bootstrap-3.3.7-dist/js/bootstrap.min.js\"></script>\r\n</head>\r\n\r\n<body style=\"padding-right: 0\">\r\n\r\n<?php\r\ninclude \"utils/index-header.php\";\r\n?>\r\n<nav >\r\n    <div id=\"carousel-example-generic\" class=\"carousel slide\" data-ride=\"carousel\">\r\n        <!-- Indicators -->\r\n        <ol class=\"carousel-indicators\">\r\n            <li data-target=\"#carousel-example-generic\" data-slide-to=\"0\" class=\"active\"></li>\r\n            <li data-target=\"#carousel-example-generic\" data-slide-to=\"1\"></li>\r\n            <li data-target=\"#carousel-example-generic\" data-slide-to=\"2\"></li>\r\n        </ol>\r\n        <!-- Wrapper for slides -->\r\n        <div class=\"carousel-inner\" role=\"listbox\">\r\n            <div class=\"item active\">\r\n                <img src=\"asset/src/img2/86016044_p0.png\" alt=\"...\">\r\n                <div class=\"carousel-caption\">\r\n                    ...\r\n                </div>\r\n            </div>\r\n            <div class=\"item\">\r\n                <img src=\"asset/src/img2/86016044_p0.png\" alt=\"...\">\r\n                <div class=\"carousel-caption\">\r\n                    ...\r\n                </div>\r\n            </div>\r\n            <div class=\"item\">\r\n                <img src=\"asset/src/img2/86016044_p0.png\" alt=\"...\">\r\n                <div class=\"carousel-caption\">\r\n                    ...\r\n                </div>\r\n            </div>\r\n        </div>\r\n        <!-- Controls -->\r\n        <a class=\"left carousel-control\" href=\"#carousel-example-generic\" role=\"button\" data-slide=\"prev\">\r\n            <span class=\"glyphicon glyphicon-chevron-left\" aria-hidden=\"true\"></span>\r\n            <span class=\"sr-only\">Previous</span>\r\n        </a>\r\n        <a class=\"right carousel-control\" href=\"#carousel-example-generic\" role=\"button\" data-slide=\"next\">\r\n            <span class=\"glyphicon glyphicon-chevron-right\" aria-hidden=\"true\"></span>\r\n            <span class=\"sr-only\">Next</span>\r\n        </a>\r\n    </div>\r\n</nav>\r\n<!--Main-->\r\n<div class=\"top1\">\r\n<!-- 滚动图的第一层section   -->\r\n    <section class=\"top1_div_first\">\r\n<!--滚动图的第二层div-->\r\n        <div class=\"top1_div_second\">\r\n<!--滚动图的第三层div-->\r\n\r\n                    <div class=\"top1_div_third\">\r\n                                    <p class=\"top1_p_first\">精品水果</p>\r\n                                    <div class=\"top1_div_fourth\">\r\n                                        <ul class=\"top1_ul_first\" role=\"tablist\">\r\n                                            <li class=\"top1_li_first\" role=\"presentation\" index=\"1\"><button type=\"button\" style=\"background-color:#fff;\" class=\"top1_button_first\" index=\"1\">精品水果篮</button></li>\r\n                                            <li class=\"top1_li_first\" index=\"2\"><button type=\"button\" style=\"background-color:#fff;\" class=\"top1_button_first\" index=\"2\">优选樱桃</button></li>\r\n                                            <li class=\"top1_li_first\" index=\"3\"><button type=\"button\" style=\"background-color:#fff;\" class=\"top1_button_first\" index=\"3\">优选樱桃</button></li>\r\n                                            <li class=\"top1_li_first\" index=\"4\"><button type=\"button\" style=\"background-color:#fff;\" class=\"top1_button_first\" index=\"4\">麻阳甜橙</button></li>\r\n                                            <li class=\"top1_li_first\" index=\"5\"><button type=\"button\" style=\"background-color:#fff;\" class=\"top1_button_first\" index=\"5\">水果皇后</button></li>\r\n                                        </ul>\r\n                                    </div>\r\n                        <div class=\"show\">\r\n\r\n\r\n\r\n                            <div class=\"container\">\r\n                                <div class=\"list\" style=\"left:0px;\">\r\n                                    <!--<img src=\"../static/image/photo1.jpg\" alt=\"5\"/>-->\r\n                                    <img src=\"admin/images/scroll/in_111.jpg\" alt=\"1\"/>\r\n                                    <img src=\"admin/images/scroll/in_222.jpg\" alt=\"2\"/>\r\n                                    <img src=\"admin/images/scroll/in_333.jpg\" alt=\"3\"/>\r\n                                    <img src=\"admin/images/scroll/in_444.jpg\" alt=\"4\"/>\r\n                                    <img src=\"admin/images/scroll/in_555.jpg\" alt=\"5\"/>\r\n                                    <!--<img src=\"../static/image/banner.jpg\" alt=\"1\"/>-->\r\n                                </div>\r\n\r\n                            </div>\r\n                        </div>\r\n                                <h2>水果优品</h2>\r\n                                <h6>限时折扣78%</h6>\r\n                                <button class=\"topbtn\">立即抢购<span class=\"glyphicon glyphicon-send\"></span></button>\r\n\r\n\r\n\r\n\r\n\r\n                            <p class=\"top1_p_first\">地方特产</p>\r\n                            <div class=\"top1_div_fourth\">\r\n                                <ul class=\"top1_ul_first\" id=\"top1_ul_second\" role=\"tablist\">\r\n                                    <li class=\"top1_li_first\" role=\"presentation\" index=\"1\"><button type=\"button\" style=\"background-color:#fff;\" class=\"top1_button_first\">进口水果</button></li>\r\n                                    <li class=\"top1_li_first\" index=\"2\"><button type=\"button\" style=\"background-color:#fff;\" class=\"top1_button_first\">丰水梨</button></li>\r\n                                    <li class=\"top1_li_first\" index=\"3\"><button type=\"button\" style=\"background-color:#fff;\" class=\"top1_button_first\">百香果</button></li>\r\n                                    <li class=\"top1_li_first\" index=\"4\"><button type=\"button\" style=\"background-color:#fff;\" class=\"top1_button_first\">麻阳甜橙</button></li>\r\n                                    <li class=\"top1_li_first\" index=\"5\"><button type=\"button\" style=\"background-color:#fff;\" class=\"top1_button_first\">精品水果篮</button></li>\r\n                                </ul>\r\n                            </div>\r\n                            <div class=\"show\">\r\n\r\n                                <div class=\"container\">\r\n                                    <div class=\"list_a\" style=\"left:0px;\">\r\n                                        <!--<img src=\"../static/image/photo1.jpg\" alt=\"5\"/>-->\r\n                                        <img src=\"admin/images/scroll/in_555.jpg\" alt=\"1\"/>\r\n                                        <img src=\"admin/images/scroll/in_444.jpg\" alt=\"2\"/>\r\n                                        <img src=\"admin/images/scroll/in_666.jpg\" alt=\"3\"/>\r\n                                        <img src=\"admin/images/scroll/in_222.jpg\" alt=\"4\"/>\r\n                                        <img src=\"admin/images/scroll/in_111.jpg\" alt=\"5\"/>\r\n                                        <!--<img src=\"../static/image/banner.jpg\" alt=\"1\"/>-->\r\n                                    </div>\r\n\r\n                                </div>\r\n\r\n\r\n                            </div>\r\n                            <h2>助农水果</h2>\r\n                            <h6></h6>\r\n                            <button class=\"topbtn\">立即抢购 <span class=\"glyphicon glyphicon-send\"></span></button>\r\n\r\n\r\n\r\n                            <?php\r\n                            include \"utils/girl.php\";\r\n                            include \"utils/footer.php\";\r\n\r\n                            ?>\r\n\r\n                        </div>\r\n\r\n\r\n\r\n         </div>\r\n\r\n    </section>\r\n</div>\r\n<script></script>\r\n<script>\r\n    var imgCount = 5;\r\n    var index = 1;\r\n    var intervalId;\r\n    var buttonSpan = $('.top1_ul_first')[0].children;\r\n    var buttonSpan2 = $('#top1_ul_second')[0].children;\r\n    //自动轮播功能 使用定时器\r\n    autoNextPage();\r\n    function autoNextPage(){\r\n        intervalId = setInterval(function(){\r\n            nextPage(true);\r\n            nextPage2(true);\r\n        },3000);\r\n    }\r\n    //当鼠标移入 停止轮播\r\n    $('.container').mouseover(function(){\r\n        console.log('hah');\r\n        clearInterval(intervalId);\r\n    });\r\n    // 当鼠标移出，开始轮播\r\n    $('.container').mouseout(function(){\r\n        autoNextPage();\r\n    });\r\n\r\n    clickButtons();\r\n    function clickButtons(){\r\n        var length = buttonSpan.length;\r\n        var length2 = buttonSpan2.length;\r\n        for(var i=0;i<length;i++){\r\n            buttonSpan[i].onclick = function(){\r\n                if($(this).attr('index')==1){\r\n                    index = 5;\r\n                }else{\r\n                    index = $(this).attr('index')-1;\r\n                }\r\n                nextPage(true);\r\n\r\n            };\r\n        }\r\n        for(var i=0;i<length2;i++){\r\n            buttonSpan2[i].onclick = function(){\r\n                if($(this).attr('index')==1){\r\n                    index = 5;\r\n                }else{\r\n                    index = $(this).attr('index')-1;\r\n                }\r\n                nextPage2(true);\r\n\r\n            };\r\n        }\r\n    }\r\n    function nextPage(next){\r\n        var targetLeft = 0;\r\n\r\n        if(next){//往后走\r\n            if(index == 5){//到最后一张，直接跳到第一张\r\n                targetLeft = 0;\r\n                index = 1;\r\n            }else{\r\n                index++;\r\n                targetLeft = -1000*(index-1);\r\n            }\r\n\r\n        }else{//往前走\r\n            if(index == 1){//在第一张，直接跳到第五张\r\n                index = 5;\r\n                targetLeft = -1000*(imgCount-1);\r\n            }else{\r\n                index--;\r\n                targetLeft = -1000*(index-1);\r\n            }\r\n\r\n        }\r\n        $('.list').animate({left:targetLeft+'px'});\r\n\r\n\r\n\r\n\r\n    }\r\n    function nextPage2(next){\r\n        var targetLeft = 0;\r\n\r\n        if(next){//往后走\r\n            if(index == 5){//到最后一张，直接跳到第一张\r\n                targetLeft = 0;\r\n                index = 1;\r\n            }else{\r\n                index++;\r\n                targetLeft = -1000*(index-1);\r\n            }\r\n\r\n        }else{//往前走\r\n            if(index == 1){//在第一张，直接跳到第五张\r\n                index = 5;\r\n                targetLeft = -1000*(imgCount-1);\r\n            }else{\r\n                index--;\r\n                targetLeft = -1000*(index-1);\r\n            }\r\n\r\n        }\r\n        $('.list_a').animate({left:targetLeft+'px'});\r\n\r\n\r\n\r\n\r\n    }\r\n\r\n\r\n</script>\r\n\r\n\r\n\r\n\r\n\r\n\r\n</body>\r\n</html>
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- index.php	(revision b88467978a2e0852c71c1f94be286c5024eb7f9b)
++++ index.php	(date 1608183957880)
+@@ -15,7 +15,6 @@
+ </head>
+ 
+ <body style="padding-right: 0">
+-
+ <?php
+ include "utils/index-header.php";
+ ?>
+Index: shop/js/car.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>$(document).on(\"click\", \"#car\", function () {\r\n     // alert(\"hello world\");\r\n    $.ajax({\r\n        type: \"POST\",\r\n        url: \"car.php\",\r\n        data: {action:\"queryListCar\"},\r\n        dataType: \"json\",\r\n        async:false,\r\n        success: function(data) {\r\n            $n =  $('#num-car')\r\n            if (data==\"\"){\r\n                $n.html('');\r\n                $n.append(0);\r\n                return false;\r\n            }\r\n            var $i = 0;\r\n            var $ul =  $('#car-ul');\r\n            $ul.html('');\r\n            // console.log(data);\r\n            while (data[$i]){\r\n                var $car = \"<li>\\n\" +\r\n                    \"                       <div class=\\\"row\\\">\\n\" +\r\n                    \"                           <div class=\\\"pic col-xs-2 col-sm-2 col-md-2 col-lg-2\\\">\\n\" +\r\n                    \"                               <img src=\\\"../admin/\"+data[$i].picture+\"\\\" alt=\\\"\\\">\\n\" +\r\n                    \"                           </div>\\n\" +\r\n                    \"                           <div class=\\\"name col-xs-6 col-sm-6 col-md-6 col-lg-6\\\">\\n\" +\r\n                    \"                              <p>\"+data[$i].modityname+\"</p>\\n\" +\r\n                    \"                           </div>\\n\" +\r\n                    \"                           <div class=\\\"name number col-xs-3 col-sm-3 col-md-3 col-lg-3\\\">\\n\" +\r\n                    \"                               <button class=\\\"btn btn-xs minus\\\"><span class=\\\" glyphicon glyphicon glyphicon-minus\\\"></span></button>\\n\" +\r\n                    \"                               <label>\\n\" +\r\n                    \"                                   <input type=\\\"number\\\" name=\\\"shopnum\\\" readonly value=\\\"\"+data[$i].shopnum+\"\\\">\\n\" +\r\n                    \"                               </label>\\n\" +\r\n                    \"                               <button class=\\\"btn btn-xs plus\\\"><span class=\\\" glyphicon glyphicon-plus\\\"></span>\\n\" +\r\n                    \"                               </button>\\n\" +\r\n                    \"                           </div>\\n\" +\r\n                    \"                           <div class=\\\"dele col-xs-1 col-sm-1 col-md-1 col-lg-1\\\">\\n\" +\r\n                    \"                               <div class=\\\"delete-one-car\\\">\\n\" +\r\n                    \"                                   <button class=\\\"btn btn-sm deleteOneCar\\\">\\n\" +\r\n                    \"                                       <span class=\\\" glyphicon glyphicon-trash\\\"></span>\\n\" +\r\n                    \"                                   </button>\\n\" +\r\n                    \"                               </div>\\n\" +\r\n                    \"                           </div>\\n\" +\r\n                    \"                       </div>\\n\" +\r\n                    \"                    </li>\";\r\n                $i++;\r\n                $ul.append($car);\r\n            }\r\n           // $n =  $('#num-car')\r\n            $n.html('');\r\n            $n.append($i);\r\n        }\r\n    });\r\n    var $input = $(this).parent('li').children('input');\r\n    var i = $input.val();\r\n    if (i>0){\r\n    i--;\r\n    $input.attr('value',i);\r\n}\r\n});\r\n    $(document).on(\"click\", \".minus\", function () {\r\n    var nump = $(this).parent('div').children('label').children('input');\r\n    var num =  nump.val();\r\n    if (num>0)\r\n    num--;\r\n    nump.attr('value',num);\r\n});\r\n/**\r\n * 删除全部数据\r\n */\r\n$(document).on(\"click\", \"#delete-all\", function () {\r\n    $n =  $('#num-car');\r\n    if ($n.text()==0){\r\n        alert(\"当前没有商品\");\r\n    }\r\n    $.ajax({\r\n    type: \"POST\",\r\n    url: \"car.php\",\r\n    data: {action:\"deleteall\"},\r\n    dataType: \"text\",\r\n    async:false,\r\n    success: function(data) {\r\n        var $ul =  $('#car-ul');\r\n        $ul.html('');\r\n        $n.html('');\r\n        $n.append(0);\r\n    }\r\n\r\n});\r\n});\r\n    $(document).on(\"click\", \"#submit\", function () {\r\n\r\n});\r\n    $(document).on(\"click\", \".plus\", function () {\r\n    var nump = $(this).parent('div').children('label').children('input');\r\n    var num =  nump.val();\r\n\r\n    num++;\r\n    nump.attr('value',num);\r\n    });\r\n    $(document).on(\"click\", \".minus\", function () {\r\n    var nump = $(this).parent('div').children('label').children('input');\r\n    var num =  nump.val();\r\n    if (num>0)\r\n    num--;\r\n    nump.attr('value',num);\r\n    });\r\n\r\n    $('.cancel-order').click(function () {\r\n    var order = $(this);\r\n    order.css('display','none');\r\n});\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+--- shop/js/car.js	(revision b88467978a2e0852c71c1f94be286c5024eb7f9b)
++++ shop/js/car.js	(date 1608183611443)
+@@ -85,12 +85,11 @@
+         $n.html('');
+         $n.append(0);
+     }
+-
+ });
+ });
+     $(document).on("click", "#submit", function () {
+ 
+-});
++    });
+     $(document).on("click", ".plus", function () {
+     var nump = $(this).parent('div').children('label').children('input');
+     var num =  nump.val();
