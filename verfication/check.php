@@ -39,7 +39,7 @@ function login($account,$password,$conn){
            header('location:../user/user.php');
         }
     }else{
-        header('location:index.php?msg=error');
+        header('location:login.php?msg=error');
     }
 }
 
@@ -53,7 +53,7 @@ function reg($account,$password,$conn,$email){
         $sql ="INSERT INTO tab_user (account, password, email) values ('$account','$encode_pswd', '$email');";
         $rec = mysqli_query($conn,$sql);
         if ($rec!=false){
-            header('location:index.php');
+            header('location:login.php');
         }else{
             header('location:reg.php');
         }
