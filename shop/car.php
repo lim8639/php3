@@ -12,7 +12,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"&&!empty($_POST['action'])) {
             queryListCar($conn);
             break;
         case 'addOneCar':
-            addOneCar($conn);
+            addtoCar($conn);
+            break;
+        case 'deleteall':
+            deleteall($conn);
 
     }
 } elseif ($_SERVER["REQUEST_METHOD"] == "GET"&&!empty($_GET['action'])){
@@ -29,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"&&!empty($_POST['action'])) {
 
 function queryListCar($conn){
     $uid = $_SESSION['username'];
-    $sql = "select * from tab_shop where $uid";
+    $sql = "select * from tab_shop where customernum =  $uid";
     $rec = queryList($conn,$sql);
     // $rec = array("hello","world");
     echo json_encode($rec,JSON_UNESCAPED_UNICODE);
@@ -38,42 +41,40 @@ function queryListCar($conn){
 /**
  * @param $conn 添加一个商品到购物车
  */
-function addOneCar($conn){
+
+function addtoCar($conn){
    $uid = $_SESSION['username'];
    $moditynum = $_POST['moditynum'];
-   $sql = "select * from tab_modity where moditynum = 1001;";
-   $modity = queryOneRecord($conn,$sql);
+   $sql1 = "select * from tab_modity where moditynum = $moditynum;";
+   $modity = queryOneRecord($conn,$sql1);
    $modityname = $modity['modityname'];
    $picture = $modity['picture'];
    $shopnum = $_POST['shopnum'];
    $insert = "INSERT INTO tab_shop
     (customernum, moditynum, modityname, picture, shopnum)
-    VALUES ($uid, $moditynum, '$modityname', '$picture', $shopnum);";
+    VALUES ($uid, $moditynum,'$modityname', '$picture', $shopnum);";
     // echo json_encode(array("hello","world"));
-   //    输出数据要用echo
+    //    输出数据要用echo
     //echo json_encode($modity,JSON_UNESCAPED_UNICODE);
-    if (changeRecord($conn,$insert)){
-        echo 1;
-    }else{
-        echo 0;
-    }
+   if (changeRecord($conn,$insert)){
+       $sql3 = "select count(customernum) from tab_shop where customernum =$uid;";
+        $rec = queryOneRecord($conn,$sql3);
+        echo  $rec['count(customernum)'];
+   }else{
+       echo 0;
+   }
 }
 
 function deleteCar($uid,$gid){
-    $sql = "delete from tab_shop where customernum =$uid and moditynum =$gid;";
-     if (changeRecord($conn,$sql)){
-         echo 1;
-     }else{
-         echo 0;
-     }
+    $uid = $_SESSION['username'];
+    $sql = "delete from tab_shop where customernum =$uid and moditynum =$uid;";
+    echo changeRecord($conn,$sql);
 }
 
-function deleteAllCar($uid){
-    $sql = "delete from tab_shop where customernum =$uid;";
-    if (changeRecord($sql)){
-        echo 1;
-    }else{
-        echo 0;
-    }
+function deleteall($conn){
+    $uid = $_SESSION['username'];
+    $sql = "delete from tab_shop where customernum =$uid";
+    echo  changeRecord($conn,$sql);
 }
+
 ?>

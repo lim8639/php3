@@ -194,20 +194,3 @@ input::-webkit-inner-spin-button {
 input{
     -moz-appearance:textfield;
 }
-#car-list >ul>li{
-    height: 100px;
-
-}
-.car-num{
-   width: 50px;
-    height: 50px;
-}
-#car-list li span{
-
-}
-#car-list li img{
-   height: 100%;
-}
-#car-list li p{
-
-}
