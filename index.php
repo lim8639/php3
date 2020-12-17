@@ -91,8 +91,8 @@ include "utils/index-header.php";
                                         </div>
                                     </div>
                                     <h2>水果优品</h2>
-                                    <h6>限时折扣78%</h6>
-                                    <button class="topbtn">立即抢购<span class="glyphicon glyphicon-send"></span></button>
+                                  <h6>限时折扣78%</h6>
+                        <a href="shop/mall.php"><button class="topbtn">立即抢购<span class="glyphicon glyphicon-send"></span></button></a>
                                     <p class="top1_p_first">地方特产</p>
                                     <div class="top1_div_fourth">
                                         <ul class="top1_ul_first" id="top1_ul_second" role="tablist">
@@ -119,20 +119,19 @@ include "utils/index-header.php";
                                         </div>
                                     </div>
                                     <h2>助农水果</h2>
-                                    <h6>限时折扣78%</h6>
-                                    <button class="topbtn">立即抢购 <span class="glyphicon glyphicon-send"></span></button>
+                        <h6>限时折扣78%</h6>
+                        <a href="shop/mall.php"><button class="topbtn">立即抢购 <span class="glyphicon glyphicon-send"></span></button></a>
 
-
-
-                                    <?php
-                                    include "utils/girl.php";
-                                    include "utils/footer.php";
-
-                                    ?>
                     </div>
+
          </div>
     </section>
 </div>
+<?php
+include "utils/girl.php";
+include "utils/footer.php";
+
+?>
 <script></script>
 <script>
     var imgCount = 5;
