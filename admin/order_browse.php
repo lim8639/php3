@@ -89,9 +89,9 @@ $sql.=" order by ordernum limit ".($pageNum-1)*$pageSize.",".$pageSize;
 
 
         <div id="search">
-            <form action=add_check.php" method="post" enctype="multipart/form-data" name="form">
-                <input type="text" name="key" value="<?php echo $key;?>" /><span>按照单号进行查询</span>
-                <input type="submit" value="查询"/>
+            <form action="order_browse.php"" method="post" enctype="multipart/form-data" name="form">
+            <input type="text" name="key" value="<?php echo $key;?>" /><span>根据订单编号进行查询</span>
+            <input type="submit" value="查询"/>
             </form>
 
         </div>
@@ -108,7 +108,7 @@ $sql.=" order by ordernum limit ".($pageNum-1)*$pageSize.",".$pageSize;
 		<th>金额</th>
 		<th>买家编号</th>
 		<th>地址编号</th>
-		<th colspan='3'></th></tr>";//输出表头行
+		<th colspan='2'></th></tr>";//输出表头行
             while($row=mysqli_fetch_assoc($result))//从记录集获取一行数据到数组，不为false，则显示该行数据(数组中各元素
             {
                 ?>

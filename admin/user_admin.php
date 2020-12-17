@@ -70,27 +70,35 @@ $pageSize=2;//
 $pageNum=empty($_GET["pageNum"])?1:$_GET["pageNum"];
 //echo "要显示的页码是:$pageNum <br>";
 
-$sql="select * from tab_order,tab_modity where tab_order.moditynum=tab_modity.moditynum";//构造SQL语句
+$sql="select * from tab_user where isadmin=1";//构造SQL语句
 if($_SERVER["REQUEST_METHOD"]=="POST")//如果是提交表单
 {
     $key=$_POST["key"];
-    $sql=" select * from tab_order where ordernum = $key";}
-$result=mysqli_query($conn,$sql);
+    $sql=" select * from tab_user where tab_user.account =$key and  tab_user.isadmin=1";
+    $result=mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result)<=0){
+        echo  "<script language='JavaScript' type='text/JavaScript'>;";
+        echo "alert('该管理员账户不存在');";
+        echo "</script>";
+    }
 
+}
+
+$result=mysqli_query($conn,$sql);
 $allNum=mysqli_num_rows($result);
 $endPage=ceil($allNum/$pageSize);
 //echo"总记录条数".$allNum."<br>";
 //echo"总页数".$endPage;
 //$sql.="  limit ($pageNum-1)*$pageSize,$pageSize";
-$sql.=" order by ordernum limit ".($pageNum-1)*$pageSize.",".$pageSize;
+$sql.=" order by account limit ".($pageNum-1)*$pageSize.",".$pageSize;
 ?>
 <div class="browse">
     <div id="top">
 
 
         <div id="search">
-            <form action="add_check.php" method="post" >
-                <input type="text" name="key" value="<?php echo $key;?>" /><span>根据订单编号进行查询</span>
+            <form action="user_admin.php" method="post" >
+                <input type="text" name="key" value="<?php echo $key;?>" /><span>根据账号进行查询</span>
                 <input type="submit" value="查询"/>
             </form>
 
@@ -102,12 +110,9 @@ $sql.=" order by ordernum limit ".($pageNum-1)*$pageSize.",".$pageSize;
             echo"<table align='center' >";//输出表格标签
             echo"<tr>
        
-        <th>订单编号</th>
-		<th>商品编号</th>
-		<th>数量</th>
-		<th>金额</th>
-		<th>买家编号</th>
-		<th>地址编号</th>
+        <th>管理员编号</th>
+		<th>管理员账户</th>
+		<th>管理员账户</th>
 		<th colspan='2'></th></tr>";//输出表头行
             while($row=mysqli_fetch_assoc($result))//从记录集获取一行数据到数组，不为false，则显示该行数据(数组中各元素
             {
@@ -118,15 +123,11 @@ $sql.=" order by ordernum limit ".($pageNum-1)*$pageSize.",".$pageSize;
                 <?php
 
                 echo"
-       <td >$row[ordernum]</td>
-       <td>$row[moditynum]</td>
-       <td>$row[num]</td>
-	   <td>$row[money]</td>
-       <td>$row[customernum]</td>
-       <td>$row[addressnum]</td>
-	   <td><a href='order_details.php?ordernum=$row[ordernum]'>详情</a></td>
+       <td >$row[customernum]</td>
+       <td>$row[account]</td>
+       <td>$row[email]</td>
 	
-	    <td><a href=javascript:if(confirm('你确定要删除吗？'))location='orderDelete.php?ordernum=$row[ordernum]'>删除</a></td>";//输出获取的一行数据
+	    <td><a href=javascript:if(confirm('你确定要删除吗？'))location='admin_delete.php?customernum=$row[customernum]'>删除</a></td>";//输出获取的一行数据
                 echo"</tr>";//输出行结束标记
             };
             ?>
@@ -144,11 +145,12 @@ $sql.=" order by ordernum limit ".($pageNum-1)*$pageSize.",".$pageSize;
             echo"</table>";//输出表格结束标记
         }
         else //没有查询结果
-            echo"尚无订单信息";
+            echo"尚无管理员信息";
 
         ?>
     </div>
 </body>
 
 </html>
+
 
