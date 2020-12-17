@@ -133,7 +133,7 @@ include "../admin/conn.php";
 
                         <button type="submit" class="btn btn-default" id="btn1">提交</button>
                     </form>
-                    <script>
+                    <!--<script>
                         $("#btn1").click(function () {
                             var p1 = $("#oldpassword").val();
                             if(p1==''){
@@ -171,7 +171,7 @@ include "../admin/conn.php";
 
 
                         });
-                    </script>
+                    </script>-->
                 </div>
             </div>
             <div class="rightcar" id="car">
