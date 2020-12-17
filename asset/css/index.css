@@ -247,41 +247,30 @@ button{
     width:1000px;
     height:400px;
 }
-.pointer{
-    position:absolute;
-    width:100px;
-    bottom:20px;
-    left:250px;
-}
-.pointer>span{
-    cursor:pointer;
-    display:inline-block;
-    width:10px;
-    height:10px;
-    background: #7b7d80;
-    border-radius:50%;
-    border:1px solid #fff;
-}
 
-.arrow{
-    position:absolute;
-    text-decoration:none;
-    width:40px;
-    height:40px;
-    background: #727d8f;
-    color:#fff;
-    font-weight: bold;
-    line-height:40px;
-    text-align:center;
-    top:180px;
-    display:none;
-}
-.arrow:hover{
-    background: #0f0f0f;
-}
+
+
 
 .container:hover .arrow{
     display:block;
+}
+.top1 footer p{
+    font-family: "微软雅黑", Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    text-align: center;
+    padding: 0;
+    margin-top: 0;
+    font-weight: normal;
+    line-height: normal;
+    color: #f7f7f9;
+}
+footer{
+
+    margin-top: 1600px;
+
+}
+.div_scroll{
+
 }
 
 /*模态框*/

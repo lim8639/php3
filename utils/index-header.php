@@ -1,4 +1,53 @@
 <!--页头-->
+<script>
+    function showResult(str)
+    {
+        if (str.length==0)
+        {
+            document.getElementById("livesearch").innerHTML="";
+            document.getElementById("livesearch").style.border="0px";
+            return;
+        }
+        if (window.XMLHttpRequest)
+        {// IE7+, Firefox, Chrome, Opera, Safari 浏览器执行
+            xmlhttp=new XMLHttpRequest();
+        }
+        else
+        {// IE6, IE5 浏览器执行
+            xmlhttp=new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange=function()
+        {
+            if (xmlhttp.readyState==4 && xmlhttp.status==200)
+            {
+                document.getElementById("livesearch").innerHTML=xmlhttp.responseText;
+                document.getElementById("livesearch").style.border="1px solid #A5ACB2";
+            }
+        }
+        xmlhttp.open("GET","utils/livesearch.php?q="+str,true);
+        xmlhttp.send();
+    }
+    function showResult2()
+    {
+        if($("#search_in").val().length==0)
+        {
+            location.href="shop/mall2.php";
+        }
+        else
+        {
+            location.href="shop/mall2.php?key="+$("#search_in").val();
+        }
+    }
+</script>
+<style>
+    #livesearch div:hover
+    {
+        background-color:#999;
+    }
+    #livesearch a{
+        color:#999; text-decoration:none;
+    }
+</style>
 <header>
     <div id="head">
         <div class="head-left">
@@ -31,15 +80,17 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel">购物车</h4>
+                <h4 class="modal-title" id="myModalLabel">搜索</h4>
             </div>
             <div class="modal-body">
-                点击搜索<input type="text"> <button type="button" class="btn btn-primary">前往</button>
-                <ul>
-                    <li>#</li>
-                    <li>#</li>
-                </ul>
+                点击搜索<input type="text" id="search_in" onkeyup="showResult(this.value)" > <button type="button" class="btn btn-primary" onclick="showResult2()">前往</button>
+                <div id="livesearch" style="z-index: 1000;background-color:white;width: 28%;margin-left: 10%;margin-top: -1%;" ></div>
+
+
             </div>
+
+
+
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
                 <button type="button" class="btn btn-info">前往</button>
