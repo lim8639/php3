@@ -1,0 +1,156 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>浏览记录</title>
+    <style>
+        .browse{
+            position: relative;
+            top: 60px;
+            left:23%;
+            height: 100%;
+            width: 75%;
+            background: #fff;
+
+        }
+        table{
+            margin-top:50px;
+            width:80%;
+            border:1px #B3CDE8 solid;
+        }
+        th
+        {
+            text-align:center;
+            background-color:#C8F4FF;
+        }
+        tr
+        {        height:35px;
+        }
+
+
+        #top{
+            margin:50px auto;
+            width:75%;
+            height:25px;
+        }
+        a{
+            text-decoration:none;
+            color:#66f;
+        }
+
+        a:hover{
+            color:#F96;
+        }
+        #search{
+            float:right;}
+        input{
+            height: 20px;
+            margin-bottom: 1px;
+            margin: ;
+        }
+        form{
+            margin: 0 130px 0 200px;
+        }
+
+    </style>
+    <title>浏览记录</title>
+</head>
+<body>
+
+
+<?php
+//访问控制
+include "conn.php";//包含连接文件
+include "top.php";
+
+
+
+$key='';
+$pageSize=2;//
+$pageNum=empty($_GET["pageNum"])?1:$_GET["pageNum"];
+//echo "要显示的页码是:$pageNum <br>";
+
+$sql="select * from tab_user where isadmin=1";//构造SQL语句
+if($_SERVER["REQUEST_METHOD"]=="POST")//如果是提交表单
+{
+    $key=$_POST["key"];
+    $sql=" select * from tab_user where tab_user.account =$key and  tab_user.isadmin=1";
+    $result=mysqli_query($conn,$sql);
+    if(mysqli_num_rows($result)<=0){
+        echo  "<script language='JavaScript' type='text/JavaScript'>;";
+        echo "alert('该管理员账户不存在');";
+        echo "</script>";
+    }
+
+}
+
+$result=mysqli_query($conn,$sql);
+$allNum=mysqli_num_rows($result);
+$endPage=ceil($allNum/$pageSize);
+//echo"总记录条数".$allNum."<br>";
+//echo"总页数".$endPage;
+//$sql.="  limit ($pageNum-1)*$pageSize,$pageSize";
+$sql.=" order by account limit ".($pageNum-1)*$pageSize.",".$pageSize;
+?>
+<div class="browse">
+    <div id="top">
+
+
+        <div id="search">
+            <form action="user_admin.php" method="post" >
+                <input type="text" name="key" value="<?php echo $key;?>" /><span>根据账号进行查询</span>
+                <input type="submit" value="查询"/>
+            </form>
+
+        </div>
+
+        <?php
+        $result=mysqli_query($conn,$sql)or die("数据查询失败".$sql);//执行SQL语句
+        if(mysqli_num_rows($result)>0){ //判断是否有查询结果
+            echo"<table align='center' >";//输出表格标签
+            echo"<tr>
+       
+        <th>管理员编号</th>
+		<th>管理员账户</th>
+		<th>管理员账户</th>
+		<th colspan='2'></th></tr>";//输出表头行
+            while($row=mysqli_fetch_assoc($result))//从记录集获取一行数据到数组，不为false，则显示该行数据(数组中各元素
+            {
+                ?>
+
+                <tr onMouseOver="this.style.backgroundColor='#D8F4FF';"onMouseOut="this.style.backgroundColor='#ffffff';">
+
+                <?php
+
+                echo"
+       <td >$row[customernum]</td>
+       <td>$row[account]</td>
+       <td>$row[email]</td>
+	
+	    <td><a href=javascript:if(confirm('你确定要删除吗？'))location='admin_delete.php?customernum=$row[customernum]'>删除</a></td>";//输出获取的一行数据
+                echo"</tr>";//输出行结束标记
+            };
+            ?>
+            <tr>
+                <td colspan="10" align="center">
+                    <a href="?pageNum=1">首页</a>
+                    <a href="?pageNum=<?php echo $pageNum==1?1:($pageNum-1)?>">上一页</a>
+                    <a href="?pageNum=<?php echo $pageNum==$endPage?$endPage:($pageNum+1)?>">下一页</a>
+                    <a href="?pageNum=<?php echo $endPage?>">尾页</a>
+                </td>
+            </tr>
+
+
+            <?php
+            echo"</table>";//输出表格结束标记
+        }
+        else //没有查询结果
+            echo"尚无管理员信息";
+
+        ?>
+    </div>
+</body>
+
+</html>
+
+
