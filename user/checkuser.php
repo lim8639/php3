@@ -18,18 +18,21 @@ $res['password'];
 if(password_hash($p1)!=$res['password'])
 {
     header('location:user.php');
-}else if (password_hash($p1)==$res['password']){
-
+}else if (password_hash($p1)==$res['password'])
+{
     if (!empty($p2)&&!empty($p3))
-{
-    if($p2==$p3){
-        $sql1="update tab_user set password='$p3' where customernum='$id';";
-        $res=queryOneRecord($conn,$sql1);
+    {
+        if($p2==$p3)
+        {
+            $sql1="update tab_user set password='$p3' where customernum='$id';";
+            $res2=changeRecord($conn,$sql1) or die ("修改失败".$sql1);
+        }
     }
-}else if(!empty(email))
-{
-    $sql2="update tab_user set email='$email' where customernum='$id'";
-}
+    if(!empty($email))
+    {
+        $sql2="update tab_user set email='$email' where customernum='$id'";
+        $res3=changeRecord($conn,$sql2) or die ("修改失败".$sql2);
+    }
 }
 
 ?>
