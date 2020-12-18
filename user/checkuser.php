@@ -22,8 +22,6 @@ if (empty($p1)){
     echo "window.location.href ='user.php';";
     echo "</script>";
 }else if (!empty($p1)){//p1不为空
-//    password_verify($password,$row['password'])
-
     if (password_verify($p1,$res['password']))
     {//旧密码与数据库中的密码一样
         if (!empty($p2)&&!empty($p3))
@@ -33,7 +31,6 @@ if (empty($p1)){
                 $p33 = password_hash($p3,PASSWORD_DEFAULT);
                 $sql1="update tab_user set password='$p33' where customernum='$id';";
                 $res2=changeRecord($conn,$sql1);
-
                 if (empty($email))
                 {
                     echo "<script language='javascript' type='text/javascript'>";
@@ -54,11 +51,6 @@ if (empty($p1)){
                 echo "alert('两次密码不同！');";
                 echo "window.location.href ='user.php';";
                 echo "</script>";
-
-//                $p33 = password_hash($p3,PASSWORD_DEFAULT);
-//                echo $p33;
-
-//            echo $res2;
             }elseif ($p2!=$p3)
             {
                 echo "<script language='javascript' type='text/javascript'>";
@@ -85,7 +77,6 @@ if (empty($p1)){
                 echo "</script>";
             }
         }
-
     }else
 //        if (password_hash($p1,PASSWORD_DEFAULT)!=$res['password'])
     {

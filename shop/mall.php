@@ -223,9 +223,9 @@ include "../verfication/usersession.php";
         </script>
         <div class="kind"></div>
     </div>
-            echo $show;
+          <!--  echo $show;
         }
-        ?>
+        ?>-->
         <!--        格式代码样例-->
         <!--        <div class="newone col-sm-6 col-md-4 ">-->
         <!--            <div class="thumbnail">-->
