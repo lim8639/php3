@@ -97,10 +97,10 @@ $res = queryList($conn,$sql);
                                               <input select-address p="p" c="c" a="a" d="d" ng-model="xxx" placeholder="请选择所在地" type="text" class="form-control" />
                                               <!-- javascript
         ================================================== -->
-                                              <script src="../asset/bootstrap-3.3.7-dist/jquery/jquery-3.5.1.min.js" type="text/javascript"></script>
+<!--                                              <script src="../asset/bootstrap-3.3.7-dist/jquery/jquery-3.5.1.min.js" type="text/javascript"></script>-->
                                               <script src="js/plugins/angular/angular.min.js" type="text/javascript"></script>
                                               <script src="js/selectAddress2.js" type="text/javascript"></script>
-                                              <script src="js/index.js"></script>
+<!--                                              <script src="js/index.js"></script>-->
 
                                       </div>
                                   </div>
@@ -199,7 +199,7 @@ $res = queryList($conn,$sql);
       </div>
 
        <form action="submitorder.php" method="post">
-           hello world
+           <input type="hidden" name="adrr" value="3" >
            <div class="sub">
                <button id="btnsub" class="btn btn-danger" type="submit">提交订单</button>
            </div>
