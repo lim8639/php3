@@ -90,9 +90,9 @@ include "../verfication/usersession.php";
 <div>
 </div>
 </div>
-   <div style="width: 100%;height: 300px;background-color:#3c763d;"></div>
-    <div class="container">
-    <div class="row">
+<!--   <div style="width: 100%;height: 300px;background-color:#3c763d;"></div>-->
+<!--<div class="container">
+    <div class="row">-->
 
     <div class="lunbo">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
