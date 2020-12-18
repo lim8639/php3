@@ -1,3 +1,4 @@
+
 $(document).on("click", "#car", function () {
      // alert("hello world");
     $.ajax({
@@ -37,7 +38,9 @@ $(document).on("click", "#car", function () {
                     "                           <div class=\"dele col-xs-1 col-sm-1 col-md-1 col-lg-1\">\n" +
                     "                               <div class=\"delete-one-car\">\n" +
                     "                                   <button class=\"btn btn-sm deleteOneCar\">\n" +
+
                     "                                       <span class=\" glyphicon glyphicon-trash\"></span>\n" +
+                                                                  "<input type='hidden' name='gid' value='"+data[$i].moditynum+"'>"+
                     "                                   </button>\n" +
                     "                               </div>\n" +
                     "                           </div>\n" +
@@ -65,6 +68,25 @@ $(document).on("click", "#car", function () {
     num--;
     nump.attr('value',num);
 });
+
+$(document).on("click", ".deleteOneCar", function () {
+    var gid = $(this).children('input').val();
+    var $li = $(this).parent().parent().parent().parent('li');
+    $.ajax({
+        type: "POST",
+        url: "car.php?",
+        data: {action:'delete',gid:gid},
+        dataType: "text",
+        async:false,
+        success: function(data) {
+            $n =  $('#num-car');
+            $n.html('');
+            $n.append(data);
+            $li.css('display','none')
+        }
+    });
+});
+
 /**
  * 删除全部数据
  */
@@ -85,16 +107,17 @@ $(document).on("click", "#delete-all", function () {
         $n.html('');
         $n.append(0);
     }
-
 });
 });
-    $(document).on("click", "#submit", function () {
+   /**
+    * 购物车提交
+    */
+$(document).on("click", "#submit", function () {
 
 });
     $(document).on("click", ".plus", function () {
     var nump = $(this).parent('div').children('label').children('input');
     var num =  nump.val();
-
     num++;
     nump.attr('value',num);
     });

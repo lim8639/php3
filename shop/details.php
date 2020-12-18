@@ -12,10 +12,10 @@
     <link rel="stylesheet" href="css/details.css">
     <link rel="stylesheet" href="../utils/car.css">
     <script src="../asset/bootstrap-3.3.7-dist/jquery/jquery-3.5.1.min.js">
-
     </script>
     <script src="../asset/bootstrap-3.3.7-dist/js/bootstrap.min.js">
-
+    </script>
+    <script src="js/car.js">
     </script>
 </head>
 <body>

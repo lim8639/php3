@@ -54,6 +54,7 @@
 }
 
 .name input{
+    text-align: center;
     width: 30px;
     border: #00000000;
     display: inline-block;

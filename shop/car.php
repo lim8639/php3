@@ -16,20 +16,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"&&!empty($_POST['action'])) {
             break;
         case 'deleteall':
             deleteall($conn);
+            break;
+        case 'delete':
+            deleteCar($conn);
+        case 'getcount':
+            getcount($conn);
 
-    }
-} elseif ($_SERVER["REQUEST_METHOD"] == "GET"&&!empty($_GET['action'])){
-    $uid = $_SESSION['username'];
-    $gid = $_GET['gid'];
-    if ($_GET['action']=='delete'){
-       deleteCar($uid,$gid);
-    }elseif ($_GET['action']=='deleteall'){
-       deleteAllCar($uid);
     }
 }else{
     echo "<h1>你这是请求吗，请个锤子</h1>";
 }
-
+function getcount($conn){
+    $uid = $_SESSION['username'];
+    $sql4 = "select count(customernum) from tab_shop where customernum =$uid;";
+    $rec = queryOneRecord($conn, $sql4);
+    echo  $rec['count(customernum)'];
+}
 function queryListCar($conn){
     $uid = $_SESSION['username'];
     $sql = "select * from tab_shop where customernum =  $uid";
@@ -65,10 +67,18 @@ function addtoCar($conn){
    }
 }
 
-function deleteCar($uid,$gid){
+
+function deleteCar($conn){
+    $gid =  $_POST['gid'];
     $uid = $_SESSION['username'];
-    $sql = "delete from tab_shop where customernum =$uid and moditynum =$uid;";
-    echo changeRecord($conn,$sql);
+    $sql = "delete from tab_shop where customernum = '$uid' and moditynum ='$gid';";
+    if (changeRecord($conn,$sql)){
+        $sql2 = "select count(customernum) from tab_shop where customernum =$uid;";
+        $rec = queryOneRecord($conn,$sql2);
+        echo $rec['count(customernum)'];
+    }else{
+        echo 0;
+    }
 }
 
 function deleteall($conn){

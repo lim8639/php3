@@ -16,9 +16,9 @@
     border-left: 5px #c61d25 solid;
 }
 .adrr{
-    margin: 20px 0;
-    padding: 35px 15px;
-    background-color: #fff9ef;
+    margin: 0;
+    padding: 10px 0;
+
 
 }
 .the-address{
@@ -49,12 +49,7 @@
     height: 25px!important;
     padding: 0!important;
 }
-.sub{
-    padding: 20px 30px;
-    text-align: right;
-}
 #btnsub{
-
     outline-color: #f7f7f9;
     background-color: #c61d25;
     width: 160px;
@@ -63,4 +58,43 @@
     font-size: 20px;
     font-family: "微软雅黑", Arial, Helvetica, sans-serif;
 }
+.myddr{
+    background-color: #fff9ef;
+    margin: 0 20px;
+    padding-right: 20px;
+}
+.selectadrr{
+    padding-bottom: 5px;
+    background-color: #fff9ef;
+    margin: 0 20px;
+}
+.selectadrr label{
+    padding:0 20px;
+    width: 100%;
+}
+.sub{
+    padding: 20px 30px;
+    text-align: right;
+}
 
+.title2{
+    padding: 0 20px;
+    line-height: 40px;
+    height: 40px;
+    font-size: 20px;
+}
+#select1{
+    padding: 0 30px;
+    font-size: 14px;
+    font-family: "宋体", serif;
+    border-radius: 10px;
+    color: #000000;
+    background-color: #e3ece2;
+    outline-color: #f7f7f9;
+    height: 80px;
+    width: 100%;
+}
+#select1 option{
+    height: 30px;
+    line-height: 30px;
+}

@@ -12,26 +12,38 @@
 <div id="test">
 不存在
 </div>
-
+<form action="">
+    <input id="text1" type="text" name="key" value="value">
+</form>
 <h1>hello world</h1>
     <button id="btn">
         test
     </button>
     <script>
          $('#btn').click(function () {
+
              // $.post("car.php","action=query",function(result){
              //    alert(result);
              // },"text");
              /**
               * 完整的ajax 请求，默认异步请求
+              *
+              *  ajax 只是看不到，所以觉得难
               */
+             // 拿到值 key:value
+              $val = $('#text1').val();
              $.ajax({
                  type: "POST",
-                 url: "car.php",
-                 data: {action:"query",moditynum:},
-                 dataType: "text",
-                 success: function(data) {
-                     $('#test').append(data);
+                 url: "api.php",
+                 data: {action:"changepassword",name:$val,p1:1234,p3:456},
+
+                   // request 这个data是要包装在 post或者是get里面发给服务器的
+                 //
+                 // input
+                   // 返回
+                 dataType: "text", // json text
+                 success: function(aedssdf) { // back response
+                    alert(aedssdf);
                  }
              });
          })

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <dataSource name="myphp@123.56.1.58">
-  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.20">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.19">
     <root id="1">
       <ServerVersion>5.7.31</ServerVersion>
       <DefaultEngine>InnoDB</DefaultEngine>
@@ -723,7 +723,7 @@
     </collation>
     <user id="226" parent="1" name="myphp">
       <Host>%</Host>
-      <ObjectGrants>ALL PRIVILEGES|myphp
+      <ObjectGrants>ALL PRIVILEGES|myphp:null
 </ObjectGrants>
     </user>
     <table id="227" parent="3" name="t_user"/>
@@ -733,237 +733,262 @@
     <table id="231" parent="3" name="tab_shop"/>
     <table id="232" parent="3" name="tab_type"/>
     <table id="233" parent="3" name="tab_user"/>
-    <column id="234" parent="227" name="uid">
+    <table id="234" parent="3" name="tab_user2"/>
+    <column id="235" parent="227" name="uid">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="235" parent="227" name="username">
+    <column id="236" parent="227" name="username">
       <Position>2</Position>
       <DataType>char(32)|0s</DataType>
     </column>
-    <column id="236" parent="227" name="password">
+    <column id="237" parent="227" name="password">
       <Position>3</Position>
       <DataType>char(64)|0s</DataType>
     </column>
-    <column id="237" parent="227" name="name">
+    <column id="238" parent="227" name="name">
       <Position>4</Position>
       <DataType>char(32)|0s</DataType>
     </column>
-    <column id="238" parent="227" name="qq">
+    <column id="239" parent="227" name="qq">
       <Position>5</Position>
       <DataType>mediumtext|0s</DataType>
     </column>
-    <key id="239" parent="227" name="PRIMARY">
+    <key id="240" parent="227" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>uid</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="240" parent="228" name="addressnum">
+    <column id="241" parent="228" name="addressnum">
       <Position>1</Position>
       <DataType>int(20)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="241" parent="228" name="datailaddress">
+    <column id="242" parent="228" name="datailaddress">
       <Position>2</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="242" parent="228" name="name">
+    <column id="243" parent="228" name="name">
       <Position>3</Position>
       <DataType>varchar(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="243" parent="228" name="phonenumber">
+    <column id="244" parent="228" name="phonenumber">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="244" parent="228" name="remarks">
+    <column id="245" parent="228" name="remarks">
       <Position>5</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="245" parent="228" name="customernum">
+    <column id="246" parent="228" name="customernum">
       <Position>6</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="246" parent="228" name="PRIMARY">
+    <key id="247" parent="228" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>addressnum</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="247" parent="229" name="moditynum">
+    <column id="248" parent="229" name="moditynum">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="248" parent="229" name="modityname">
+    <column id="249" parent="229" name="modityname">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="249" parent="229" name="warehouse">
+    <column id="250" parent="229" name="warehouse">
       <Position>3</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="250" parent="229" name="typename">
+    <column id="251" parent="229" name="typename">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="251" parent="229" name="bid">
+    <column id="252" parent="229" name="bid">
       <Position>5</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="252" parent="229" name="time">
+    <column id="253" parent="229" name="time">
       <Position>6</Position>
       <DataType>date|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="253" parent="229" name="sellprice">
+    <column id="254" parent="229" name="sellprice">
       <Position>7</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="254" parent="229" name="picture">
+    <column id="255" parent="229" name="picture">
       <Position>8</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="255" parent="229" name="moditydescribe">
+    <column id="256" parent="229" name="moditydescribe">
       <Position>9</Position>
       <DataType>varchar(100)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="256" parent="229" name="PRIMARY">
+    <key id="257" parent="229" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>moditynum</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="257" parent="230" name="ordernum">
+    <column id="258" parent="230" name="ordernum">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="258" parent="230" name="moditynum">
+    <column id="259" parent="230" name="moditynum">
       <Position>2</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="259" parent="230" name="num">
+    <column id="260" parent="230" name="num">
       <Position>3</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="260" parent="230" name="money">
+    <column id="261" parent="230" name="money">
       <Position>4</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="261" parent="230" name="customernum">
+    <column id="262" parent="230" name="customernum">
       <Position>5</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="262" parent="230" name="addressnum">
+    <column id="263" parent="230" name="addressnum">
       <Position>6</Position>
       <DataType>int(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="263" parent="230" name="PRIMARY">
+    <key id="264" parent="230" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ordernum</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="264" parent="231" name="customernum">
+    <column id="265" parent="231" name="customernum">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="265" parent="231" name="moditynum">
+    <column id="266" parent="231" name="moditynum">
       <Position>2</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="266" parent="231" name="modityname">
+    <column id="267" parent="231" name="modityname">
       <Position>3</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="267" parent="231" name="picture">
+    <column id="268" parent="231" name="picture">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="268" parent="231" name="shopnum">
+    <column id="269" parent="231" name="shopnum">
       <Position>5</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="269" parent="232" name="typenum">
+    <column id="270" parent="232" name="typenum">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="270" parent="232" name="typename">
+    <column id="271" parent="232" name="typename">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <key id="271" parent="232" name="PRIMARY">
+    <key id="272" parent="232" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>typenum</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="272" parent="233" name="customernum">
+    <column id="273" parent="233" name="customernum">
       <Position>1</Position>
       <DataType>int(10)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="273" parent="233" name="account">
+    <column id="274" parent="233" name="account">
       <Position>2</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="274" parent="233" name="password">
+    <column id="275" parent="233" name="password">
       <Position>3</Position>
       <DataType>varchar(128)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="275" parent="233" name="email">
+    <column id="276" parent="233" name="email">
       <Position>4</Position>
       <DataType>varchar(20)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="276" parent="233" name="isadmin">
+    <column id="277" parent="233" name="isadmin">
       <Position>5</Position>
       <DataType>int(5)|0s</DataType>
       <NotNull>1</NotNull>
       <DefaultExpression>0</DefaultExpression>
     </column>
-    <index id="277" parent="233" name="account">
+    <index id="278" parent="233" name="account">
       <ColNames>account</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="278" parent="233" name="PRIMARY">
+    <key id="279" parent="233" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>customernum</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="279" parent="233" name="account">
+    <key id="280" parent="233" name="account">
       <ColNames>account</ColNames>
       <UnderlyingIndexName>account</UnderlyingIndexName>
     </key>
+    <column id="281" parent="234" name="customernum">
+      <Position>1</Position>
+      <DataType>int(10)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="282" parent="234" name="petname">
+      <Position>2</Position>
+      <DataType>varchar(10)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="283" parent="234" name="picture">
+      <Position>3</Position>
+      <DataType>varchar(100)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="284" parent="234" name="customernum">
+      <ColNames>customernum</ColNames>
+      <Type>btree</Type>
+    </index>
+    <foreign-key id="285" parent="234" name="tab_user2_ibfk_1">
+      <ColNames>customernum</ColNames>
+      <RefTableName>tab_user</RefTableName>
+      <RefColNames>customernum</RefColNames>
+    </foreign-key>
   </database-model>
 </dataSource>

@@ -74,6 +74,7 @@ include "../verfication/usersession.php";
                                 <li><a href="../user/user.php">我的账户</a></li>
                                 <li><a href="../user/user.php">我的订单</a></li>
                                 <li><a href="../user/user.php">购物车</a></li>
+                                <li><a href="../verfication/check.php?action=logout">退出登录</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="../user/user.php">更多我的</a></li>
                             </ul>
@@ -82,9 +83,17 @@ include "../verfication/usersession.php";
                 </div><!-- /.navbar-collapse -->
             </nav>
         </div><!-- /.container-fluid -->
+        </div><!-- /.container-fluid -->
+ </nav>
     </div>
 </div>
 <div>
+</div>
+</div>
+   <div style="width: 100%;height: 300px;background-color:#3c763d;"></div>
+    <div class="container">
+    <div class="row">
+
     <div class="lunbo">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -215,6 +224,47 @@ include "../verfication/usersession.php";
         </script>
         <div class="kind"></div>
     </div>
+            echo $show;
+        }
+        ?>
+        <!--        格式代码样例-->
+        <!--        <div class="newone col-sm-6 col-md-4 ">-->
+        <!--            <div class="thumbnail">-->
+        <!--                <img src="img/k2.jpg">-->
+        <!--                <div class="caption">-->
+        <!--                    <h3>商品名称</h3>-->
+        <!--                    <p>-->
+        <!--                        <a href="#" class="btn btn-primary" role="button">加入购物车</a>-->
+        <!--                        <a href="#" class="btn btn-default" role="button">购买</a>-->
+        <!--                    </p>-->
+        <!--                </div>-->
+        <!--            </div>-->
+        <!--        </div>-->
+    </div>
+    <input type="hidden" id="islogin" value="<?php if(empty($_SESSION['username'])){
+         echo "0";
+    }else{
+        echo "1";
+    }?>">
+    <script>
+
+          $('.btn-into-car').click(function () {
+              var value = $(this).children('input').val();
+              $.ajax({
+                  type: "POST",
+                  url: "car.php",
+                  data: {action:"addOneCar",moditynum:value,shopnum:1},
+                  dataType: "text",
+                  async:true,
+                  success: function(data){
+                      $n =  $('#num-car')
+                      $n.html('');
+                      $n.append(data);
+                  }
+              });
+          });
+    </script>
+    <div class="kind"></div>
 </div>
 
 <div class="page">

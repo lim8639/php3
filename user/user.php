@@ -130,10 +130,11 @@ include "../admin/conn.php";
                             <input type="file" id="exampleInputFile">
                             <p class="help-block">Example block-level help text here.</p>
                         </div>
+                        <button type="button" onclick="window.location.href='../verfication/check.php?action=logout'" class="btn btn-default" id="btn1">退出登陆</button>
 
                         <button type="submit" class="btn btn-default" id="btn1">提交</button>
                     </form>
-                    <!--<script>
+                     <!--<script>
                         $("#btn1").click(function () {
                             var p1 = $("#oldpassword").val();
                             if(p1==''){
@@ -192,7 +193,7 @@ include "../admin/conn.php";
                                 <p>...</p>
                                 <p><a href="#" class="btn btn-primary" role="button">购买</a>
                                     <a href="#" class="btn btn-default" role="button">移除</a>
-                                </p>
+                                </p>6 7i365u
                             </div>
                         </div>
                     </div>

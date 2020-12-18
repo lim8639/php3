@@ -72,10 +72,18 @@ nav{
 .tab_list{
     margin-bottom: 80px;
     position: relative;
-    text-align: center;
+    text-align: center;}
+.tab_list ul::-webkit-scrollbar{
+    display: none;
+}
+body{
+    overflow-x: hidden;
+}
+.top1_ul_first::-webkit-scrollbar{
+    display: none;
 }
 .tab_list ul{
-position: absolute;
+   position: absolute;
     top: 0;
     left: 50%;
     margin-left: -720px;
