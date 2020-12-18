@@ -74,6 +74,7 @@ include "../verfication/usersession.php";
                                 <li><a href="../user/user.php">我的账户</a></li>
                                 <li><a href="../user/user.php">我的订单</a></li>
                                 <li><a href="../user/user.php">购物车</a></li>
+                                <li><a href="../verfication/check.php?action=logout">退出登录</a></li>
                                 <li role="separator" class="divider"></li>
                                 <li><a href="../user/user.php">更多我的</a></li>
                             </ul>
