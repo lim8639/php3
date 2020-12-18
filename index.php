@@ -109,11 +109,11 @@ include "utils/index-header.php";
                                                     <div class="container">
                                                         <div class="list_a" style="left:0px;">
                                                             <!--<img src="../static/image/photo1.jpg" alt="5"/>-->
-                                                            <img src="admin/images/scroll/in_555.jpg" alt="1"/>
-                                                            <img src="admin/images/scroll/in_444.jpg" alt="2"/>
-                                                            <img src="admin/images/scroll/in_666.jpg" alt="3"/>
-                                                            <img src="admin/images/scroll/in_222.jpg" alt="4"/>
-                                                            <img src="admin/images/scroll/in_111.jpg" alt="5"/>
+                                                            <img src="admin/images/scroll/in_777.jpg" alt="1"/>
+                                                            <img src="admin/images/scroll/in_888.jpg" alt="2"/>
+                                                            <img src="admin/images/scroll/in_999.jpg" alt="3"/>
+                                                            <img src="admin/images/scroll/in_101.jpg" alt="4"/>
+                                                            <img src="admin/images/scroll/in_666.jpg" alt="5"/>
                                                             <!--<img src="../static/image/banner.jpg" alt="1"/>-->
                                                         </div>
 
@@ -136,6 +136,7 @@ include "utils/footer.php";
 <script>
     var imgCount = 5;
     var index = 1;
+    var index2 = 1;
     var intervalId;
     var buttonSpan = $('.top1_ul_first')[0].children;
     var buttonSpan2 = $('#top1_ul_second')[0].children;
@@ -175,9 +176,9 @@ include "utils/footer.php";
         for(var i=0;i<length2;i++){
             buttonSpan2[i].onclick = function(){
                 if($(this).attr('index')==1){
-                    index = 5;
+                    index2= 5;
                 }else{
-                    index = $(this).attr('index')-1;
+                    index2 = $(this).attr('index')-1;
                 }
                 nextPage2(true);
 
@@ -216,21 +217,21 @@ include "utils/footer.php";
         var targetLeft = 0;
 
         if(next){//往后走
-            if(index == 5){//到最后一张，直接跳到第一张
+            if(index2 == 5){//到最后一张，直接跳到第一张
                 targetLeft = 0;
-                index = 1;
+                index2 = 1;
             }else{
-                index++;
-                targetLeft = -1000*(index-1);
+                index2++;
+                targetLeft = -1000*(index2-1);
             }
 
         }else{//往前走
-            if(index == 1){//在第一张，直接跳到第五张
-                index = 5;
+            if(index2 == 1){//在第一张，直接跳到第五张
+                index2 = 5;
                 targetLeft = -1000*(imgCount-1);
             }else{
-                index--;
-                targetLeft = -1000*(index-1);
+                index2--;
+                targetLeft = -1000*(index2-1);
             }
 
         }
