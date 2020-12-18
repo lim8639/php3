@@ -93,7 +93,6 @@ include "../verfication/usersession.php";
 <!--   <div style="width: 100%;height: 300px;background-color:#3c763d;"></div>-->
 <!--<div class="container">
     <div class="row">-->
-
     <div class="lunbo">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -246,24 +245,6 @@ include "../verfication/usersession.php";
     }else{
         echo "1";
     }?>">
-    <script>
-
-          $('.btn-into-car').click(function () {
-              var value = $(this).children('input').val();
-              $.ajax({
-                  type: "POST",
-                  url: "car.php",
-                  data: {action:"addOneCar",moditynum:value,shopnum:1},
-                  dataType: "text",
-                  async:true,
-                  success: function(data){
-                      $n =  $('#num-car')
-                      $n.html('');
-                      $n.append(data);
-                  }
-              });
-          });
-    </script>
     <div class="kind"></div>
 </div>
 
