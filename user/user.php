@@ -50,7 +50,8 @@ include "../admin/conn.php";
     $id = $_SESSION['username']; // 在登录界面
     // 这里黄色按 alt + enter  意思是设置一个标准给他检查
     // 那就换成account
-    $sql = "SELECT * FROM tab_user WHERE account = $id;";
+//    echo $id;
+    $sql = "SELECT * FROM tab_user WHERE customernum = '$id';";
 
 //    开始查询
 
@@ -65,11 +66,11 @@ include "../admin/conn.php";
         <div class="left col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div id="fixed">
                 <div class="img">
-                    <img src="../asset/src/img/th1.png" class="img-circle">
+                    <img src="../asset/src/img2/8.png" class="img-circle">
                 </div>
                 <div class="leftdown">
                     <ul style="padding: 0">
-                        <li><h3>用户编号:<?php $_SESSION['username'];?></h3></li>
+                        <li><h3>用户编号:<?php echo $res['account'];?></h3></li>
                         <li><h3>账号:222</h3></li>
 <!--                        -->
                         <li><h3>邮箱:<?php
@@ -245,18 +246,75 @@ include "../admin/conn.php";
             <div class="rightdan" id="order">
                 <div class="righttop1"><h2 align="center"><span class="glyphicon glyphicon-list-alt"></span>我的订单</h2></div>
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <?php
+                    $sql1="select * from tab_book where customernum='$id'";
+                    $res1 = queryOneRecord($conn,$sql1);
+                    $oid=$res1['oid'];
+
+                    $sql2="select * from tab_mo where oid='$oid'";
+                    $res2 = queryOneRecord($conn,$sql2);
+                    $mid=$res2['mid'];
+                    $res4=queryList($conn,$sql2);
+
+                    $sql3="select * from tab_modity where moditynum='$mid'";
+                    $res3 = queryOneRecord($conn,$sql3);
+                    ?>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <?php echo "待付款"?>
-                                    <span class="badge" style="float: right">14</span>
+                                    <?php echo "成功订单"?>
+                                    <span class="badge" style="float: right"><?php echo count($res4)?></span>
                                 </a>
                             </h4>
                         </div>
+
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
-                                <div class="orderphoto col-sm-6 col-md-4">
+                                <div class="panel panel-default">
+                                    <!-- Default panel contents -->
+                                    <div class="panel-heading">成功订单</div>
+
+                                    <!-- Table -->
+                                    <table class="table">
+                                        <tr>
+                                            <th>订单编号</th>
+                                            <th>商品编号</th>
+                                            <th>商品名称</th>
+                                            <th>商品价格</th>
+                                            <th>成交时间</th>
+                                        </tr>
+                                        <?php
+
+                                               echo "<tr>";
+
+                                               echo "<td>";
+                                               echo $res1['oid'];
+                                               echo "</td>";
+                                               echo "<td>";
+                                               echo $res3['moditynum'];
+                                               echo "</td>";
+                                               echo "<td>";
+                                               echo $res3['modityname'];
+                                               echo "</td>";
+                                               echo "<td>";
+                                               echo $res3['sellprice'];
+                                               echo "</td>";
+                                               echo "<td>";
+                                               echo $res1['ordertime'];
+                                               echo "</td>";
+
+                                               echo "</tr>";
+//                                           }
+                                        ?>
+                                        <tr>
+                                            <td colspan="5">
+                                                <?php  print_r($res4) ;?>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </div>
+                                <!--<div class="orderphoto col-sm-6 col-md-4">
                                     <div class="thumbnail2 thumbnail">
                                         <img src="..." alt="...">
                                         <div class="caption">
@@ -299,9 +357,9 @@ include "../admin/conn.php";
                                                 <a href="#" class="btn btn-default" role="button">移除</a></p>
                                         </div>
                                     </div>
-                                </div>
+                                </div>-->
                             </div>
-                            <div class="page">
+                            <!--<div class="page">
                                 <nav aria-label="Page navigation">
                                     <ul class="pagination">
                                         <li>
@@ -321,14 +379,14 @@ include "../admin/conn.php";
                                         </li>
                                     </ul>
                                 </nav>
-                            </div>
+                            </div>-->
                         </div>
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <?php echo "待发货"?>
+                                    <?php echo "未支付订单"?>
                                     <span class="badge" style="float: right">14</span>
                                 </a>
                             </h4>

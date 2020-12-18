@@ -90,7 +90,7 @@ li{
     width: 240px;
 }
 .panel-body{
-    height: 300px;
+    height: auto;
     width: 750px;
 }
 .orderphoto{
