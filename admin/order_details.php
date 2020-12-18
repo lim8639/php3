@@ -72,13 +72,13 @@ include_once("top.php");
                     </td>
                 </tr>
                 <tr >
-                    <td width="129" height ="35" align="right"  ><p style="margin-top: 5px">买家信息：</p></td>
+                    <td width="129" height ="35" align="right"  ><p style="margin-top: 5px">管理员信息：</p></td>
                     <td width="618" >
-                        <p style="display:inline-block; class="num";margin:10px 0 0 15px;"><span> <?php echo "买家编号：". $row2["customernum"]?> </span><p/>
-                        <p style="display:inline-block;class="num"; margin:15px><span> <?php echo "买家账号： ". $row2["account"]?> </span><p/>
+                        <p style="display:inline-block; class="num";margin:10px 0 0 15px;"><span> <?php echo "管理员编号：". $row2["customernum"]?> </span><p/>
+                        <p style="display:inline-block;class="num"; margin:15px><span> <?php echo "管理员账号： ". $row2["account"]?> </span><p/>
 
-                        <p style="display:inline-block; class="num";margin:10px 0 0 15px;"><span> <?php echo "卖家邮箱：". $row2["email"]?> </span><p/>
-                        <p style="display:inline-block; class="num";margin:10px 0 0 15px;"><span> <?php echo "收获地址编号：". $row1["addressnum"]?> </span><p/>
+                        <p style="display:inline-block; class="num";margin:10px 0 0 15px;"><span> <?php echo "管理员邮箱：". $row2["email"]?> </span><p/>
+
                     </td>
                 </tr>
                 <tr >
