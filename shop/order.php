@@ -140,7 +140,7 @@ if (!empty($_POST['tel'])) {
 <!--                                              <script src="../asset/bootstrap-3.3.7-dist/jquery/jquery-3.5.1.min.js" type="text/javascript"></script>-->
                                               <script src="js/plugins/angular/angular.min.js" type="text/javascript"></script>
                                               <script src="js/selectAddress2.js" type="text/javascript"></script>
-<!--                                              <script src="js/index.js"></script>-->
+                                              <script src="js/index.js"></script>
                                       </div>
                                   </div>
                                   <div class="form-group">
@@ -149,7 +149,6 @@ if (!empty($_POST['tel'])) {
                                           <input type="text" name="mark" class="form-control"  placeholder="">
                                       </div>
                                   </div>
-
                                   <button type="submit" class="btn btn-md">点击添加</button>
                               </form>
                           </div>
@@ -172,20 +171,11 @@ if (!empty($_POST['tel'])) {
                 <tr>
                     <td>
                         <label>
-                            <input type="radio" name="gender"  >
+                            <input type="radio" checked="checked"  name="gender"  >
                         </label>
                     </td>
                     <td>￥10.00</td>
                     <td>在线订单不满99元支付运费10元</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input   type="radio" name="gender" value="2">
-                        </label>
-                    </td>
-                    <td>￥0</td>
-                    <td>货到付款</td>
                 </tr>
                  </tbody>
                 <script>
@@ -247,7 +237,6 @@ if (!empty($_POST['tel'])) {
                        }
                    })
                </script>
-
            </div>
        </form>
 </div>

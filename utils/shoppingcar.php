@@ -53,12 +53,12 @@
 <!--                           </div>-->
 <!--                       </div>-->
 <!--                    </li>-->
-                                          <li>     <div class="name col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                                  <p>您的购物车空空如也</p>
-                                              </div></li>
+
+     <li>     <div class="name col-xs-6 col-sm-6 col-md-6 col-lg-6">
+              <p>您的购物车空空如也</p>
+         </div></li>
                 </ul>
             </div>
-
             <div class="modal-footer">
                 <button type="button" id="delete-all" class="btn btn-warning" data-dismiss="modal">清空购物车</button>
                 <form action="order.php" method="post" style="display:inline-block">
@@ -67,7 +67,6 @@
                     </label>
                     <button type="submit" id="submit" class="btn btn-success">立即结算</button>
                 </form>
-
             </div>
         </div>
     </div>

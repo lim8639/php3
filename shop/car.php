@@ -40,6 +40,7 @@ function queryListCar($conn){
     echo json_encode($rec,JSON_UNESCAPED_UNICODE);
 }
 
+
 /**
  * @param $conn 添加一个商品到购物车
  */
