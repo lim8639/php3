@@ -16,16 +16,17 @@
     </script>
 </head>
 <body>
-    <?php
-    include "../utils/header.php";
-//    include "../utils/shoppingcar.php";
-    if (empty($_POST['order'])){
-        //header('location:mall.php');
-    }else{
-        $var =   $_POST['order'];
-        print_r($var);
-    }
-    ?>
+<?php
+include "../verfication/usersession.php";
+include "../utils/conn.php";
+include "../utils/dao.php";
+$uid = $_SESSION['username'];
+
+$sql = "select * from tab_modity left join tab_shop on
+ tab_shop.moditynum = tab_modity.moditynum where tab_shop.customernum = '$uid';";
+
+$res = queryList($conn,$sql);
+?>
 <div class="container">
     <div class="page-header">
         <h1>确认订单<small>请仔细检查您的订单</small></h1>
@@ -67,11 +68,16 @@
                                      </tbody>
                                  </table>
                              </div>
+                             <div class="selectadrr">
+                                 <div class="alert alert-success" role="alert">
+                                     当前地址选择
+                                 </div>
+                             </div>
                          </div>
                         <div class="adrr col-lg-6 col-md-6 col-sm-12 col-xs-12">
                           <div class="myddr">
                               <p class="title2">#添加地址</p>
-                              <form class="form-horizontal">
+                              <form class="form-horizontal" id="adrrform">
                                   <div class="form-group">
                                       <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
                                       <div class="col-sm-10">
@@ -87,7 +93,15 @@
                                   <div class="form-group">
                                       <label for="inputPassword3" class="col-sm-2 control-label">地址</label>
                                       <div class="col-sm-10">
-                                          <input select-address p="p" c="c" a="a" d="d" ng-model="xxx" placeholder="请选择所在地" type="text" class="form-control" />
+
+                                              <input select-address p="p" c="c" a="a" d="d" ng-model="xxx" placeholder="请选择所在地" type="text" class="form-control" />
+                                              <!-- javascript
+        ================================================== -->
+                                              <script src="../asset/bootstrap-3.3.7-dist/jquery/jquery-3.5.1.min.js" type="text/javascript"></script>
+                                              <script src="js/plugins/angular/angular.min.js" type="text/javascript"></script>
+                                              <script src="js/selectAddress2.js" type="text/javascript"></script>
+                                              <script src="js/index.js"></script>
+
                                       </div>
                                   </div>
                                   <div class="form-group">
@@ -100,22 +114,12 @@
                                   <div class="form-group">
 
                                   </div>
-                                  <script>
 
-                                  </script>
                               </form>
                           </div>
                         </div>
                     </div>
             </div>
-
-            <!-- javascript
-                ================================================== -->
-                  <script src="../asset/pluge/adrr/js/plugins/jquery/dist/jquery.min.js" type="text/javascript"></script>
-                  <script src="../asset/pluge/adrr/js/plugins/angular/angular.min.js" type="text/javascript"></script>
-                  <script src="../asset/pluge/adrr/js/selectAddress2.js" type="text/javascript"></script>
-                  <script src="../asset/pluge/adrr/js/index.js"></script>
-
                  <div class="title">
             2、配送方式
                 </div>
@@ -132,7 +136,7 @@
                 <tr>
                     <td>
                         <label>
-                            <input type="radio" id="rdo1" value="1">
+                            <input type="radio" name="gender"  >
                         </label>
                     </td>
                     <td>￥10.00</td>
@@ -141,7 +145,7 @@
                 <tr>
                     <td>
                         <label>
-                            <input id="rdo2" type="radio" value="2">
+                            <input   type="radio" name="gender" value="2">
                         </label>
                     </td>
                     <td>￥0</td>
@@ -169,20 +173,17 @@
            </tr>
            </thead>
                 <tbody>
-                <tr>
-                    <td class="first">卡姿兰大眼睛护肤水</td>
-                    <td>99.00</td>
-                    <td>2</td>
+
+               <?php
+               foreach ($res as $item)
+                  echo "<tr>
+                    <td class=\"first\">".$item['modityname']."</td>
+                    <td>".$item['sellprice']."</td>
+                    <td>".$item['shopnum']."</td>
                     <td>-10</td>
-                    <td><span class="glyphicon glyphicon-yen"></span>89.00</td>
-                </tr>
-                <tr>
-                    <td class="first">卡姿兰大眼睛护肤水</td>
-                    <td>99.00</td>
-                    <td>2</td>
-                    <td>-10</td>
-                    <td><span class="glyphicon glyphicon-yen"></span>89.00</td>
-                </tr>
+                    <td><span class=\"glyphicon glyphicon-yen\"></span>".$item['sellprice']*2 ."</td>
+                </tr>"
+               ?>
                 </tbody>
          </table>
                <div class="try-online"><a class="btn-try btn btn-success btn-lg disabled"></a></div>
@@ -197,14 +198,12 @@
 
       </div>
 
-        <div class="sub">
-            <button id="btnsub" class="btn btn-danger" type="button">提交订单</button>
-         </div>
-        <script>
-            $('#btnsub').click(function () {
-                alert("订单已经提交");
-            });
-        </script>
+       <form action="submitorder.php" method="post">
+           hello world
+           <div class="sub">
+               <button id="btnsub" class="btn btn-danger" type="submit">提交订单</button>
+           </div>
+       </form>
 </div>
 <?php  include "../utils/footer.php"?>
 </body>

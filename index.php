@@ -68,7 +68,7 @@ include "utils/index-header.php";
                     <div class="top1_div_third">
                                     <p class="top1_p_first">精品水果</p>
                                     <div class="top1_div_fourth">
-                                        <ul class="top1_ul_first" role="tablist">
+                                        <ul  class="top1_ul_first" role="tablist">
                                             <li class="top1_li_first" role="presentation" index="1"><button type="button" style="background-color:#fff;" class="top1_button_first" index="1">精品水果篮</button></li>
                                             <li class="top1_li_first" index="2"><button type="button" style="background-color:#fff;" class="top1_button_first" index="2">优选樱桃</button></li>
                                             <li class="top1_li_first" index="3"><button type="button" style="background-color:#fff;" class="top1_button_first" index="3">优选猕猴桃</button></li>

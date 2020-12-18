@@ -1,7 +1,23 @@
 <div id="car" data-toggle="modal" data-target="#myModal1">
-    <div id="num-car">1</div>
+    <div id="num-car"></div>
     <img src="../asset/src/img2/car.png" alt="">
 </div>
+<script>
+    $(function () {
+        $.ajax({
+            type: "POST",
+            url: "car.php",
+            data: {action:"getcount"},
+            dataType: "text",
+            async:false,
+            success:function (data) {
+                var n = $('#num-car');
+                n.html('');
+                n.append(data);
+            }
+        })
+    })
+</script>
 <!-- Modal -->
 <div class="modal fade" id="myModal1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog" role="document">
@@ -42,6 +58,7 @@
                                               </div></li>
                 </ul>
             </div>
+
             <div class="modal-footer">
                 <button type="button" id="delete-all" class="btn btn-warning" data-dismiss="modal">清空购物车</button>
                 <form action="order.php" method="post" style="display:inline-block">
