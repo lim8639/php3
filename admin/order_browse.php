@@ -102,12 +102,12 @@ $sql.=" order by ordernum limit ".($pageNum-1)*$pageSize.",".$pageSize;
             echo"<table align='center' >";//输出表格标签
             echo"<tr>
        
-        <th>订单编号</th>
+         <th>进货订单编号</th>
 		<th>商品编号</th>
-		<th>数量</th>
-		<th>金额</th>
-		<th>买家编号</th>
-		<th>地址编号</th>
+		<th>进货数量</th>
+		<th>进货金额</th>
+		<th>管理员</th>
+
 		<th colspan='2'></th></tr>";//输出表头行
             while($row=mysqli_fetch_assoc($result))//从记录集获取一行数据到数组，不为false，则显示该行数据(数组中各元素
             {
@@ -123,7 +123,6 @@ $sql.=" order by ordernum limit ".($pageNum-1)*$pageSize.",".$pageSize;
        <td>$row[num]</td>
 	   <td>$row[money]</td>
        <td>$row[customernum]</td>
-       <td>$row[addressnum]</td>
        ";
 
                 echo"</tr>";//输出行结束标记
