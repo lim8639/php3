@@ -31,9 +31,9 @@
             <a href="user_admin.php">管理员管理</a>
         </div>
         <div class="collapsed">
-            <span>订单管理</span>
-            <a href="order_browse.php">查看订单</a>
-            <a href="order_admin.php">管理订单</a>
+            <span>进货管理</span>
+            <a href="order_browse.php">查看进货</a>
+            <a href="order_admin.php">管理进货</a>
         </div>
         <div class="collapsed">
             <span>公告管理</span>
