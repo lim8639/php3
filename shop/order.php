@@ -231,6 +231,7 @@ if (!empty($_POST['tel'])) {
                <a href="mall.php" class="btn btn-default">取消订单</a>
                <script>
                    $('#btnsub').click(function () {
+
                        if ($('#adrr').val()==0){
                            alert("地址为空，请选择地址");
                            return false;

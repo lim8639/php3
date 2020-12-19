@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>hello world</title>
-    <link rel="stylesheet" href="../asset/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+<link rel="stylesheet" href="../asset/bootstrap-3.3.7-dist/css/bootstrap.min.css">
 </head>
 <body>
 <label for="show">hello</label>
@@ -27,6 +27,18 @@
         })
     </script>
 </div>
+
+
+<form id="myform" action="test1.php" method="post">
+    <label>
+        <input type="text">
+        <button id="bt">
+            提交
+        </button>
+    </label>
+</form>
+
+
 
 </body>
 </html>
