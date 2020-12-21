@@ -12,7 +12,6 @@ function log_or_reg(){
 	}
 </script>
 </head>
-
 <body>
 <div style="height:500px;">
 <form class="login_form_a" action="reg_check.php" method="post">
@@ -37,7 +36,7 @@ function log_or_reg(){
        <label><b>makesure Password</b></label>
       <input type="password" placeholder="Enter Password" name="user_pass2" class="form-control">
       </div>
-       
+
        
        <div class="form-group">
        <label><b>email</b></label>

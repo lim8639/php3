@@ -225,7 +225,8 @@ if (!empty($_POST['tel'])) {
 
            <input type="text" id="adrr" name="adrr" value="<?php
             echo $myaddress;
-             ?>" >
+             ?>"
+           >
            <div class="sub">
                <button id="btnsub" class="btn btn-danger" type="submit">提交订单</button>
                <a href="mall.php" class="btn btn-default">取消订单</a>

@@ -36,7 +36,7 @@ $GLOBALS['root'] = dirname(__FILE__);
     </style>
 </head>
 <body>
-<?php include "utils/header.php"?>
+<?php include "utils/index-header.php"?>
 <div class="container">
     <div class="row">
         <h1>齐赞完成了gitHub测试</h1>
