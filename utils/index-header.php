@@ -59,7 +59,7 @@
         </div>
         <div class="head-right">
             <ul >
-                <li style="padding-top: 10px" >
+                <li style="" >
                     <span id="query"  type="button" style="color: #42b983;background-color: #FFFFFF;
                     height: 38px;border: #FFFFFF" data-toggle="modal" data-target="#myModal">
                         <span style="font-size: 25px;vertical-align: center"  class="glyphicon glyphicon-search hidden-lg hidden-sm"></span>

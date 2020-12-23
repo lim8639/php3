@@ -9,6 +9,9 @@
     padding-top: 20px;
     padding-bottom: 100px;
 }
+#fixed img{
+    width: 100%;
+}
 .left{
     position: relative;
     height: 600px;
@@ -33,6 +36,9 @@ li{
     /*height: 600px;*/
     background-color: #e3ece2;
 }
+/*.rightcar{
+    !*height: auto;*!
+}*/
 .right li{
     float: right;
     height: 40px;
@@ -90,7 +96,7 @@ li{
     width: 240px;
 }
 .panel-body{
-    height: 300px;
+    height: auto;
     width: 750px;
 }
 .orderphoto{

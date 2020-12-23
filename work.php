@@ -36,10 +36,12 @@ $GLOBALS['root'] = dirname(__FILE__);
     </style>
 </head>
 <body>
-<?php include "utils/header.php"?>
+<?php include "utils/index-header.php"?>
 <div class="container">
     <div class="row">
+        <h1>齐赞完成了gitHub测试</h1>
         <h1>三级项目开发页面</h1>
+
         <div class="col-xs-12 .col-sm-12 col-md-6 col-lg-6">
 
             <h3>一、快速链接</h3>
@@ -51,10 +53,13 @@ $GLOBALS['root'] = dirname(__FILE__);
                 <li><a target="_blank"  href="#"></a></li>
             </ul>
             <h3>二、网站目录</h3>
-            <div class="img"> 
+            <div class="img">
                 <img src="asset/src/img2/VERK8CS6TL74N4VAUDSZ252.png" alt="dada">
             </div>
 
+            <div class="hello">
+
+            </div>
         </div>
         <div class="col-xs-12 .col-sm-12 col-md-6 col-lg-6">
             <h3>三、工作日志</h3>

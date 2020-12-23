@@ -50,7 +50,8 @@ include "../admin/conn.php";
     $id = $_SESSION['username']; // 在登录界面
     // 这里黄色按 alt + enter  意思是设置一个标准给他检查
     // 那就换成account
-    $sql = "SELECT * FROM tab_user WHERE account = $id;";
+//    echo $id;
+    $sql = "SELECT * FROM tab_user WHERE customernum = '$id';";
 
 //    开始查询
 
@@ -60,23 +61,18 @@ include "../admin/conn.php";
 //    print_r($res);
     ?>
 </div>
-<div class="container">
+<div class="container" style="padding-top: 40px;">
     <div class="row">
         <div class="left col-xs-12 col-sm-6 col-md-4 col-lg-4">
             <div id="fixed">
                 <div class="img">
-                    <img src="../asset/src/img/th1.png" class="img-circle">
+                    <img src="../asset/src/img2/head.jpg" class="img-circle">
                 </div>
                 <div class="leftdown">
                     <ul style="padding: 0">
-                        <li><h3>用户编号:<?php $_SESSION['username'];?></h3></li>
-                        <li><h3>账号:222</h3></li>
-<!--                        -->
-                        <li><h3>邮箱:<?php
-                                //是一个关联数组
-                                echo $res['email'];
-                                ?>
-                            </h3></li>
+                        <li><h3>用户编号:<?php echo $res['customernum'];?></h3></li>
+                        <li><h3>账号:<?php echo $res['account'];?></h3></li>
+                        <li><h3>邮箱:<?php echo $res['email'];?></h3></li>
                     </ul>
                 </div>
             </div>
@@ -130,276 +126,195 @@ include "../admin/conn.php";
                             <input type="file" id="exampleInputFile">
                             <p class="help-block">Example block-level help text here.</p>
                         </div>
-                        <button type="button" onclick="window.location.href='../verfication/check.php?action=logout'" class="btn btn-default" id="btn1">退出登陆</button>
-
+                        <button type="button" onclick="window.location.href='../verfication/check.php?action=logout'" class="btn btn-default" id="btn1">
+                            退出登陆
+                        </button>
                         <button type="submit" class="btn btn-default" id="btn1">提交</button>
                     </form>
-                     <!--<script>
-                        $("#btn1").click(function () {
-                            var p1 = $("#oldpassword").val();
-                            if(p1==''){
-                                alert("没有输入旧密码");
-                                return false;
-                            }
-                           var p2 =  $("#confirmpassword3").val();
-                           var p3 = $('#newpassword2').val();
-                           var email = $('#exampleInputemail').val();
-                           // $("#confirmpassword3").attr('value',123);
-                           if (p2!=p3){
-                               alert("两次密码不相等");
-                               return false;
-                           }else if (p2!=''&&p3!=''){
-                               if(p2==p3){
-                                   if (email!=''){
-                                       alert("密码和邮箱修改成功");
-                                       return false;
-                                   }else {
-                                       alert("密码修改成功");
-                                       return false;
-                                   }
 
-                               }
-                           }else if (p2==''&&p3==''){
-                               if (email!=''){
-                                   alert("邮箱修改成功");
-                                   return false;
-                               }else {
-                                   alert("请输入修改后的密码或邮箱");
-                                   return false;
-                               }
-                           }
-
-
-
-                        });
-                    </script>-->
                 </div>
             </div>
-            <div class="rightcar" id="car">
-                <div class="righttop1">
-                    <p>
-                        <span class="glyphicon glyphicon-shopping-cart">
-
-                        </span>
-                        购物车
-                    </p>
-                </div>
-                <div class="rightcarall">
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <img src="../admin/images/222.png" alt="...">
-                            <div class="caption">
-                                <h3>商品名称</h3>
-                                <p>...</p>
-                                <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                    <a href="#" class="btn btn-default" role="button">移除</a>
-                                </p>6 7i365u
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <img src="..." alt="...">
-                            <div class="caption">
-                                <h3>商品名称</h3>
-                                <p>...</p>
-                                <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                    <a href="#" class="btn btn-default" role="button">移除</a></p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4">
-                        <div class="thumbnail">
-                            <img src="..." alt="...">
-                            <div class="caption">
-                                <h3>商品名称</h3>
-                                <p>...</p>
-                                <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                    <a href="#" class="btn btn-default" role="button">移除</a></p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="page">
-                    <nav aria-label="Page navigation">
-                        <ul class="pagination">
-                            <li>
-                                <a href="#" aria-label="Previous">
-                                    <span aria-hidden="true">&raquo;</span>
-                                </a>
-                            </li>
-                            <li><a href="#">5</a></li>
-                            <li><a href="#">4</a></li>
-                            <li><a href="#">3</a></li>
-                            <li><a href="#">2</a></li>
-                            <li><a href="#">1</a></li>
-                            <li>
-                                <a href="#" aria-label="Next">
-                                    <span aria-hidden="true">&laquo;</span>
-                                </a>
-                            </li>
-                        </ul>
-                    </nav>
-                </div>
-            </div>
+<!--            <div class="rightcar" id="car">-->
+<!--                <div class="righttop1">-->
+<!--                    <p>-->
+<!--                        <span class="glyphicon glyphicon-shopping-cart">-->
+<!--                        </span>-->
+<!--                        购物车-->
+<!--                    </p>-->
+<!--                </div>-->
+<!--                <div class="rightcarall">-->
+<!--                    <div class="col-sm-6 col-md-4">-->
+<!--                        <div class="thumbnail">-->
+<!--                            <img src="../admin/images/222.png" alt="...">-->
+<!--                            <div class="caption">-->
+<!--                                <h3>商品名称</h3>-->
+<!--                                <p>...</p>-->
+<!--                                <p><a href="#" class="btn btn-primary" role="button">购买</a>-->
+<!--                                    <a href="#" class="btn btn-default" role="button">移除</a>-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-6 col-md-4">-->
+<!--                        <div class="thumbnail">-->
+<!--                            <img src="..." alt="...">-->
+<!--                            <div class="caption">-->
+<!--                                <h3>商品名称</h3>-->
+<!--                                <p>...</p>-->
+<!--                                <p><a href="#" class="btn btn-primary" role="button">购买</a>-->
+<!--                                    <a href="#" class="btn btn-default" role="button">移除</a></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                    <div class="col-sm-6 col-md-4">-->
+<!--                        <div class="thumbnail">-->
+<!--                            <img src="..." alt="...">-->
+<!--                            <div class="caption">-->
+<!--                                <h3>商品名称</h3>-->
+<!--                                <p>...</p>-->
+<!--                                <p><a href="#" class="btn btn-primary" role="button">购买</a>-->
+<!--                                    <a href="#" class="btn btn-default" role="button">移除</a></p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
+<!--                <div class="page">-->
+<!--                    <nav aria-label="Page navigation">-->
+<!--                        <ul class="pagination">-->
+<!--                            <li>-->
+<!--                                <a href="#" aria-label="Previous">-->
+<!--                                    <span aria-hidden="true">&raquo;</span>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                            <li><a href="#">5</a></li>-->
+<!--                            <li><a href="#">4</a></li>-->
+<!--                            <li><a href="#">3</a></li>-->
+<!--                            <li><a href="#">2</a></li>-->
+<!--                            <li><a href="#">1</a></li>-->
+<!--                            <li>-->
+<!--                                <a href="#" aria-label="Next">-->
+<!--                                    <span aria-hidden="true">&laquo;</span>-->
+<!--                                </a>-->
+<!--                            </li>-->
+<!--                        </ul>-->
+<!--                    </nav>-->
+<!--                </div>-->
+<!--            </div>-->
             <div class="rightdan" id="order">
                 <div class="righttop1"><h2 align="center"><span class="glyphicon glyphicon-list-alt"></span>我的订单</h2></div>
                 <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <?php
+                    $sql1="select tab_modity.modityname,tab_modity.moditynum,tab_book.oid,tab_modity.sellprice,tab_book.ordertime from tab_modity join tab_mo on tab_mo.mid
+= tab_modity.moditynum join tab_book on tab_mo.oid
+ = tab_book.oid where customernum = 2007";
+                    $rres=queryList($conn,$sql1);
+                    foreach($rres as $it){
+                        $oid=$it['oid'];
+                        $moditynum=$it['moditynum'];
+                        $modityname=$it['modityname'];
+                        $sellprice=$it['sellprice'];
+                        $ordertime=$it['ordertime'];
+                    }
+                    ?>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingOne">
                             <h4 class="panel-title">
                                 <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    <?php echo "待付款"?>
-                                    <span class="badge" style="float: right">14</span>
+                                    <?php echo "已成功订单"?>
+                                    <span class="badge" style="float: right"><?php echo count($rres)?></span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
                             <div class="panel-body">
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
+                                <div class="panel panel-default">
+                                    <!-- Default panel contents -->
+                                    <div class="panel-heading">已成功订单</div>
+
+                                    <!-- Table -->
+                                    <table class="table">
+                                        <tr>
+                                            <th>订单编号</th>
+                                            <th>商品编号</th>
+                                            <th>商品名称</th>
+                                            <th>商品价格</th>
+                                            <th>成交时间</th>
+                                        </tr>
+                                        <?php
+                                        $sql1="select tab_modity.modityname,tab_modity.moditynum,tab_book.oid,tab_modity.sellprice,tab_book.ordertime from tab_modity join tab_mo on tab_mo.mid
+= tab_modity.moditynum join tab_book on tab_mo.oid
+ = tab_book.oid where customernum = 2007";
+                                        $rres=queryList($conn,$sql1);
+                                        foreach($rres as $it){
+                                            $oid=$it['oid'];
+                                            $moditynum=$it['moditynum'];
+                                            $modityname=$it['modityname'];
+                                            $sellprice=$it['sellprice'];
+                                            $ordertime=$it['ordertime'];
+
+                                               echo "<tr>";
+
+                                               echo "<td>";
+                                               echo $oid;
+                                               echo "</td>";
+                                               echo "<td>";
+                                               echo $moditynum;
+                                               echo "</td>";
+                                               echo "<td>";
+                                               echo $modityname;
+                                               echo "</td>";
+                                               echo "<td>";
+                                               echo $sellprice;
+                                               echo "</td>";
+                                               echo "<td>";
+                                               echo $ordertime;
+                                               echo "</td>";
+
+                                               echo "</tr>";
+                                   }
+                                        ?>
+
+                                    </table>
                                 </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="../admin/images/222.png" alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="page">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination">
-                                        <li>
-                                            <a href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
-                                        <li><a href="#">5</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li>
-                                            <a href="#" aria-label="Next">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
                         </div>
+                    </div>
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingTwo">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    <?php echo "待发货"?>
-                                    <span class="badge" style="float: right">14</span>
+                                    <?php echo "未支付订单"?>
+                                    <span class="badge" style="float: right">0</span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
                             <div class="panel-body">
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
+                                <div class="panel panel-default">
+                                    <!-- Default panel contents -->
+                                    <div class="panel-heading">未支付订单</div>
+
+                                    <!-- Table -->
+                                    <table>
+                                        <table class="table">
+                                            <tr>
+                                                <th>订单编号</th>
+                                                <th>商品编号</th>
+                                                <th>商品名称</th>
+                                                <th>商品价格</th>
+                                                <th>成交时间</th>
+                                            </tr>
+                                            <tr>
+                                                <th>...</th>
+                                                <th>...</th>
+                                                <th>...</th>
+                                                <th>...</th>
+                                                <th>...</th>
+                                            </tr>
+                                        </table>
+
+                                    </table>
                                 </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="../admin/images/222.png" alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="page">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination">
-                                        <li>
-                                            <a href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
-                                        <li><a href="#">5</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li>
-                                            <a href="#" aria-label="Next">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
                             </div>
                         </div>
                     </div>
@@ -408,156 +323,76 @@ include "../admin/conn.php";
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                                     <?php echo "待收货"?>
-                                    <span class="badge" style="float: right">14</span>
+                                    <span class="badge" style="float: right"><?php echo count($rres)?></span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
                             <div class="panel-body">
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="../admin/images/222.png" alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
+                                <div class="panel panel-default">
+                                    <!-- Default panel contents -->
+                                    <div class="panel-heading">待收货订单</div>
+
+                                    <!-- Table -->
+                                    <table>
+                                        <table class="table">
+                                            <tr>
+                                                <th>订单编号</th>
+                                                <th>商品编号</th>
+                                                <th>商品名称</th>
+                                                <th>商品价格</th>
+                                                <th>成交时间</th>
+                                            </tr>
+                                            <tr>
+                                                <th>...</th>
+                                                <th>...</th>
+                                                <th>...</th>
+                                                <th>...</th>
+                                                <th>...</th>
+                                            </tr>
+                                        </table>
+
+                                    </table>
                                 </div>
                             </div>
-                            <div class="page">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination">
-                                        <li>
-                                            <a href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
-                                        <li><a href="#">5</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li>
-                                            <a href="#" aria-label="Next">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
-                            </div>
-                        </div>
+                    </div>
                     </div>
                     <div class="panel panel-default">
                         <div class="panel-heading" role="tab" id="headingFour">
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                                     <?php echo "待评价"?>
-                                    <span class="badge" style="float: right">14</span>
+                                    <span class="badge" style="float: right"><?php echo count($rres)?></span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseFour" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFour">
                             <div class="panel-body">
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
+                                <div class="panel panel-default">
+                                    <!-- Default panel contents -->
+                                    <div class="panel-heading">待评价订单</div>
+
+                                    <!-- Table -->
+                                    <table>
+                                        <table class="table">
+                                            <tr>
+                                                <th>订单编号</th>
+                                                <th>商品编号</th>
+                                                <th>商品名称</th>
+                                                <th>商品价格</th>
+                                                <th>成交时间</th>
+                                            </tr>
+                                            <tr>
+                                                <th>...</th>
+                                                <th>...</th>
+                                                <th>...</th>
+                                                <th>...</th>
+                                                <th>...</th>
+                                            </tr>
+                                        </table>
+
+                                    </table>
                                 </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="../admin/images/222.png" alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="page">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination">
-                                        <li>
-                                            <a href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
-                                        <li><a href="#">5</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li>
-                                            <a href="#" aria-label="Next">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
                             </div>
                         </div>
                     </div>
@@ -566,77 +401,37 @@ include "../admin/conn.php";
                             <h4 class="panel-title">
                                 <a class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
                                     <?php echo "退款/售后"?>
-                                    <span class="badge" style="float: right">14</span>
+                                    <span class="badge" style="float: right"><?php echo count($rres)?></span>
                                 </a>
                             </h4>
                         </div>
                         <div id="collapseFive" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingFive">
                             <div class="panel-body">
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
+                                <div class="panel panel-default">
+                                    <!-- Default panel contents -->
+                                    <div class="panel-heading">退款/售后订单</div>
+
+                                    <!-- Table -->
+                                    <table>
+                                        <table class="table">
+                                            <tr>
+                                                <th>订单编号</th>
+                                                <th>商品编号</th>
+                                                <th>商品名称</th>
+                                                <th>商品价格</th>
+                                                <th>成交时间</th>
+                                            </tr>
+                                            <tr>
+                                                <th>...</th>
+                                                <th>...</th>
+                                                <th>...</th>
+                                                <th>...</th>
+                                                <th>...</th>
+                                            </tr>
+                                        </table>
+
+                                    </table>
                                 </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="..." alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="orderphoto col-sm-6 col-md-4">
-                                    <div class="thumbnail2 thumbnail">
-                                        <img src="../admin/images/222.png" alt="...">
-                                        <div class="caption">
-                                            <h3>商品名称</h3>
-                                            <p>...</p>
-                                            <p><a href="#" class="btn btn-primary" role="button">购买</a>
-                                                <a href="#" class="btn btn-default" role="button">移除</a></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="page">
-                                <nav aria-label="Page navigation">
-                                    <ul class="pagination">
-                                        <li>
-                                            <a href="#" aria-label="Previous">
-                                                <span aria-hidden="true">&raquo;</span>
-                                            </a>
-                                        </li>
-                                        <li><a href="#">5</a></li>
-                                        <li><a href="#">4</a></li>
-                                        <li><a href="#">3</a></li>
-                                        <li><a href="#">2</a></li>
-                                        <li><a href="#">1</a></li>
-                                        <li>
-                                            <a href="#" aria-label="Next">
-                                                <span aria-hidden="true">&laquo;</span>
-                                            </a>
-                                        </li>
-                                    </ul>
-                                </nav>
                             </div>
                         </div>
                     </div>

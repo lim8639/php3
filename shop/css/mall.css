@@ -1,3 +1,6 @@
+.daohang {
+    height: 53px;
+}
 .daohang img{
     height: 50px;
     margin-top: -15px;
@@ -5,10 +8,21 @@
     border-radius: 5px;
 }
 .carousel-inner{
-    height: 500px;
+    height: 300px;
+    /*position: relative;*/
 }
 .container-fluid {
     background-color: #deefe1;
+    height: 53px;
+}
+.navbar{
+    height: 53px;
+}
+.item img{
+    min-width: 100%;
+    object-fit:cover;
+    /*position: absolute;*/
+    height: 100% !important;
 }
 .hot{
     text-align: center;
@@ -30,15 +44,15 @@
     text-align: center;
 }
 .hotone{
-    height: 300px;
-    width: 347px;
+    height: 200px;
+    width: 247px;
     background-color: #f3f3f3;
     display: inline-block;
     margin: 0 20px;
 }
 .hotone img{
-    height: 300px;
-    width: 347px;
+    height: 200px;
+    width: 247px;
 }
 
 .newtop{

@@ -45,7 +45,7 @@ include "../verfication/usersession.php";
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"">
                     <ul class="nav navbar-nav">
                         <li><a href="#hot"><span class="glyphicon glyphicon-time"></span>限时特卖<span class="sr-only">(current)</span></a></li>
-                        <li><a href="#fresh"><span class="glyphicon glyphicon-apple"></span>新鲜水果</a></li>
+                        <li><a href="#new"><span class="glyphicon glyphicon-apple"></span>新鲜水果</a></li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="
                                 glyphicon glyphicon-th"></span>地区特产<span class="caret"></span></a>
@@ -81,15 +81,18 @@ include "../verfication/usersession.php";
                         </li>
                     </ul>
                 </div><!-- /.navbar-collapse -->
+            </nav>
+        </div><!-- /.container-fluid -->
         </div><!-- /.container-fluid -->
  </nav>
     </div>
 </div>
+<div>
 </div>
-   <div style="width: 100%;height: 300px;background-color:#3c763d;"></div>
-    <div class="container">
-    <div class="row">
-
+</div>
+<!--   <div style="width: 100%;height: 300px;background-color:#3c763d;"></div>-->
+<!--<div class="container">
+    <div class="row">-->
     <div class="lunbo">
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <!-- Indicators -->
@@ -132,38 +135,44 @@ include "../verfication/usersession.php";
             </a>
         </div>
     </div>
-    <?php
-    include "../utils/dao.php";
-    include "../utils/conn.php";
-    $sql = "select * from tab_modity;";
-    $var = queryList($conn,$sql);
-    ?>
-    <div class="hot" id="hot">
-        <div class="hottop">
-            <h3>限时热卖</h3>
-        </div>
-        <div class="hotone">
-            <img src="<?php echo "../admin/".$var[1]['picture']?>">
-        </div>
-        <div class="hotone">
-            <img src="<?php echo "../admin/".$var[2]['picture']?>">
-        </div>
-        <div class="hotone hidden-sm hidden-xs" >
-            <img src="<?php echo "../admin/".$var[3]['picture']?>">
-        </div>
-    </div>
-    <div class="new">
-        <div class=" hottop">
-            <h3>新鲜水果</h3>
-        </div>
+</div>
+<div class="container">
+    <div class="row">
         <?php
-        foreach ($var as $item){
-            $show = "<div class=\"newone col-sm-6 col-md-3 col-xs-6 col-lg-3\">
-            <div class=\"thumbnail\">
+        include "../utils/dao.php";
+        include "../utils/conn.php";
+        $sql = "select * from tab_modity;";
+        $var = queryList($conn,$sql);
+        ?>
+        <div class="hot" id="hot">
+            <div class="hottop">
+                <h3>限时热卖</h3>
+            </div>
+            <div class="hotone">
+                <img src="<?php echo "../admin/".$var[1]['picture']?>">
+            </div>
+            <div class="hotone">
+                <img src="<?php echo "../admin/".$var[2]['picture']?>">
+            </div>
+            <div class="hotone hidden-sm hidden-xs" >
+                <img src="<?php echo "../admin/".$var[3]['picture']?>">
+            </div>
+            <div class="hotone hidden-sm hidden-xs" >
+                <img src="<?php echo "../admin/".$var[4]['picture']?>">
+            </div>
+        </div>
+        <div class="new">
+            <div class=" hottop" id="new">
+                <h3>新鲜水果</h3>
+            </div>
+            <?php
+            foreach ($var as $item){
+                $show = "<div class=\"newone col-sm-6 col-md-3 col-xs-6 col-lg-3\">
+            <div class=\"thumbnail col-xs-12 col-sm-6\">
                 <img src=\"../admin/".$item['picture']."\">
                 <div class=\"caption\">
                     <h3>".$item['modityname']."</h3>
-   
+                    <p>&nbsp;</p>
                     <p>
                         <button  class=\"btn btn-primary btn-into-car\" role=\"button\">
                         <input type='hidden' name='id' value='".$item['moditynum']."'>
@@ -173,9 +182,50 @@ include "../verfication/usersession.php";
                 </div>
             </div>
         </div>";
-            echo $show;
+                echo $show;
+            }
+            ?>
+            <!--        格式代码样例-->
+            <!--        <div class="newone col-sm-6 col-md-4 ">-->
+            <!--            <div class="thumbnail">-->
+            <!--                <img src="img/k2.jpg">-->
+            <!--                <div class="caption">-->
+            <!--                    <h3>商品名称</h3>-->
+            <!--                    <p>-->
+            <!--                        <a href="#" class="btn btn-primary" role="button">加入购物车</a>-->
+            <!--                        <a href="#" class="btn btn-default" role="button">购买</a>-->
+            <!--                    </p>-->
+            <!--                </div>-->
+            <!--            </div>-->
+            <!--        </div>-->
+        </div>
+        <input type="hidden" id="islogin" value="<?php if(empty($_SESSION['username'])){
+            echo "0";
+        }else{
+            echo "1";
+        }?>">
+        <script>
+            $('.btn-into-car').click(function () {
+                var value = $(this).children('input').val();
+                $.ajax({
+                    type: "POST",
+                    url: "car.php",
+                    data: {action:"addOneCar",moditynum:value,shopnum:1},
+                    dataType: "text",
+                    async:true,
+                    success: function(data){
+                        $n =  $('#num-car')
+                        $n.html('');
+                        $n.append(data);
+                    }
+                });
+            });
+        </script>
+        <div class="kind"></div>
+    </div>
+          <!--  echo $show;
         }
-        ?>
+        ?>-->
         <!--        格式代码样例-->
         <!--        <div class="newone col-sm-6 col-md-4 ">-->
         <!--            <div class="thumbnail">-->
@@ -195,24 +245,6 @@ include "../verfication/usersession.php";
     }else{
         echo "1";
     }?>">
-    <script>
-
-          $('.btn-into-car').click(function () {
-              var value = $(this).children('input').val();
-              $.ajax({
-                  type: "POST",
-                  url: "car.php",
-                  data: {action:"addOneCar",moditynum:value,shopnum:1},
-                  dataType: "text",
-                  async:true,
-                  success: function(data){
-                      $n =  $('#num-car')
-                      $n.html('');
-                      $n.append(data);
-                  }
-              });
-          });
-    </script>
     <div class="kind"></div>
 </div>
 <div class="page">
