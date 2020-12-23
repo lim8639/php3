@@ -45,17 +45,22 @@ if($_SERVER["REQUEST_METHOD"]=="POST")
     };
     if (empty($bid) or is_numeric($bid)==false)
     {
-        echo "<script>alert('进价不能为空且必须为数字');history.back();</script>";
+        echo "<script>alert('进价不能为空且必须为正数');history.back();</script>";
     };
 
-    if (empty($sellprice) or is_numeric($sellprice)==false)
+    if(((int)$bid)<=0)
     {
-        echo "<script>alert('售价不能为空且必须为数字');history.back();</script>";
+        echo "<script>alert('进价必须为正数');history.back();</script>";
     };
 
-    if(empty($warehouse) or is_numeric($sellprice)==false)
+    if (empty($sellprice) or is_numeric($sellprice)==false or (intval($sellprice)<=0))
     {
-        echo "<script>alert('库存不能为空且必须为数字');history.back();</script>";
+        echo "<script>alert('售价不能为空且必须为正数');history.back();</script>";
+    };
+
+    if(empty($warehouse) or is_numeric($warehouse)==false or intval($warehouse)<=0)
+    {
+        echo "<script>alert('库存不能为空且必须为正整数');history.back();</script>";
     }
     if(empty($content))
     {

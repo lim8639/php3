@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="images/favicon.ico">
 <script type="application/javascript">
 function log_or_reg(){
-	location.href="login.php";
+	location.href="index.php";
 	}
 </script>
 </head>

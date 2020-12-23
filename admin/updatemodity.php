@@ -103,10 +103,10 @@ include "top.php";
             }
             ?>
             <div class="fan">
-                <a href="brogoods.php?pagenum=1"><button type="button" class="btn btn-primary">首页</button></a>
-                <a href="brogoods.php?key=<?php echo $key;?>&pagenum=<?php echo ($pagenum==1?1:($pagenum-1));?>"><button type="button" class="btn btn-success">上一页</button></a>
-                <a href="brogoods.php?key=<?php echo $key;?>&pagenum=<?php echo ($pagenum==$endPage?$endPage:($pagenum+1));?>"><button type="button" class="btn btn-success">下一页</button></a>
-                <a href="brogoods.php?key=<?php echo $key;?>&pagenum=<?php echo $endPage;?>"><button type="button" class="btn btn-info">尾页</button></a>
+                <a href="updatemodity.php?pagenum=1"><button type="button" class="btn btn-primary">首页</button></a>
+                <a href="updatemodity.php?key=<?php echo $key;?>&pagenum=<?php echo ($pagenum==1?1:($pagenum-1));?>"><button type="button" class="btn btn-success">上一页</button></a>
+                <a href="updatemodity.php?key=<?php echo $key;?>&pagenum=<?php echo ($pagenum==$endPage?$endPage:($pagenum+1));?>"><button type="button" class="btn btn-success">下一页</button></a>
+                <a href="updatemodity.php?key=<?php echo $key;?>&pagenum=<?php echo $endPage;?>"><button type="button" class="btn btn-info">尾页</button></a>
 
             </div>
         </div>
