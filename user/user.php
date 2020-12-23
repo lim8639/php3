@@ -7,6 +7,7 @@
  */
 include "../verfication/usersession.php";
 include "../admin/conn.php";
+
 ?>
 <!doctype html>
 <html lang="zh-CN">
@@ -19,9 +20,12 @@ include "../admin/conn.php";
     <link rel="shortcut icon" href="../asset/src/icon/favicon.ico">
     <link rel="stylesheet" href="../asset/bootstrap-3.3.7-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="user2.css">
+    <link rel="stylesheet" href="../shop/css/mall.css">
+    <link rel="stylesheet" href="../utils/car.css">
     <link rel="stylesheet" href="../asset/css/frame.css">
     <script src="../asset/bootstrap-3.3.7-dist/jquery/jquery-3.5.1.min.js"></script>
     <script src="../asset/bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+    <script src="../shop/js/car.js"></script>
     <style>
         header{
             z-index: 100;
@@ -129,7 +133,7 @@ include "../admin/conn.php";
                         <button type="button" onclick="window.location.href='../verfication/check.php?action=logout'" class="btn btn-default" id="btn1">
                             退出登陆
                         </button>
-                        <button type="submit" class="btn btn-default" id="btn1">提交</button>
+                        <button type="submit" class="btn btn-default" id="btn12">提交</button>
                     </form>
 
                 </div>
@@ -251,9 +255,7 @@ include "../admin/conn.php";
                                             $modityname=$it['modityname'];
                                             $sellprice=$it['sellprice'];
                                             $ordertime=$it['ordertime'];
-
                                                echo "<tr>";
-
                                                echo "<td>";
                                                echo $oid;
                                                echo "</td>";
@@ -440,7 +442,39 @@ include "../admin/conn.php";
         </div>
     </div>
 </div>
+
+<div>
+    <input type="hidden" id="islogin" value="<?php if(empty($_SESSION['username'])){
+        echo "0";
+    }else{
+        echo "1";
+    }?>">
+    <script>
+        $('.btn-into-car').click(function () {
+            var value = $(this).children('input').val();
+            $.ajax({
+                type: "POST",
+                url: "car.php",
+                data: {action:"addOneCar",moditynum:value,shopnum:1},
+                dataType: "text",
+                async:true,
+                success: function(data){
+                    $n =  $('#num-car')
+                    $n.html('');
+                    $n.append(data);
+                }
+            });
+        });
+    </script>
+    <div class="kind"></div>
+    <div id="car" data-toggle="modal" data-target="#myModal1">
+        <div id="num-car"></div>
+        <img src="../asset/src/img2/car.png" alt="">
+    </div>
+</div>
+
 <?php
+include "../utils/shoppingcar.php";
 include "../utils/footer.php";
 ?>
 </body>

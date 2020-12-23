@@ -2,6 +2,7 @@
 
 session_start();
 if (empty($_SESSION['username'])){
+
     /**
      * put the url into session,if exist
      */

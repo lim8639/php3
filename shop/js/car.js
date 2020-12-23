@@ -129,6 +129,7 @@ $(document).on("click", "#submit", function () {
     nump.attr('value',num);
     });
 
+
     $('.cancel-order').click(function () {
     var order = $(this);
     order.css('display','none');

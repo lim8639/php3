@@ -34,6 +34,7 @@ function login($account,$password,$conn){
         // 我存的居然是用户名
         $_SESSION['username'] = $row['customernum'];
         if(!empty($_SESSION['LOGIN_REQUEST_URI'])){
+
             header('location:'.$_SESSION['LOGIN_REQUEST_URI']);
         }else{
            header('location:../user/user.php');
