@@ -247,7 +247,6 @@ include "../verfication/usersession.php";
     }?>">
     <div class="kind"></div>
 </div>
-
 <div class="page">
     <nav aria-label="Page navigation">
         <ul class="pagination">

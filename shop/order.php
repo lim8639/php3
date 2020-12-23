@@ -24,8 +24,28 @@ $uid = $_SESSION['username'];
 
 $sql = "select * from tab_modity left join tab_shop on
  tab_shop.moditynum = tab_modity.moditynum where tab_shop.customernum = '$uid';";
-
 $res = queryList($conn,$sql);
+if (empty($res)){
+    header('location:mall.php');
+}
+if (!empty($_POST['tel'])) {
+    $tel2 = $_POST['tel'];
+    $mark2 = $_POST['mark'];
+    $adrr2 = $_POST['adrr'];
+    $name2 = $_POST['name'];
+    $sqladd = "INSERT INTO tab_address (datailaddress, name, phonenumber, remarks, customernum)
+ VALUES ('$adrr2','$name2','$tel2','$mark2',$uid);";
+    if (changeRecord($conn, $sqladd)) {
+        echo "     <script>
+                                  alert(\"添加成功\");
+                              </script>";
+    } else {
+        echo "     <script>
+                                  alert(\"添加失败\");
+                      </script>";
+    }
+}
+
 ?>
 <div class="container">
     <div class="page-header">
@@ -57,14 +77,35 @@ $res = queryList($conn,$sql);
                                          <td>备注</td>
                                          <td><span class="">X</span></td>
                                      </tr>
-                                     <tr class="success">
-                                         <td class="active">姓名</td>
-                                         <td>电话</td>
-                                         <td >地址</td>
-                                         <td>备注</td>
-                                         <td>备注</td>
-                                     </tr>
+                                     <input type="hidden" id="">
+                     <?php
 
+                     $sql1 = "select  * from  tab_address where customernum = '$uid';";
+                     $resc = queryList($conn,$sql1);
+                     if (empty($resc)){
+                         echo "     <tr class=\".danger\">
+                                         <td>您當前沒有收貨地址！！</td>
+                           
+                                     </tr>";
+                         $myaddress = 0;
+                     }else{
+                         $myaddress = $resc[0]['addressnum'];
+                         foreach ($resc as $it){
+                             $tel = $it['phonenumber'];
+                             $addr = $it['datailaddress'];
+                             $mark = $it['remarks'];
+                             $name = $it['name'];
+                             echo "   <tr class=\"success\"
+                                         <td>$name</td>
+                                         <td >$tel</td>
+                                         <td>$addr</td>
+                                         <td>$mark</td>
+                                          <td><span class=\"\">X</span></td>
+                                             </tr>";
+                         }
+                     }
+
+                     ?>
                                      </tbody>
                                  </table>
                              </div>
@@ -77,44 +118,38 @@ $res = queryList($conn,$sql);
                         <div class="adrr col-lg-6 col-md-6 col-sm-12 col-xs-12">
                           <div class="myddr">
                               <p class="title2">#添加地址</p>
-                              <form class="form-horizontal" id="adrrform">
+                              <form class="form-horizontal" action="order.php" method="post" id="adrrform">
                                   <div class="form-group">
                                       <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control"  placeholder="">
+                                          <input type="text" name="name" class="form-control"  placeholder="">
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label for="inputEmail3" class="col-sm-2 control-label">电话</label>
+                                      <label for="inputEmail3"  class="col-sm-2 control-label">电话</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control"  placeholder="">
+                                          <input type="text" name="tel" class="form-control"  placeholder="">
                                       </div>
                                   </div>
                                   <div class="form-group">
-                                      <label for="inputPassword3" class="col-sm-2 control-label">地址</label>
+                                      <label for="inputPassword3"  class="col-sm-2 control-label">地址</label>
                                       <div class="col-sm-10">
-
-                                              <input select-address p="p" c="c" a="a" d="d" ng-model="xxx" placeholder="请选择所在地" type="text" class="form-control" />
+                                              <input select-address p="p" c="c" a="a" d="d" ng-model="xxx" name="adrr" placeholder="请选择所在地" type="text" class="form-control" />
                                               <!-- javascript
         ================================================== -->
 <!--                                              <script src="../asset/bootstrap-3.3.7-dist/jquery/jquery-3.5.1.min.js" type="text/javascript"></script>-->
                                               <script src="js/plugins/angular/angular.min.js" type="text/javascript"></script>
                                               <script src="js/selectAddress2.js" type="text/javascript"></script>
-<!--                                              <script src="js/index.js"></script>-->
-
+                                              <script src="js/index.js"></script>
                                       </div>
                                   </div>
                                   <div class="form-group">
                                       <label for="inputEmail3" class="col-sm-2 control-label">备注</label>
                                       <div class="col-sm-10">
-                                          <input type="text" class="form-control"  placeholder="">
+                                          <input type="text" name="mark" class="form-control"  placeholder="">
                                       </div>
                                   </div>
-                                  <button class="btn btn-md">点击添加</button>
-                                  <div class="form-group">
-
-                                  </div>
-
+                                  <button type="submit" class="btn btn-md">点击添加</button>
                               </form>
                           </div>
                         </div>
@@ -136,20 +171,11 @@ $res = queryList($conn,$sql);
                 <tr>
                     <td>
                         <label>
-                            <input type="radio" name="gender"  >
+                            <input type="radio" checked="checked"  name="gender"  >
                         </label>
                     </td>
                     <td>￥10.00</td>
                     <td>在线订单不满99元支付运费10元</td>
-                </tr>
-                <tr>
-                    <td>
-                        <label>
-                            <input   type="radio" name="gender" value="2">
-                        </label>
-                    </td>
-                    <td>￥0</td>
-                    <td>货到付款</td>
                 </tr>
                  </tbody>
                 <script>
@@ -173,7 +199,6 @@ $res = queryList($conn,$sql);
            </tr>
            </thead>
                 <tbody>
-
                <?php
                foreach ($res as $item)
                   echo "<tr>
@@ -195,13 +220,25 @@ $res = queryList($conn,$sql);
             4、支付方式
       </div>
       <div id="pay">
-
       </div>
-
        <form action="submitorder.php" method="post">
-           <input type="hidden" name="adrr" value="3" >
+
+           <input type="text" id="adrr" name="adrr" value="<?php
+            echo $myaddress;
+             ?>"
+           >
            <div class="sub">
                <button id="btnsub" class="btn btn-danger" type="submit">提交订单</button>
+               <a href="mall.php" class="btn btn-default">取消订单</a>
+               <script>
+                   $('#btnsub').click(function () {
+
+                       if ($('#adrr').val()==0){
+                           alert("地址为空，请选择地址");
+                           return false;
+                       }
+                   })
+               </script>
            </div>
        </form>
 </div>

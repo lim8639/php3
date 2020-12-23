@@ -38,8 +38,8 @@
                  data: {action:"changepassword",name:$val,p1:1234,p3:456},
 
                    // request 这个data是要包装在 post或者是get里面发给服务器的
-                 //
-                 // input
+                   //
+                   // input
                    // 返回
                  dataType: "text", // json text
                  success: function(aedssdf) { // back response

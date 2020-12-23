@@ -185,6 +185,7 @@ include "utils/footer.php";
             };
         }
     }
+
     function nextPage(next){
         var targetLeft = 0;
 

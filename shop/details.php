@@ -33,6 +33,7 @@
         include "../utils/dao.php";
         $sql = "select * from tab_modity where moditynum ='$id';";
         $rec = queryOneRecord($conn,$sql);
+
         ?>
       <div class="left col-lg-5 col-md-5 col-sm-12 col-xs-12">
           <div class="wareimg">
@@ -126,19 +127,22 @@
                                      nub--;
                                      $input.attr('value',nub);
                                  }
-                             })
+                             });
+
 
                              $('#btn').click(function () {
-                                 $.ajax({
-                                     type: "POST",
-                                     url: "car.php",
-                                     data: {action:"query",uid:5},
-                                     dataType: "text",
-                                     async:false,
-                                     success: function(data) {
-                                         $('#test').append(data);
-                                     }
-                                 });
+                                  $.ajax({
+                                      type: "POST",
+                                      url: "car.php",
+                                      data: {action:"addOneCar",moditynum:<?php echo $id;?>,shopnum:1},
+                                      dataType: "text",
+                                      async:true,
+                                      success: function(data){
+                                          $n =  $('#num-car')
+                                          $n.html('');
+                                          $n.append(data);
+                                      }
+                                  });
                              })
                   </script>
             </div>

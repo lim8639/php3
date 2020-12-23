@@ -18,6 +18,10 @@ h3{
 .img{
     position: relative;
 }
+.img img{
+    width: 220px;
+    height: 220px;
+}
 .other{
     position: absolute;
     width:100%;
